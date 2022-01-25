@@ -35,8 +35,8 @@ clear
 pkg update && pkg upgrade -y
 pkg install clang curl git libcrypt libffi libiconv libjpeg* libjpeg-turbo libwebp libxml2 libxslt make ndk-sysroot openssl postgresql python readline wget zlib -y
 
-git clone https://github.com/muhammadrizky16/Kyy-Userbot.git
-cd Geez-UserBot
+git clone https://github.com/PunyaAlby/ALBY-Userbot.git
+cd ALBY-UserBot
 
 pip install --upgrade pip setuptools
 pip install -r requirements.txt
