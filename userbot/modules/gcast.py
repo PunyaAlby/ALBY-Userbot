@@ -13,6 +13,10 @@
 from userbot import CMD_HELP
 from userbot.events import register
 
+GCAST_BLACKLIST = [
+    -1001638078842,  # RuangDiskusi
+]
+
 
 @register(outgoing=True, pattern=r"^\.gcast(?: |$)(.*)")
 async def gcast(event):
