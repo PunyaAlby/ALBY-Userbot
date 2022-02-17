@@ -47,7 +47,7 @@ async def typewriter(typew):
     sleep(3)
     await typew.edit("`Hai kamuu`")
     sleep(3)
-    await typew.edit("`iyaa kamu yang baca😁`")
+    await typew.edit("`iyaa kamu yang p0😁`")
     sleep(3)
     await typew.edit("`semangat ya nugasnya✊🏻`")
     sleep(4)
@@ -58,12 +58,12 @@ async def typewriter(typew):
 
 
 CMD_HELP.update({
-    "oi": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `Albyy`\
-    \n↳ : perkenalan Albyy\
+    "oi": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `albyy`\
+    \n↳ : perkenalan albyy\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.sayang`\
     \n↳ : Gombalan maut`\
-    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.nugas`\
+    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.semangat`\
     \n↳ : Jan Lupa Semangat."
-    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.nugas`\
+    \n\n: "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.nugas`\
     \n↳ : Semangat nugas✊🏻."
 })
