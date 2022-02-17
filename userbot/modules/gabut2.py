@@ -3,17 +3,17 @@ from userbot import CMD_HELP
 from userbot.events import register
 
 
-@register(outgoing=True, pattern='^.bdrl(?: |$)(.*)')
+@register(outgoing=True, pattern='^.albyy(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(3)
-    await typew.edit("`Hai Perkenalkan Namaku Bdrl`")
+    await typew.edit("`Hai Perkenalkan Namaku Alby`")
     sleep(3)
-    await typew.edit("`20 Tahun`")
+    await typew.edit("`Umur kepo banget hmm`")
     sleep(3)
-    await typew.edit("`JOMBLO`")
+    await typew.edit("`sayang kamu💞`")
     sleep(1)
-    await typew.edit("`Tinggal Di Jawa, Salam Kenal:)`")
+    await typew.edit("`Tinggal Di manapun yang membuat nyaman, Salam Kenal:)`")
 # Create by myself @localheart
 
 
@@ -41,27 +41,29 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@register(outgoing=True, pattern='^.trio(?: |$)(.*)')
+@register(outgoing=True, pattern='^.nugas(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(3)
-    await typew.edit("`Hai saya trio kontol `")
-    sleep(5)
-    await typew.edit("`perkenalkan saya @TripleNineee Bawok, lanjut.`")
+    await typew.edit("`Hai kamuu`")
     sleep(3)
-    await typew.edit("`saya @SangDappaa memek`")
+    await typew.edit("`iyaa kamu yang baca😁`")
     sleep(3)
-    await typew.edit("`Dan saya @Bdrlllll Jembut`")
-    sleep(1)
-    await typew.edit("`Kami bertiga tolol dan donggo 🥵`")
+    await typew.edit("`semangat ya nugasnya✊🏻`")
+    sleep(4)
+    await typew.edit("`ingat masa depanmu lebih penting daripada capekmu hari ini ☺️`")
+    sleep(3)
+    await typew.edit("`SEMANGAT NUGASNYA CANTIK💞`")
 # Create by myself @localheart
 
 
 CMD_HELP.update({
-    "oi": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `bdrl`\
-    \n↳ : perkenalan Bdrl\
+    "oi": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `Albyy`\
+    \n↳ : perkenalan Albyy\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.sayang`\
     \n↳ : Gombalan maut`\
-    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.semangat`\
+    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.nugas`\
     \n↳ : Jan Lupa Semangat."
+    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.nugas`\
+    \n↳ : Semangat nugas✊🏻."
 })
