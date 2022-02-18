@@ -105,7 +105,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID, 
-                "#BOT \n" "`ALBY-Userbot Berhasil Di Update`"
+                "**BOT**" "\nALBY-Userbot Berhasil Di Update`"
             )
 
     else:
