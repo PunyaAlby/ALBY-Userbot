@@ -46,19 +46,18 @@ roas = [
 ]
 
 pacar = [
-    "**Saya Hadir Untuk Membasmi Para Jamet Telegram** 😎 ",
+    "**Saya Hadir Untuk Membantu Tuan Alby** 😎 ",
     "**Iya Bang kenapa?**",
     "**Hai ganteng** 🤭",
     "**Alby I love U 💞💞 ,Mwahhh😘**",
     "**Saya Hadir Untuk Melindungi Cewe Dari Laki Laki Sagapung** 😎",
     "**Siap 86 Bang** 😎",
-    "**Lagi sange bang** 🥵",
     "**Ada apa alby Akuuuuhhh** ☺️",
     "**Mau ga bang jadi pacar aku?** 😁",
     "**Mending pc aku bang** 🥺",
-    "**Ngewe Sama Aku yuk**🥵🥵💦",
     "**Albyyy Aku Sayang Kamu ,Mwahhh😘**",
-
+    "**mau ga temenin aku🥺**",
+    "**mau ga telponan sama aku🥺**",
 ]
 
 
