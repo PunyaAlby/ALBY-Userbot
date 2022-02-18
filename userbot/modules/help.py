@@ -36,6 +36,6 @@ async def help(event):
         await event.edit("**✨ ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ ✨**\n\n"
                          f"**◉ Bᴏᴛ ᴏꜰ {DEFAULTUSER}**\n**◉ Mᴏᴅᴜʟᴇꜱ : {len(modules)}**\n\n"
                          "**• Mᴀɪɴ Mᴇɴᴜ :**\n"
-                         f"◉ {string}◉\n\n✐ **ɴᴏᴛᴇꜱ :**  `kamu bisa melihat dan menggunakan setiap perintah yang ada di atas dengan cara ketik .help (kata perintah) contoh disini saya ingin melihat daftar perintah gcast, jadinya saya tinggal ketik .help gcast nanti muncul list perintahnya. Mudah bukan? Selamat mencoba☺️`\n☞  PEMILIK :[『ⒶⓁⒷⓎ』](t.me/punya_alby)")
+                         f"◉ {string}◉\n\n✐ **ɴᴏᴛᴇꜱ :**  `kamu bisa melihat dan menggunakan setiap perintah yang ada di atas dengan cara ketik .help (kata perintah) contoh disini saya ingin melihat daftar perintah gcast, jadinya saya tinggal ketik .help gcast nanti muncul list perintahnya. Mudah bukan? Selamat mencoba☺️`\n☞  PEMILIK : @punya_alby")
         await asyncio.sleep(1000)
         await event.delete()
