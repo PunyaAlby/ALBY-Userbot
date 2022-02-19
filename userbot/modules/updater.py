@@ -67,11 +67,11 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 break
         if heroku_app is None:
             await event.edit(
-                f"{txt}\nKredensial Heroku tidak valid untuk deploy ALBY-Project dyno.`"
+                f"{txt}\n`Kredensial Heroku tidak valid untuk deploy ALBY-Project dyno.`"
             )
             return repo.__del__()
         await event.edit(
-             "**HEROKU :** Sedang Mengupdate" "\nMohon Menunggu beberapa Menit"
+            "`Heroku :` `Sedang MengUpdate`" "\n`Mohon Menunggu beberapa Menit"
         )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -105,12 +105,12 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID, 
-                "**BOT**" "\nALBY-Userbot Berhasil Di Update`"
+                "#BOT \n" "`ALBY-Userbot Berhasil Di Update`"
             )
 
     else:
         await event.edit(
-            "**[HEROKU]:**" "\nHarap Siapkan Variabel` **HEROKU_API_KEY** `.`"
+            "`[HEROKU]:" "\nHarap Siapkan Variabel` **HEROKU_API_KEY** `.`"
         )
         await asyncio.sleep(10)
         await event.delete()
@@ -155,7 +155,7 @@ async def upstream(event):
     off_repo = UPSTREAM_REPO_URL
     force_update = False
     try:
-        txt = "Mohon Maaf, Pembaruan Tidak Dapat Di Lanjutkan Karna "
+        txt = "`Mohon Maaf, Pembaruan Tidak Dapat Di Lanjutkan Karna "
         txt += "Beberapa Masalah Terjadi`\n\n**LOGTRACE:**\n"
         repo = Repo()
     except NoSuchPathError as error:
@@ -167,7 +167,7 @@ async def upstream(event):
     except InvalidGitRepositoryError as error:
         if conf is None:
             return await event.edit(
-                f"Sayangnya, Directory {error} Tampaknya Bukan Dari Repo."
+                f"`Sayangnya, Directory {error} Tampaknya Bukan Dari Repo."
                 "\nTapi Kita Bisa Memperbarui Paksa Userbot Menggunakan .update now.`"
             )
         repo = Repo.init()
@@ -182,7 +182,7 @@ async def upstream(event):
     if ac_br != UPSTREAM_REPO_BRANCH:
         await event.edit(
             "**[UPDATER]:**\n"
-            f"Looks like you are using your own custom branch ({ac_br}). "
+            f"`Looks like you are using your own custom branch ({ac_br}). "
             "in that case, Updater is unable to identify "
             "which branch is to be merged. "
             "please checkout to any official branch`"
