@@ -238,7 +238,7 @@ async def amireallyalive(alive):
         f"◙ `Bot Ver    :` {BOT_VER} \n"
         f"◙ `Modules    :` {len(modules)} \n"
         f"╰✠╼━━━━━━━━━━━━━━━✠╯\n"
-        f"[ɢʀᴏᴜᴘꜱ](https://t.me/ruangdiskusikami) | [ᴄʜᴀɴɴᴇʟ](https://t.me/ruangprojects) | [ᴏᴡɴᴇʀ](https://t.me/Punya_Alby) | [ɢɪᴛʜᴜʙ](http://404.jodi.org/ae/)")
+        f"[ɢʀᴏᴜᴘꜱ](https://t.me/ruangdiskusikami) | [ᴄʜᴀɴɴᴇʟ](https://t.me/ruangprojects) | [ᴏᴡɴᴇʀ](https://t.me/Punya_Alby) | [ɢɪᴛʜᴜʙ](https://github.com/PunyaAlby/ALBY-Userbot)")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
@@ -314,7 +314,7 @@ async def redis(alive):
         f"┣  `Branch   :` {UPSTREAM_REPO_BRANCH} \n"
         f"┣  `Bot Ver  :` {BOT_VER} \n"
         f"┣  `Modules  :` {len(modules)} Modules \n"
-        f"┣  `GitHub   :` [ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ](http://404.jodi.org/ae/) \n"
+        f"┣  `GitHub   :` [ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ](https://github.com/PunyaAlby/ALBY-Userbot) \n"
         f"┣  `Support  :` [ᴄʜᴀɴɴᴇʟ](https://t.me/ruangprojects) \n"
         f"┣  `Owner    :` [『ⒶⓁⒷⓎ』](https://t.me/Punya_Alby) \n"
         f"┗━━━━━━━━━━━━━━━━━━━")
