@@ -87,7 +87,7 @@ async def killdabot(event):
 async def reedme(e):
     await e.edit(
         "Here's Something for You to Read :\n"
-        "\n[✨ ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ Repo](http://404.jodi.org/ae/)"
+        "\n[✨ ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ Repo](https://github.com/PunyaAlby/ALBY-Userbot)"
         "\n[Setup Guide - Basic](https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02)"
         "\n[Special - Note](https://telegra.ph/Special-Note-11-02)")
 
@@ -112,7 +112,7 @@ async def repo_is_here(wannasee):
     await wannasee.edit(
         "**Hey**, I am using **✨ ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ ✨** \n"
         "卍━━━━━━━━━━━━━━━━━━━━━━卍\n"
-        "➣ **Repo Userbot :** [ɢɪᴛʜᴜʙ](http://404.jodi.org/ae/)\n"
+        "➣ **Repo Userbot :** [ɢɪᴛʜᴜʙ](https://github.com/PunyaAlby/ALBY-Userbot)\n"
         "➣ **Owner Bot       :** [『ⒶⓁⒷⓎ』](t.me/Punya_Alby)\n"
         "➣ **Support           :** [sᴜᴘᴘᴏʀᴛ](https://t.me/ruangdiskusikami)\n"
         "➣ **Channel           :** [ᴄʜᴀɴɴᴇʟ](https://t.me/ruangprojects)\n"
