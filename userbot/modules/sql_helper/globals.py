@@ -1,5 +1,5 @@
 try:
-    from userbot.modules.sql_helper import SESSION, BASE
+    from userbot.modules.sql_helper import BASE, SESSION
 except ImportError:
     raise AttributeError
 
@@ -21,8 +21,12 @@ Globals.__table__.create(checkfirst=True)
 
 def gvarstatus(variable):
     try:
-        return SESSION.query(Globals).filter(
-            Globals.variable == str(variable)).first().value
+        return (
+            SESSION.query(Globals)
+            .filter(Globals.variable == str(variable))
+            .first()
+            .value
+        )
     except BaseException:
         return None
     finally:
@@ -39,7 +43,10 @@ def addgvar(variable, value):
 
 
 def delgvar(variable):
-    rem = SESSION.query(Globals).filter(Globals.variable == str(variable))\
+    rem = (
+        SESSION.query(Globals)
+        .filter(Globals.variable == str(variable))
         .delete(synchronize_session="fetch")
+    )
     if rem:
         SESSION.commit()
