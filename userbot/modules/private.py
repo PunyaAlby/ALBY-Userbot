@@ -503,7 +503,7 @@ async def bot_start(event):
             start_msg = f"**Users**: {mention}\
                         \n\n**Bot**: [{OWNER}](tg://user?id={OWNER_ID}) \
                         \n**Info**: Kamu bisa menghubungi owner bot melalui bot ini\
-                        \n\n**Powered by**: [Skyla-Userbot](https://github.com/SkylaIND/Skyla-Userbot)"
+                        \n\n**Powered by**: [ALBY-Userbot](https://github.com/PunyaAlby/ALBY-Userbot)"
             buttons = [
                 (
                     Button.inline("ɪɴꜰᴏ", data="infor"),
@@ -562,7 +562,7 @@ async def _(event):
 async def infor(event):
     await tgbot.send_message(
         event.chat_id,
-        message=f"**Groups**: [sᴜᴘᴘᴏʀᴛ](t.me/skylasupport)\n**Github**: [Skyla-Userbot](https://github.com/SkylaIND/Skyla-Userbot)\n**Deploy**: [Heroku](https://dashboard.heroku.com/new?template=https://github.com/SkylaIND/Skyla-Userbot)",
+        message=f"**Groups**: [sᴜᴘᴘᴏʀᴛ](t.me/ruangdiskusikami)\n**Github**: [ALBY-Userbot](https://github.com/PunyaAlby/ALBY-Userbot)",
         buttons=[
             [
                 custom.Button.inline(
