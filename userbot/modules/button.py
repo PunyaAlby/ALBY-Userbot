@@ -10,7 +10,7 @@ from telethon import Button
 from userbot import BOT_USERNAME
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.utils import edit_delete, kyy_cmd, reply_id
+from userbot.utils import edit_delete, ALBY_cmd, reply_id
 
 # regex obtained from:
 # https://github.com/PaulSonOfLars/tgbot/blob/master/tg_bot/modules/helper_funcs/string_handling.py#L23
@@ -18,7 +18,7 @@ BTN_URL_REGEX = re.compile(
     r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 
 
-@kyy_cmd(pattern="button(?:\\s|$)([\\s\\S]*)")
+@ALBY_cmd(pattern="button(?:\\s|$)([\\s\\S]*)")
 async def _(event):
     reply_to_id = await reply_id(event)
     reply_message = await event.get_reply_message()
