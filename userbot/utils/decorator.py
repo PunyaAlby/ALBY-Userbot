@@ -21,7 +21,7 @@ from userbot import (
 )
 
 
-def ALBY_cmd(
+def kyy_cmd(
     pattern: str = None,
     allow_sudo: bool = True,
     disable_edited: bool = False,
@@ -44,25 +44,25 @@ def ALBY_cmd(
         args["chats"] = black_list_chats
 
     if pattern is not None:
-        global ALBY_reg
+        global kyy_reg
         global sudo_reg
         if (
             pattern.startswith(r"\#")
             or not pattern.startswith(r"\#")
             and pattern.startswith(r"^")
         ):
-            ALBY_reg = sudo_reg = re.compile(pattern)
+            kyy_reg = sudo_reg = re.compile(pattern)
         else:
-            ALBY_ = "\\" + CMD_HANDLER
+            kyy_ = "\\" + CMD_HANDLER
             sudo_ = "\\" + SUDO_HANDLER
-            ALBY_reg = re.compile(ALBY_ + pattern)
+            kyy_reg = re.compile(kyy_ + pattern)
             sudo_reg = re.compile(sudo_ + pattern)
             if command is not None:
-                cmd1 = ALBY_ + command
+                cmd1 = kyy_ + command
                 cmd2 = sudo_ + command
             else:
                 cmd1 = (
-                    (ALBY_ +
+                    (kyy_ +
                      pattern).replace(
                         "$",
                         "").replace(
@@ -85,9 +85,9 @@ def ALBY_cmd(
         if not disable_edited:
             bot.add_event_handler(
                 func, events.MessageEdited(
-                    **args, outgoing=True, pattern=ALBY_reg))
+                    **args, outgoing=True, pattern=kyy_reg))
         bot.add_event_handler(
-            func, events.NewMessage(**args, outgoing=True, pattern=ALBY_reg)
+            func, events.NewMessage(**args, outgoing=True, pattern=kyy_reg)
         )
         if allow_sudo:
             if not disable_edited:
@@ -112,7 +112,7 @@ def ALBY_cmd(
     return decorator
 
 
-def ALBY_handler(
+def kyy_handler(
     **args,
 ):
     def decorator(func):
