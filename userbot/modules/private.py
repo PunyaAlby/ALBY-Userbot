@@ -500,9 +500,10 @@ async def bot_start(event):
                 my_mention=my_mention,
             )
         else:
-            start_msg = f"**Users**: {mention}\
-                        \n\n**Bot**: [{OWNER}](tg://user?id={OWNER_ID}) \
-                        \n**Info**: Kamu bisa menghubungi owner bot melalui bot ini\
+            start_msg = f"**👋 Hai** {mention}**!**\
+                        \n\n**Saya adalah {my_first}** \
+                        \n**Anda dapat Menghubungi [{OWNER}](tg://user?id={OWNER_ID}) melalui bot ini.**\
+                        \n**Jangan Melakukan Spam Atau anda akan di blokir**\
                         \n\n**Powered by**: [ALBY-Userbot](https://github.com/PunyaAlby/ALBY-Userbot)"
             buttons = [
                 (
