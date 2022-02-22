@@ -8,16 +8,23 @@ from telethon.tl.functions.phone import DiscardGroupCallRequest as stopvc
 from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 
-from userbot import CMD_HELP
-from userbot.events import register
+from userbot import CMD_HELP, CMD_HANDLER as cmd
+from userbot.utils import kyy_cmd
 
 NO_ADMIN = "`Maaf Kamu Bukan Admin 👮`"
 
 
-async def get_call(event):
-    kyy = await event.client(getchat(event.chat_id))
-    kyy = await event.client(getvc(kyy.full_chat.call, limit=1))
-    return kyy.call
+def vcmention(user):
+    full_name = get_display_name(user)
+    if not isinstance(user, types.User):
+        return full_name
+    return f"[{full_name}](tg://user?id={user.id})"
+
+
+async def get_call(kyy):
+    kyy = await kyy.client(getchat(kyy.chat_id))
+    await kyy.client(getvc(kyy.full_chat.call, limit=1))
+    return hehe.call
 
 
 def user_list(l, n):
@@ -25,7 +32,7 @@ def user_list(l, n):
         yield l[i: i + n]
 
 
-@register(outgoing=True, pattern=r"^\.startvc$")
+@kyy_cmd(pattern="startvc$")
 async def start_voice(c):
     chat = await c.get_chat()
     admin = chat.admin_rights
@@ -41,7 +48,7 @@ async def start_voice(c):
         await c.edit(f"**ERROR:** `{ex}`")
 
 
-@register(outgoing=True, pattern=r"^\.stopvc$")
+@kyy_cmd(pattern="stopvc$")
 async def stop_voice(c):
     chat = await c.get_chat()
     admin = chat.admin_rights
@@ -57,7 +64,7 @@ async def stop_voice(c):
         await c.edit(f"**ERROR:** `{ex}`")
 
 
-@register(outgoing=True, pattern=r"^\.vcinvite", groups_only=True)
+@kyy_cmd(pattern="vcinvite")
 async def _(kyy):
     await kyy.edit("`Sedang Menginvite Member...`")
     users = []
@@ -77,11 +84,11 @@ async def _(kyy):
 
 CMD_HELP.update(
     {
-        "vcg": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.startvc`\
+        "vcg": f"𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}startvc`\
          \n↳ : Memulai Obrolan Suara dalam Group.\
-         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.stopvc`\
+         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}stopvc`\
          \n↳ : `Menghentikan Obrolan Suara Pada Group.`\
-         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.vcinvite`\
+         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}vcinvite`\
          \n↳ : Invite semua member yang berada di group."
     }
 )
