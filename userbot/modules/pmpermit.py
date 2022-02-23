@@ -8,7 +8,7 @@ from sqlalchemy.exc import IntegrityError
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.functions.messages import ReportSpamRequest
 from telethon.tl.types import User
-from userbot.utils import ALBY_cmd
+from userbot.utils import kyy_cmd
 from userbot.events import register
 from userbot import CMD_HANDLER as cmd
 from userbot import (
@@ -190,7 +190,7 @@ async def auto_accept(event):
                     )
 
 
-@ALBY_cmd(pattern="notifoff$")
+@kyy_cmd(pattern="notifoff$")
 async def notifoff(noff_event):
     """For .notifoff command, stop getting notifications from unapproved PMs."""
     try:
@@ -201,7 +201,7 @@ async def notifoff(noff_event):
     await noff_event.edit("`Notifikasi Dari Pesan Pribadi Tidak Disetujui, Telah Dibisukan!`")
 
 
-@ALBY_cmd(pattern="notifon$")
+@kyy_cmd(pattern="notifon$")
 async def notifon(non_event):
     """For .notifoff command, get notifications from unapproved PMs."""
     try:
@@ -212,7 +212,7 @@ async def notifon(non_event):
     await non_event.edit("`Notifikasi Dari Pesan Pribadi Tidak Disetujui, Tidak Lagi Dibisukan!`")
 
 
-@ALBY_cmd(pattern="(?:setuju|ok)\\s?(.)?")
+@kyy_cmd(pattern="(?:setuju|ok)\\s?(.)?")
 async def approvepm(apprvpm):
     """For .ok command, give someone the permissions to PM you."""
     try:
@@ -261,7 +261,7 @@ async def approvepm(apprvpm):
         )
 
 
-@ALBY_cmd(pattern="(?:tolak|nopm)\\s?(.)?")
+@kyy_cmd(pattern="(?:tolak|nopm)\\s?(.)?")
 async def disapprovepm(disapprvpm):
     try:
         from userbot.modules.sql_helper.pm_permit_sql import dissprove
@@ -291,7 +291,7 @@ async def disapprovepm(disapprvpm):
         )
 
 
-@ALBY_cmd(pattern="block$")
+@kyy_cmd(pattern="block$")
 async def blockpm(block):
     """For .block command, block people from PMing you!"""
     if block.reply_to_msg_id:
@@ -323,7 +323,7 @@ async def blockpm(block):
         )
 
 
-@ALBY_cmd(pattern="unblock$")
+@kyy_cmd(pattern="unblock$")
 async def unblockpm(unblock):
     """For .unblock command, let people PMing you again!"""
     if unblock.reply_to_msg_id:
@@ -340,7 +340,7 @@ async def unblockpm(unblock):
         )
 
 
-@ALBY_cmd(pattern="(set|get|reset) pm_msg(?: |$)(\\w*)")
+@kyy_cmd(pattern="(set|get|reset) pm_msg(?: |$)(\\w*)")
 async def add_pmsg(cust_msg):
     """Set your own Unapproved message"""
     if not PM_AUTO_BAN:
