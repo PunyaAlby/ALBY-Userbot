@@ -21,6 +21,7 @@ from datetime import datetime
 from redis import StrictRedis
 from dotenv import load_dotenv
 from requests import get
+from telethon.errors import UserIsBlockedError
 from telethon import Button
 from telethon.sync import TelegramClient, custom, events
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
