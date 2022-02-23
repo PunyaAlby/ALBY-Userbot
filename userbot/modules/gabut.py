@@ -179,6 +179,52 @@ async def perkenalan(event):
 # Kerja
 
 
+@register(outgoing=True, pattern="^.prenjon(?: |$)(.*)")
+async def perkenalan(event):
+    event.pattern_match.group(1)
+    await event.edit(f"`Hai you👋`")
+    sleep(2)
+    await event.edit(f"`iyaa kamuu..`")
+    sleep(2)
+    await event.edit("`Mau bilang sesuatu ni..`")
+    sleep(2)
+    await event.edit("`Sebenarnya..`")
+    sleep(2)
+    await event.edit("`Sebenarnya gua suka sama lu`")
+    sleep(2)
+    await event.edit("`Tapi lu nya ga suka sama gua😟`")
+    sleep(2)
+    await event.edit("`Tapi gapapa🙂`")
+    sleep(2)
+    await event.edit("`i'm okay😌`")
+
+
+# prenjon
+
+
+@register(outgoing=True, pattern="^.kangencerita(?: |$)(.*)")
+async def perkenalan(event):
+    event.pattern_match.group(1)
+    await event.edit(f"`Hai kamu👋`")
+    sleep(2)
+    await event.edit(f"`apa kabar?`")
+    sleep(2)
+    await event.edit("`makan nya udah?`")
+    sleep(2)
+    await event.edit("`buat hari ini gimana?`")
+    sleep(2)
+    await event.edit("`ada yang mau kamu ceritain ngga?`")
+    sleep(2)
+    await event.edit("`kalau ada sini cerita sini sama aku🥺`")
+    sleep(2)
+    await event.edit("`aku kangen kamu ceritaa🥺`")
+    sleep(2)
+    await event.edit("`aku siap jadi pendengar cerita kamu☺️`")
+
+
+# KangenCerita
+
+
 
 CMD_HELP.update(
     {
@@ -201,6 +247,10 @@ CMD_HELP.update(
         \nUsage : semangatin orang ngerjain tugas\
         \n\n Cmd : `.kerja`\
         \nUsage : semangatin orang bekerja\
+        \n\n Cmd : `.prenjon`\
+        \nUsage : Cinta friendzone\
+        \n\n Cmd : `.kangencerita`\
+        \nUsage : Kangen cerita dari kamu\
     "
     }
 )
