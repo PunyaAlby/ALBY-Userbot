@@ -219,7 +219,7 @@ async def perkenalan(event):
     sleep(2)
     await event.edit("`aku kangen kamu ceritaa🥺`")
     sleep(2)
-    await event.edit("`aku siap jadi pendengar cerita kamu☺️`")
+    await event.edit("`aku siap jadi pendengar cerita kamu`")
 
 
 # KangenCerita
