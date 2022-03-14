@@ -15,6 +15,7 @@ from userbot.events import register
 
 GCAST_BLACKLIST = [
     -1001638078842,  # RuangDiskusi
+    -1001705349543,  # KyuraSupport
 
 ]
 
