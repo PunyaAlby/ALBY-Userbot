@@ -21,7 +21,7 @@ async def usit(e):
 async def var(m):
     await m.edit(
         f"**Disini Daftar Vars Dari {DEFAULTUSER}:**\n"
-        "\n[DAFTAR VARS](https://raw.githubusercontent.com/Yansaii/Bdrl-userbot/Bdrl-userbot/varshelper.txt)")
+        "\n[DAFTAR VARS](https://raw.githubusercontent.com/PunyaAlby/ALBY-Userbot/ALBY-Userbot/varshelper.txt)")
 
 
 CMD_HELP.update({
