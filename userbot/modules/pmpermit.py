@@ -16,6 +16,7 @@ from userbot import (
     COUNT_PM,
     LASTMSG,
     LOGS,
+    VVIP,
     PM_AUTO_BAN,
     ALIVE_NAME,
     PMPERMIT_TEXT,
