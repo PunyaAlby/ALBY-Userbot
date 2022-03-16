@@ -39,15 +39,18 @@ async def get_adzan(adzan):
     isya = parsed["results"]["datetime"][0]["times"]["Isha"]
 
     result = (
-        f"**Jadwal Sholat**:\n"
+        f"**✥ Jadwal Sholat ✥**\n"
+        f"**✧╼━━━━━━━━━━━━━━━✧**\n"
         f"📅 `{date} | {timezone}`\n"
         f"🌏 `{city} | {country}`\n\n"
-        f"**Imsak :** `{imsak}`\n"
-        f"**Subuh :** `{subuh}`\n"
-        f"**Zuhur :** `{zuhur}`\n"
-        f"**Ashar :** `{ashar}`\n"
-        f"**Maghrib :** `{maghrib}`\n"
-        f"**Isya :** `{isya}`\n"
+        f"**╭✠╼━━━━━━━━━━━━━━━━✠╮**\n"
+        f"**𖥻ꦼ➮ Imsak :** `{imsak}`\n"
+        f"**𖥻ꦼ➮ Subuh :** `{subuh}`\n"
+        f"**𖥻ꦼ➮ Zuhur :** `{zuhur}`\n"
+        f"**𖥻ꦼ➮ Ashar :** `{ashar}`\n"
+        f"**𖥻ꦼ➮ Maghrib :** `{maghrib}`\n"
+        f"**𖥻ꦼ➮ Isya :** `{isya}`\n"
+        f"**╰✠╼━━━━━━━━━━━━━━━✠╯**\n"
     )
 
     await adzan.edit(result)
