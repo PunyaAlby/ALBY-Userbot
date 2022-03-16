@@ -137,8 +137,8 @@ async def typewriter(typew):
 
 
 CMD_HELP.update({
-    "animasi7": "`.gabut` ; `.orgil`\
-    \nUsage: ntahlah gabut doang.\
+    "animasi7": "`.orgil`\
+    \nUsage: ntahlah coba aja.\
     \n\n`.sange` :\
     \nUsage: cobalah sndiri bodoh.\
     \n\n`.ass`\
