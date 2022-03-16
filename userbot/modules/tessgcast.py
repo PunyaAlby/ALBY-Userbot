@@ -10,7 +10,7 @@
 # FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
 # t.me/SharingUserbot & t.me/Lunatic0de
 
-from userbot import CMD_HELP
+from userbot import VVIP, CMD_HELP
 from userbot.events import register
 
 GCAST_BLACKLIST = [
