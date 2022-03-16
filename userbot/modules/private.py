@@ -255,7 +255,7 @@ async def botsettings(event):
     if event.query.user_id == OWNER_ID:
         await tgbot.send_message(
             event.chat_id,
-            message=f"**Halo👋 [{OWNER}](tg://user?id={OWNER_ID})**\n**Apa ada yang bisa saya bantu?**",
+            message=f"**Menu ini Hanya Terlihat Oleh [{OWNER}](tg://user?id={OWNER_ID})** ..!",
             buttons=[
                 (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ", data="apiset"),),
                 (
@@ -502,16 +502,16 @@ async def bot_start(event):
         else:
             start_msg = f"**👋 Hai** {mention}**!**\
                         \n\n**Saya adalah {my_first}** \
-                        \n**Anda dapat menghubungi [{OWNER}](tg://user?id={OWNER_ID}) dari sini.**\
-                        \n**Jangan melakukan spam atau anda akan di Banned**\
+                        \n**Anda dapat Menghubungi [{OWNER}](tg://user?id={OWNER_ID}) dari sini.**\
+                        \n**Jangan Melakukan Spam Atau anda akan di blokir**\
                         \n\n**Powered by** [ALBY-Userbot](https://github.com/PunyaAlby/ALBY-Userbot)"
-        buttons = [
+            buttons = [
                 (
                     Button.inline("ɪɴꜰᴏ", data="infor"),
                 )
             ]
     else:
-        start_msg = f"**Halo 👋 [{OWNER}](tg://user?id={OWNER_ID})**\n**Apa ada yang bisa saya bantu?**!"
+        start_msg = f"**Menu ini Hanya Terlihat Oleh [{OWNER}](tg://user?id={OWNER_ID})** ..!"
         buttons = [
             (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ", data="apiset"),),
             (
@@ -543,14 +543,14 @@ async def bot_start(event):
         await check_bot_started_users(chat, event)
 
 
-@callback(data=re.compile(b"uptimebot"))
+@ callback(data=re.compile(b"uptimebot"))
 async def _(event):
     uptime = await get_readable_time((time.time() - StartTime))
     pin = f"⏱ ᴜᴘᴛɪᴍᴇ = {uptime}"
     await event.answer(pin, cache_time=0, alert=True)
 
 
-@asst_cmd(pattern="^/ping$")
+@ callback(data=re.compile(b"pingbot"))
 async def _(event):
     start = datetime.now()
     end = datetime.now()
@@ -559,7 +559,7 @@ async def _(event):
     await event.answer(pin, cache_time=0, alert=True)
 
 
-@callback(data=re.compile(b"infor"))
+@ callback(data=re.compile(b"infor"))
 async def infor(event):
     await tgbot.send_message(
         event.chat_id,
