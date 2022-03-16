@@ -834,7 +834,7 @@ async def get_usersdel(show):
         await show.client.send_file(
             show.chat_id,
             "daftarpengguna.txt",
-            caption="Daftar Pengguna {}".format(title),
+            caption="✥ Daftar Pengguna {}".format(title),
             reply_to=show.id,
         )
         remove("daftarpengguna.txt")
@@ -891,7 +891,7 @@ async def get_userdel_from_id(user, event):
 async def get_bots(show):
     info = await show.client.get_entity(show.chat_id)
     title = info.title if info.title else "Grup Ini"
-    mentions = f"<b>Daftar Bot Di {title}:</b>\n"
+    mentions = f"<b>✥ Daftar Bot Di {title}:</b>\n"
     try:
         if isinstance(show.to_id, PeerChat):
             return await show.edit("`Saya mendengar bahwa hanya Supergrup yang dapat memiliki bot`")
@@ -917,7 +917,7 @@ async def get_bots(show):
         await show.client.send_file(
             show.chat_id,
             "botlist.txt",
-            caption="Daftar Bot Di {}".format(title),
+            caption="✥ Daftar Bot Di {}".format(title),
             reply_to=show.id,
         )
         remove("botlist.txt")
