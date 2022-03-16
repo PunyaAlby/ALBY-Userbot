@@ -397,7 +397,7 @@ CMD_HELP.update({
     "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.gabut` atau `.dino`\
     \n↳ : Dikala gabut, yaaa pake aja xixixi.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.cinta`\
-    \n↳ : Mengirim cinta tai anjiing ke seseorang.\
+    \n↳ : mengirim cintamu ke seseorang.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.sayang`\
     \n↳ : Berubah menjadi kadal."
 })
