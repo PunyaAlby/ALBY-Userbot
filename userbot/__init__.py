@@ -94,6 +94,14 @@ DEVS = (
     1337194042,
 )
 
+# VVIP | JANGAN DIISI YAA BODOH 
+VVIP = (
+    1441342342,
+    5089916692,
+    1938616056,
+    810227767,
+)
+
 SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
 BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
 
