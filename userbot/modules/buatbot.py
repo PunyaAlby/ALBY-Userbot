@@ -46,7 +46,11 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "botfather": ".botbaru\
-    \nUntuk Membuat Bot Dari Botfather, .botbaru  < bot_name > <bot_username >  ."
+        "siaran": "**𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : **`siaran`\
+        \n\n  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.botbaru`\
+        \n  **Usage : **Untuk Membuat Bot Dari Botfather.\
+        \n\n  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.botbaru  < bot_name > <bot_username >`\
+        \n  **Usage : **Untuk Membuat Bot secara otomatis tanpa melalui botfather \
+    "
     }
 )
