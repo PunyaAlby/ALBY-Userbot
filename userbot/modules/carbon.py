@@ -1,6 +1,6 @@
 # Ported By @VckyouuBitch From Geez-Projects
 # Fixes BUGS, HEHE USAHA MEMANG TIDAK MENGHIANATI HASIL:)
-
+# recode @punya_alby
 
 import os
 from time import sleep
@@ -355,8 +355,11 @@ async def carbon_api(e):
     await e.delete()  # Deleting msg
 
 
-CMD_HELP.update({
-    "carbon":
-    "`.carbon`value <values=1,2,3,4>\
-        \nUsage:reply or type .carbon1 or 2,3,4 value and beautify your text."
-})
+CMD_HELP.update(
+    {
+        "Carbon": "**𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : **`carbon`\
+        \n\n  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.carbon`value <values=1,2,3,4>\
+        \n  **Usage : **reply pesan atau ketik .carbon1 or 2,3,4 untuk mempercantik teks anda.\
+    "
+    }
+)
