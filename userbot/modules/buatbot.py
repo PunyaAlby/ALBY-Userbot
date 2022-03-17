@@ -1,6 +1,7 @@
 # nyenyenyenye
 # FROM skyzu-userbot <https://github.com/Skyzu/skyzu-userbot>
 # port by koala🐨/@manusiarakitann
+# Recode by @Punya_alby
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.contacts import UnblockRequest
@@ -46,7 +47,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "siaran": "**𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : **`siaran`\
+        "Membuat bot father": "**𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : **`Membuat bot father`\
         \n\n  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.botbaru`\
         \n  **Usage : **Untuk Membuat Bot Dari Botfather.\
         \n\n  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.botbaru  < bot_name > <bot_username >`\
