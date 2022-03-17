@@ -24,10 +24,15 @@ async def var(m):
         "\n[DAFTAR VARS](https://raw.githubusercontent.com/PunyaAlby/ALBY-Userbot/ALBY-Userbot/varshelper.txt)")
 
 
-CMD_HELP.update({
-    "helper":
-    "`.lhelp`\
-\nUsage: Bantuan Untuk ALBY-Userbot.\
-\n`.vars`\
-\nUsage: Melihat Daftar Vars."
-})
+CMD_HELP.update(
+    {
+        "helper": "**𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : **`helper`\
+        \n\n  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.lhelp`\
+        \n  **Usage : **Lakukan ketika ingin OFF.\nSiapapun Yang Balas, Tag, Atau Chat Kamu \
+Mereka Akan Tau Alasan Kamu OFF.
+        \n\nAFK Bisa Dilakukan Dan Dibatalkan Dimanapun.\
+        \n\n  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.vars`\
+        \n  **Usage : **Melihat Daftar Vars. \
+    "
+    }
+)
