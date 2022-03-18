@@ -21,18 +21,13 @@ async def usit(e):
 async def var(m):
     await m.edit(
         f"**Disini Daftar Vars Dari {DEFAULTUSER}:**\n"
-        "\n[DAFTAR VARS](https://raw.githubusercontent.com/PunyaAlby/ALBY-Userbot/ALBY-Userbot/varshelper.txt)")
+        "\n[DAFTAR VARS](https://raw.githubusercontent.com/Yansaii/Bdrl-userbot/Bdrl-userbot/varshelper.txt)")
 
 
-CMD_HELP.update(
-    {
-        "helper": "**𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : **`helper`\
-        \n\n  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.lhelp`\
-        \n  **Usage : **Lakukan ketika ingin OFF.\nSiapapun Yang Balas, Tag, Atau Chat Kamu \
-Mereka Akan Tau Alasan Kamu OFF.
-        \n\nAFK Bisa Dilakukan Dan Dibatalkan Dimanapun.\
-        \n\n  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.vars`\
-        \n  **Usage : **Melihat Daftar Vars. \
-    "
-    }
-)
+CMD_HELP.update({
+    "helper":
+    "`.lhelp`\
+\nUsage: Bantuan Untuk Rose-Userbot.\
+\n`.vars`\
+\nUsage: Melihat Daftar Vars."
+})
