@@ -9,6 +9,7 @@ import random
 import pybase64
 import sys
 
+from base64 import b64decode
 from sys import version_info
 from logging import basicConfig, getLogger, INFO, DEBUG
 from distutils.util import strtobool as sb
@@ -21,7 +22,6 @@ from datetime import datetime
 from redis import StrictRedis
 from dotenv import load_dotenv
 from requests import get
-from telethon.errors import UserIsBlockedError
 from telethon import Button
 from telethon.sync import TelegramClient, custom, events
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
@@ -30,6 +30,12 @@ from telethon.sessions import StringSession
 from telethon import Button, events, functions, types
 from telethon.tl.types import InputWebDocument
 from telethon.utils import get_display_name
+
+from .storage import Storage
+
+
+def STORAGE(n):
+    return Storage(Path("data") / n)
 
 
 redis_db = None
@@ -133,7 +139,6 @@ PMPERMIT_PIC = os.environ.get(
 
 # Bleep Blop, this is a bot ;)
 PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
-PM_LIMIT = int(os.environ.get("PM_LIMIT", 6))
 
 # Send .chatid in any group with all your administration bots (added)
 G_BAN_LOGGER_GROUP = os.environ.get("G_BAN_LOGGER_GROUP", "")
@@ -207,7 +212,7 @@ PM_LOGGR_BOT_API_ID = int(os.environ.get("PM_LOGGR_BOT_API_ID", "-100"))
 # OpenWeatherMap API Key
 OPEN_WEATHER_MAP_APPID = os.environ.get(
     "OPEN_WEATHER_MAP_APPID") or "5ed2fcba931692ec6bd0a8a3f8d84936"
-WEATHER_DEFCITY = os.environ.get("WEATHER_DEFCITY", None)
+WEATHER_DEFCITY = os.environ.get("WEATHER_DEFCITY", "Batam")
 
 # Lydia API
 LYDIA_API_KEY = os.environ.get(
@@ -228,9 +233,7 @@ YOUTUBE_API_KEY = os.environ.get(
     "YOUTUBE_API_KEY") or "AIzaSyACwFrVv-mlhICIOCvDQgaabo6RIoaK8Dg"
 
 # Untuk Perintah .albyalive
-ALBY_TEKS_KUSTOM = os.environ.get(
-    "ALBY_TEKS_KUSTOM",
-    "I'am Using ALBY-Userbot✨")
+ALBY_TEKS_KUSTOM = os.environ.get("ALBY_TEKS_KUSTOM", "I'am Using ALBY-Userbot✨")
 
 # Untuk Mengubah Pesan Welcome
 START_WELCOME = os.environ.get("START_WELCOME", None)
@@ -256,7 +259,7 @@ BITLY_TOKEN = os.environ.get(
 TERM_ALIAS = os.environ.get("TERM_ALIAS", "ALBY-Userbot")
 
 # Bot Version
-BOT_VER = os.environ.get("BOT_VER", "8.0")
+BOT_VER = os.environ.get("BOT_VER", "9.0")
 
 # Default .alive Username
 ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
@@ -277,6 +280,8 @@ EMOJI_HELP = os.environ.get("EMOJI_HELP") or "✨"
 
 # °ALBY-Userbot°
 OWNER_URL = os.environ.get("OWNER_URL") or "https://t.me/Punya_Alby"
+
+DEFAULT = list(map(int, b64decode("MTY2MzI1ODY2NA==").split()))
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
@@ -382,7 +387,7 @@ for binary, path in binaries.items():
 if STRING_SESSION:
     session = StringSession(str(STRING_SESSION))
 else:
-    session = "ALBY-UserBot"
+    session = "ALBY-Userbot"
 try:
     bot = TelegramClient(
         session=session,
@@ -561,13 +566,13 @@ with bot:
             r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
         )
 
-        @ tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(rb"reopen")))
+        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(rb"reopen")))
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                current_page_number = int(lockpage)
+                current_page_number = int(looters)
                 buttons = paginate_help(
                     current_page_number, dugmeler, "helpme")
-                text = f"**✨ ALBY-Userbot Inline Menu ✨**\n\n✣ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules"
+                text = f"**✨ ALBY-Userbot ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n✣ **ᴏᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴊᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**"
                 await event.edit(
                     text,
                     file=roselogo,
@@ -578,8 +583,8 @@ with bot:
                 reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ tgbot.on(events.NewMessage(incoming=True,
-                                     func=lambda e: e.is_private))
+        @tgbot.on(events.NewMessage(incoming=True,
+                  func=lambda e: e.is_private))
         async def bot_pms(event):
             chat = await event.get_chat()
             if check_is_black_list(chat.id):
@@ -649,7 +654,7 @@ with bot:
                                 f"**ERROR:** Saat menyimpan detail pesan di database\n`{e}`",
                             )
 
-        @ tgbot.on(events.InlineQuery)
+        @tgbot.on(events.InlineQuery)
         async def inline_handler(event):
             builder = event.builder
             result = None
@@ -659,7 +664,7 @@ with bot:
                 result = builder.photo(
                     file=roselogo,
                     link_preview=False,
-                    text=f"**✨ ALBY-Userbot Inline Menu ✨**\n\n✣ **Owner** [{user.first_name}](tg://user?id={user.id})\n✣ **Jumlah** `{len(dugmeler)}` Modules",
+                    text=f"**✨ ALBY-Userbot ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n✣ **ᴏᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴊᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**",
                     buttons=buttons,
                 )
             elif query.startswith("repo"):
@@ -672,7 +677,7 @@ with bot:
                         0,
                         "image/jpeg",
                         []),
-                    text="**ALBY - Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [『ⒶⓁⒷⓎ』](https://t.me/Punya_Alby)\n✣ **Support :** @ruangdiskusikami\n✣ **Repository :** [ALBY-Userbot](https://github.com/PunyaAlby/ALBY-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    text="**ALBY-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **ᴏᴡɴᴇʀ ʀᴇᴘᴏ :** [『ⒶⓁⒷⓎ』](https://t.me/Punya_Alby)\n✣ **sᴜᴘᴘᴏʀᴛ :** @ruangdiskusikami\n✣ **ʀᴇᴘᴏsɪᴛᴏʀʏ :** [ALBY-Userbot](https://github.com/PunyaAlby/ALBY-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url(
@@ -721,13 +726,13 @@ with bot:
                 result = builder.article(
                     title="✨ ALBY-Userbot ✨",
                     description="ALBY - Userbot | Telethon",
-                    url="https://t.me/ruangprojects",
+                    url="https://t.me/ruangdiskusikami",
                     thumb=InputWebDocument(
                         INLINE_PIC,
                         0,
                         "image/jpeg",
                         []),
-                    text=f"**ALBY - Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **Owner:** [{user.first_name}](tg://user?id={user.id})\n✣ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Updates:** @ruangprojects\n➖➖➖➖➖➖➖➖➖➖",
+                    text=f"**ALBY-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **ᴏᴡɴᴇʀ:** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴀssɪsᴛᴀɴᴛ:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**ᴜᴘᴅᴀᴛᴇs:** @ruangprojects\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url(
@@ -744,7 +749,7 @@ with bot:
                 [result], switch_pm="👥 USERBOT PORTAL", switch_pm_param="start"
             )
 
-        @ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(
                 data=re.compile(rb"helpme_next\((.+?)\)")
             )
@@ -762,19 +767,19 @@ with bot:
                 )
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
+        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in DEVS and SUDO_USERS:
                 openlagi = custom.Button.inline(
                     "• Re-Open Menu •", data="reopen")
                 await event.edit(
-                    "⚜️ **Help Mode Button Ditutup!** ⚜️", buttons=openlagi
+                    "⚜️ **ʜᴇʟᴘ ᴍᴏᴅᴇ ʙᴜᴛᴛᴏɴ ᴅɪᴛᴜᴛᴜᴘ!** ⚜️", buttons=openlagi
                 )
             else:
                 reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ tgbot.on(
+        @tgbot.on(
             events.callbackquery.CallbackQuery(
                 data=re.compile(rb"helpme_prev\((.+?)\)")
             )
@@ -790,7 +795,7 @@ with bot:
                 reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @ tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ub_modul_(.*)")))
+        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ub_modul_(.*)")))
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 modul_name = event.data_match.group(1).decode("UTF-8")
@@ -813,21 +818,21 @@ with bot:
                 reply_pop_up_alert = (
                     help_string
                     if help_string is not None
-                    else "{} No document has been written for module.".format(
+                    else "{} Tidak ada dokumen yang telah ditulis untuk modul.".format(
                         modul_name
                     )
                 )
             else:
-                f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER} Nanti Kena Ghosting."
+                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
+            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     except BaseException:
         LOGS.info(
-            "Mode Inline Bot Mu Nonaktif. "
-            "Untuk Mengaktifkannya, Silahkan Pergi Ke @BotFather Lalu, Settings Bot > Pilih Mode Inline > Turn On. ")
+            "Help Mode Inline Bot Mu Tidak aktif. Tidak di aktifkan juga tidak apa-apa. "
+            "Untuk Mengaktifkannya Buat bot di @BotFather Lalu Tambahkan var BOT_TOKEN dan BOT_USERNAME. "
+            "Pergi Ke @BotFather lalu settings bot » Pilih mode inline » Turn On. ")
     try:
         bot.loop.run_until_complete(check_botlog_chatid())
-    except BaseException:
-        LOGS.info(
-            "BOTLOG_CHATID Environment Variable Isn't a "
-            "Valid Entity. Please Check Your Environment variables/config.env File.")
-        quit(1)
+    except BaseException as e:
+        LOGS.exception(f"[BOTLOG] - {e}")
+        sys.exit(1)
