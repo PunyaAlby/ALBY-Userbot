@@ -305,18 +305,15 @@ async def redis(alive):
     await alive.edit("✨")
     await asyncio.sleep(2)
     output = (
-        f"┏━━━━━━━━━━━━━━━━━━━ \n"
-        f"┣  `Name     :` {DEFAULTUSER} \n"
-        f"┣  `Username :` @{user.username} \n"
-        f"┣  `Telethon :` Ver {version.__version__} \n"
-        f"┣  `Python   :` Ver {python_version()} \n"
-        f"┣  `Branch   :` {UPSTREAM_REPO_BRANCH} \n"
-        f"┣  `Bot Ver  :` {BOT_VER} \n"
-        f"┣  `Modules  :` {len(modules)} Modules \n"
-        f"┣  `GitHub   :` [ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ](https://github.com/PunyaAlby/ALBY-Userbot) \n"
-        f"┣  `Support  :` [ᴄʜᴀɴɴᴇʟ](https://t.me/ruangprojects) \n"
-        f"┣  `Owner    :` [『ⒶⓁⒷⓎ』](https://t.me/Punya_Alby) \n"
-        f"┗━━━━━━━━━━━━━━━━━━━")
+        f"**[ALBY-Userbot](https://github.com/PunyaAlby/ALBY-Userbot) is Up and Running.**\n\n"
+        f"**{alive_text}**\n\n"
+        f"❖ **Master :** [{user.first_name}](tg://user?id={user.id}) \n"
+        f"❖ **Modules :** `{len(modules)} Modules` \n"
+        f"❖ **Bot Version :** `{BOT_VER}` \n"
+        f"❖ **Python Version :** `{python_version()}` \n"
+        f"❖ **Telethon Version :** `{version.__version__}` \n"
+        f"❖ **Bot Uptime :** `{uptime}` \n\n"
+        f"    **[𝗦.(https://t.me/{GROUP})** | **[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/{CHANNEL})** | **[𝗢𝘄𝗻𝗲𝗿](tg://user?id={user.id})**"
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
