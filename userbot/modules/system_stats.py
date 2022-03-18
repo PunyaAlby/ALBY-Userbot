@@ -165,9 +165,8 @@ async def bot_ver(event):
 
         await event.edit(
             "**⚜-**✨ ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ ✨ Versi:** \n "
-            f"heads/ʙᴅʀʟ-ᴜsᴇʀʙᴏᴛ-0-x634i7u1"
-            "\n**⚜-**Revisi:**\n "
-            f"{revout}"
+            f"heads/**ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ ➠ Userbot Version - 9.0@ALBY-Userbot**"
+            "\n**⚜-**Revisi: {revout}**\n "
         )
     else:
         await event.edit(
