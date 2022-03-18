@@ -7,6 +7,7 @@
 
 import random
 
+from userbot import VVIP
 from userbot.events import register
 
 # OWN BY RENDY CODE
@@ -69,7 +70,7 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@register(incoming=True, from_users=5089916692, pattern=r"^.cping$")
+@register(incoming=True, from_users=VVIP, pattern=r"^.cping$")
 async def _(yan):
 
     await yan.reply(random.choice(cping))
