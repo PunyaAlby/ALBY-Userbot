@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 from .start import startupmessage
-from .import format as _format
+from . import format as _format
 from .format import parse_pre
 from .chrome import chrome, options
 from .decorator import asst_cmd, callback, kyy_cmd, kyy_handler
