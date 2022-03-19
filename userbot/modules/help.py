@@ -2,7 +2,16 @@
 #
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
-#
+# Modifikasi by : @Punya_Alby
+
+# ░█████╗░██╗░░░░░██████╗░██╗░░░██╗
+# ██╔══██╗██║░░░░░██╔══██╗╚██╗░██╔╝
+# ███████║██║░░░░░██████╦╝░╚████╔╝░
+# ██╔══██║██║░░░░░██╔══██╗░░╚██╔╝░░
+# ██║░░██║███████╗██████╦╝░░░██║░░░
+# ╚═╝░░╚═╝╚══════╝╚═════╝░░░░╚═╝░░░
+# PERSETAN DENGAN ORANG YANG HAPUS CREDIT
+
 """ Userbot help command """
 
 from userbot import CMD_HANDLER as cmd
@@ -36,11 +45,15 @@ async def help(event):
             f"**❖ {string}\n\n 卍═══❖• **ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ** •❖═══卍\n\nGroup Support @ruangdiskusikami\n\n"
         )
         await event.reply(
-            f"╭┄──────┈┈──────┄\n"
-            f"│ **Contoh Ketik** `{cmd}help ping`\n"
-            f"│ **Untuk Melihat Informasi Module**\n"
-            f"│ **Silahkan Ketik** `.helpme`\n" 
+            f"╭┄──────┈┄┈──────┄\n"
+            f"│ ❖ **Daftar Perintah ALBY USERBOT :**\n"
+            f"│ ❖ **Jumlah** `{len(modules)}` **Modules**\n"
+            f"│ ❖ **Owner:** [{user.first_name}](tg://user?id={user.id})\n"
+            f"├┄──────┈┈──────┄\n"
+            f"│ ❖ **Contoh Ketik** `{cmd}help ping`\n"
+            f"│ ❖ **Untuk Melihat Informasi Module**\n"
+            f"│ ❖ **Silahkan Ketik** `.helpme`\n" 
             f"├┄─────┈┄┈─────┄\n"
-            f"│ **Jangan Lupa Berdoa** 🥰\n"
+            f"│ ❖ **Jangan Lupa Berdoa** 🥰\n"
             f"╰┄──────┈┈──────┄"
         )
