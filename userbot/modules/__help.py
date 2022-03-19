@@ -95,7 +95,6 @@ async def autobot():
             BOTLOG_CHATID,
             f"**BERHASIL MENYALAKAN MODE INLINE**",
         )
-            sys.exit(1)
     elif isdone.startswith("Done!"):
         token = isdone.split("`")[1]
         await bot.send_message(bf, "/setinline")
