@@ -55,5 +55,3 @@ async def _(event):
             xx = await xx.edit(
                     f"**BERHASIL MENYALAKAN MODE INLINE**\n\n**Ketik** `{cmd}helpme` **lagi untuk membuka menu bantuan.**"
             )
-    else:
-    bot.run_until_disconnected()
