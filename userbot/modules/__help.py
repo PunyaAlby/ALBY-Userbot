@@ -49,7 +49,7 @@ async def _(event):
         except noinline:
             xx = await edit_or_reply(
                 event,
-                "**Inline Mode Tidak aktif.**\n__Sedang Menyalakannya, Harap Tunggu Sebentar...__",
+                "**Inline Mode Tidak aktif.**\n__Sedang Menyalakannya, Harap Tunggu Sebentar...__\nKalau sudah 3 menit tidak ada perubahan silahkan pergi ke bot @BotFather ketikan /mybots\nKemudian pilih bot Assistant mu yang ada di group log\nLalu pilih Bot Settings > Pilih inline Mode > pilih Turn on\nPergi ke group log lagi dan Ketik** `{cmd}helpme` **lagi untuk membuka menu bantuan modules nya",
             )
             bot.loop.run_until_complete(autoinlinebot())
             xx = await xx.edit(
