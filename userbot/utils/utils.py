@@ -14,6 +14,7 @@ from telethon.tl.functions.contacts import UnblockRequest
 
 from userbot import (
     BOT_TOKEN,
+    BOT_USERNAME,
     BOTLOG_CHATID,
     CMD_HELP,
     HEROKU_API_KEY,
