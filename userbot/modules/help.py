@@ -6,7 +6,7 @@
 """ Userbot help command """
 
 from userbot import CMD_HANDLER as cmd
-from userbot import ALIVE_NAME, CMD_HELP, EMOJI_HELP
+from userbot import ALIVE_NAME, CMD_HELP, EMOJI_HELP, bot
 from userbot.utils import edit_delete, edit_or_reply, kyy_cmd
 
 modules = CMD_HELP
