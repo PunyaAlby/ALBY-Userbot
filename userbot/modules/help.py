@@ -32,10 +32,11 @@ async def help(event):
         string = ""
         for i in CMD_HELP:
             string += "`" + str(i)
-            string += "`\t ✗  "
+            string += "`\t ❖  "
         await event.edit("**✨ ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ ✨**\n\n"
-                         f"**◉ Bᴏᴛ ᴏꜰ {DEFAULTUSER}**\n**◉ Mᴏᴅᴜʟᴇꜱ : {len(modules)}**\n\n"
-                         "**• Mᴀɪɴ Mᴇɴᴜ :**\n"
-                         f"◉ {string}◉\n\n✐ **ɴᴏᴛᴇꜱ :**  `kamu bisa melihat dan menggunakan setiap perintah yang ada di atas dengan cara ketik .help (kata perintah) contoh disini saya ingin melihat daftar perintah gcast, jadinya saya tinggal ketik .help gcast nanti muncul list perintahnya. Mudah bukan? Selamat mencoba☺️`\n☞  PEMILIK : @punya_alby")
+                         f"**❖ 𝙿𝙴𝙼𝙸𝙻𝙸𝙺 𝙱𝙾𝚃 : {DEFAULTUSER}**\n**{EMOJI_HELP}  𝙼𝙾𝙳𝚄𝙻𝙴𝚂 : {len(modules)}**\n\n"
+                         f"**❖ 𝚂𝙴𝙼𝚄𝙰 𝙼𝙴𝙽𝚄 :**\n\n 卍═════❖•ೋ° **(っ◔◡◔)っ 🌙** °ೋ•❖═════卍\n\n"
+                         f"❖ {string}\n\n 卍═════❖•ೋ° **(っ◔◡◔)っ 🌙** °ೋ•❖═════卍\n\nSupport @ruangdiskusikami\n\n")
+        await rambot.reply(f"\n**Contoh** : Ketik <`.help ping`> Untuk Informasi Pengunaan.\nJangan Lupa Berdoa Sebelum Mencoba wahahaha..")
         await asyncio.sleep(1000)
         await event.delete()
