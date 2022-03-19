@@ -93,7 +93,7 @@ async def autobot():
         )
         await bot.send_message(
             BOTLOG_CHATID,
-            f"**BERHASIL MENYALAKAN MODE INLINE**",
+            f"**BERHASIL MENYALAKAN MODE INLINE**\n\n**Ketik** `{cmd}helpme` **lagi untuk membuka menu bantuan.**"
         )
     elif isdone.startswith("Done!"):
         token = isdone.split("`")[1]
@@ -116,17 +116,5 @@ async def autobot():
         )
         await bot.send_message(
             BOTLOG_CHATID,
-            f"**BERHASIL MENYALAKAN MODE INLINE**",
-        )
-                await xx.edit(
-                    f"**Berhasil Menyalakan Mode Inline**\n\n**Ketik** `{cmd}helpme` **lagi untuk membuka menu bantuan.**"
-                )
-            await bot.delete_messages(
-                conv.chat_id,
-                [first.id, second.id, third.id, fourth.id, fifth.id, sixth.id],
-            )
-    else:
-        await edit_or_reply(
-            event,
-            "**Silahkan Buat BOT di @BotFather dan Tambahkan Var** `BOT_TOKEN` & `BOT_USERNAME`",
+            f"**BERHASIL MENYALAKAN MODE INLINE**\n\n**Ketik** `{cmd}helpme` **lagi untuk membuka menu bantuan.**"
         )
