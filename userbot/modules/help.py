@@ -5,42 +5,42 @@
 #
 """ Userbot help command """
 
-import asyncio
-from userbot import ALIVE_NAME, CMD_HELP
-from userbot.events import register
-from platform import uname
+from userbot import CMD_HANDLER as cmd
+from userbot import ALIVE_NAME, CMD_HELP, EMOJI_HELP
+from userbot.utils import edit_delete, edit_or_reply, kyy_cmd
 
 modules = CMD_HELP
 
-# ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
-# ============================================
 
-
-@register(outgoing=True, pattern="^.help(?: |$)(.*)")
+@kyy_cmd(pattern="help(?: |$)(.*)")
 async def help(event):
-    """ For .help command,"""
+    """For help command"""
     args = event.pattern_match.group(1).lower()
     if args:
         if args in CMD_HELP:
-            await event.edit(str(CMD_HELP[args]))
+            await edit_or_reply(event, str(CMD_HELP[args]))
         else:
-            await event.edit("𝘔𝘢𝘢𝘧 𝘔𝘰𝘥𝘶𝘭𝘦 `{args}` 𝘛𝘪𝘥𝘢𝘬 𝘋𝘢𝘱𝘢𝘵 𝘋𝘪𝘵𝘦𝘮𝘶𝘬𝘢𝘯!!")
-            await asyncio.sleep(200)
-            await event.delete()
+            await edit_delete(event, f"𝘔𝘢𝘢𝘧 𝘔𝘰𝘥𝘶𝘭𝘦 `{args}` 𝘛𝘪𝘥𝘢𝘬 𝘋𝘢𝘱𝘢𝘵 𝘋𝘪𝘵𝘦𝘮𝘶𝘬𝘢𝘯!!")
     else:
+        user = await bot.get_me()
         string = ""
         for i in CMD_HELP:
             string += "`" + str(i)
-            string += "`\t ❖  "
-        await event.edit("**✨ ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ ✨**\n\n"
-                         f"**❖ 𝙿𝙴𝙼𝙸𝙻𝙸𝙺 𝙱𝙾𝚃 : {DEFAULTUSER}**\n**{EMOJI_HELP}  𝙼𝙾𝙳𝚄𝙻𝙴𝚂 : {len(modules)}**\n\n"
-                         f"**❖ 𝚂𝙴𝙼𝚄𝙰 𝙼𝙴𝙽𝚄 :**\n\n 卍═════❖•ೋ° **(っ◔◡◔)っ 🌙** °ೋ•❖═════卍\n\n"
-                         f"❖ {string}\n\n 卍═════❖•ೋ° **(っ◔◡◔)っ 🌙** °ೋ•❖═════卍\n\nSupport @ruangdiskusikami\n\n")
-        await event.reply(f"\n**Contoh** : Ketik <`.help ping`> Untuk Informasi Pengunaan.\nAtau Bisa Juga Ketik `.helpme` Untuk Main Menu Yang Lain-Nya."
+            string += f"`\t\t\t{EMOJI_HELP}\t\t\t"
+        await edit_or_reply(
+            event,
+            f"**❖ Daftar Perintah Untuk [ALBY-Userbot](https://github.com/PunyaAlby/ALBY-Userbot):**\n"
+            f"**❖ Jumlah:** `{len(modules)}` **Modules**\n"
+            f"**❖ Owner:** {ALIVE_NAME}\n"
+            f"**❖ Semua Modules :**\n\n 卍═════❖•ೋ° **DAFTAR MODULES** °ೋ•❖═════卍\n\n"
+            f"**❖ {string}\n\n 卍═════❖•ೋ° **ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ** °ೋ•❖═════卍\n\nGroup Support @ruangdiskusikami\n\n")
         )
         await event.reply(
-            f"\n**Halo {DEFAULTUSER} Jika Anda Tidak Tau Perintah Untuk Menggunakan userbot ini silahkan Ketik** `.helpme` Atau Bisa Minta Bantuan Ke @Punya_alby atau tag admin di @ruangdiskusikami:\n"
+            f"╭┄──────┈┈──────┄\n"
+            f"│ **Contoh Ketik** `{cmd}help ping`\n"
+            f"│ **Halo {ALIVE_NAME} Untuk Melihat Informasi Module :**\n"
+            f"│ **Silahkan Ketik** `.helpme` Untuk Melihat Perintah ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ**\n" 
+            f"├┄─────┈┄┈─────┄\n"
+            f"│ **Jangan Lupa Berdoa Sebelum Mencoba awokawok..**\n"
+            f"╰┄──────┈┈──────┄"
         )
-        await asyncio.sleep(1000)
-        await event.delete()
