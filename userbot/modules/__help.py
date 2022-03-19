@@ -63,7 +63,7 @@ async def _(event):
         nowdone = (await bot.get_messages(chat, limit=1))[0].text
         if nowdone.startswith("Done!"):
             token = nowdone.split("`")[1]
-            async with bot.send_message(chat) :
+            async with bot.send_message(chat) as bot:
                 try:
             await bot.send_message(chat, "/setinline")
             await asyncio.sleep(1)
