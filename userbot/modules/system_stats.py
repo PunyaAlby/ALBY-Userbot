@@ -295,35 +295,33 @@ async def amireallyalive(alive):
 async def redis(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
-    await alive.edit("__Sedang Memuat.__")
-    await alive.edit("__Sedang Memuat..__")
-    await alive.edit("__Sedang Memuat.__")
-    await alive.edit("__Sedang Memuat..__")
-    await alive.edit("__Sedang Memuat...__")
-    await alive.edit("__Sedang Memuat..__")
-    await alive.edit("__Sedang Memuat...__")
+    await alive.edit("`CONNECTING......`")
+    await asyncio.sleep(1)
     await alive.edit("✨")
-    await asyncio.sleep(2)
+    await asyncio.sleep(3)
     output = (
-        f"╭══════════════════╗‌ \n"
-        f"❖  `Name     :` {DEFAULTUSER} \n"
-        f"❖  `Username :` @{user.username} \n"
-        f"❖  `Telethon :` Ver {version.__version__} \n"
-        f"❖  `Python   :` Ver {python_version()} \n"
-        f"❖  `Branch   :` {UPSTREAM_REPO_BRANCH} \n"
-        f"❖  `Bot Ver  :` {BOT_VER} \n"
-        f"❖  `Modules  :` {len(modules)} Modules \n"
-        f"❖  `GitHub   :` [ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ](https://github.com/PunyaAlby/ALBY-Userbot) \n"
-        f"❖  `Support  :` [ᴄʜᴀɴɴᴇʟ](https://t.me/ruangprojects) \n"
-        f"❖  `Owner    :` [『ⒶⓁⒷⓎ』](https://t.me/Punya_Alby) \n"
-        f"❖  `[𝗦.(https://t.me/{GROUP})` | `[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/{CHANNEL})` | `[𝗢𝘄𝗻𝗲𝗿](tg://user?id={user.id})`"
-        f"╰══════════════════╝")
+        f"**✠╼━━━━━━❖━━━━━━━✠ ** \n"
+        f"**     ✨ALBY-USERBOT✨** \n"
+        f"**✠╼━━━━━━❖━━━━━━━✠** \n"
+        f"**╭╼════════════════════╾╮** \n"
+        f"**│  ⇱ **SISTEM ALIVE USERBOT** ⇲ \n"
+        f"**┟╼════════════════════╾┤** \n"
+        f"**╟◈ 🤴 **Name     :** {DEFAULTUSER} \n"
+        f"**╟◈ 🔎 **Username :** @{user.username} \n"
+        f"**╟◈ ⚙️ **Telethon :** v.{version.__version__} \n"
+        f"**╟◈ 🐍 **Python   :** v.{python_version()} \n"
+        f"**╟◈ 🛠️ **Branch   :** {UPSTREAM_REPO_BRANCH} \n"
+        f"**╟◈ 👾 **Bot Ver  :** v{BOT_VER} \n"
+        f"**╟◈ 📂 **Modules  :** {len(modules)} Modules \n"
+        f"**┟╼══════════════════════**\n"
+        f"[{REPO_NAME}](https://github.com/PunyaAlby/ALBY-Userbot) || [𝗚𝗥𝗢𝗨𝗣](https://t.me/{GROUP}) || `[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/{CHANNEL})`\n"
+        f"**╰═══════════════════════ **")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
             await alive.delete()
             msg = await bot.send_file(alive.chat_id, logo, caption=output)
-            await asyncio.sleep(500)
+            await asyncio.sleep(50)
             await msg.delete()
         except BaseException:
             await alive.edit(
