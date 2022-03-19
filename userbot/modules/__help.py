@@ -31,7 +31,7 @@ from telethon.tl.functions.contacts import UnblockRequest
 from userbot import CMD_HANDLER as cmd
 from userbot import BOT_USERNAME, bot
 from userbot.utils import edit_or_reply, kyy_cmd
-from userbot.utils import autobot
+from userbot.utils import autoinlinebot
 
 
 @kyy_cmd(pattern="helpme")
