@@ -49,9 +49,48 @@ async def _(event):
         except noinline:
             xx = await edit_or_reply(
                 event,
-                "**Inline Mode Tidak aktif.**\n__Sedang Menyalakannya, Harap Tunggu Sebentar...__\nKalau sudah 3 menit tidak ada perubahan silahkan pergi ke bot @BotFather ketikan /mybots\nKemudian pilih bot Assistant mu yang ada di group log\nLalu pilih Bot Settings > Pilih inline Mode > pilih Turn on\nPergi ke group log lagi dan Ketik** `{cmd}helpme` **lagi untuk membuka menu bantuan modules nya",
+                "**Inline Mode Tidak aktif.**\n__Sedang Menyalakannya, Harap Tunggu Sebentar...__\n\n**❖ Kalau sudah 3 menit tidak ada perubahan silahkan pergi ke bot @BotFather ketikan** '/mybots'\n**❖ Kemudian pilih bot Assistant mu yang ada di group log**\n**❖ Lalu pilih Bot Settings > Pilih inline Mode > pilih Turn on\n**❖ Setelah itu Pergi ke group log lagi dan Ketik** `{cmd}helpme` **lagi untuk membuka menu bantuan modules nya**",
             )
-            bot.loop.run_until_complete(autoinlinebot())
-            xx = await xx.edit(
-                    f"**BERHASIL MENYALAKAN MODE INLINE**\n\n**Ketik** `{cmd}helpme` **lagi untuk membuka menu bantuan.**"
+    await bot.send_message(chat, BOT_USERNAME)
+    await asyncio.sleep(1)
+    isdone = (await bot.get_messages(chat, limit=1))[0].text
+    await bot.send_read_acknowledge("botfather")
+    if isdone.startswith("Sorry,"):
+        ran = randint(1, 100)
+        username = "ALBY" + (str(who.id))[6:] + str(ran) + "ubot"
+        await bot.send_message(chat, BOT_USERNAME)
+        await asyncio.sleep(1)
+        nowdone = (await bot.get_messages(chat, limit=1))[0].text
+        if nowdone.startswith("Done!"):
+            token = nowdone.split("`")[1]
+            async with bot.send_message(chat) :
+                try:
+            await bot.send_message(chat, "/setinline")
+            await asyncio.sleep(1)
+            await bot.send_message(chat, f"@{BOT_USERNAME}")
+            await asyncio.sleep(1)
+            await bot.send_message(chat, "Search")
+            await asyncio.sleep(3)
+            await bot.send_message(chat, "/setuserpic")
+            await asyncio.sleep(1)
+            await bot.send_message(chat, f"@{BOT_USERNAME}")
+            await asyncio.sleep(1)
+            await bot.send_file(chat, "resources/extras/20220119_195302.jpg")
+            await asyncio.sleep(3)
+            await bot.send_message(chat, "/setabouttext")
+            await asyncio.sleep(1)
+            await bot.send_message(chat, f"@{BOT_USERNAME}")
+            await asyncio.sleep(1)
+            await bot.send_message(chat, f"Managed With ☕️ By {who.first_name}")
+            await asyncio.sleep(3)
+            await bot.send_message(chat, "/setdescription")
+            await asyncio.sleep(1)
+            await bot.send_message(chat, f"@{BOT_USERNAME}")
+            await asyncio.sleep(1)
+            await bot.send_message(
+                chat, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @ruangprojects ✨"
+            )
+            await bot.send_message(
+                BOTLOG_CHATID,
+                f"**BERHASIL MENYALAKAN INLINE MODE DENGAN USERNAME @{BOT_USERNAME}**",
             )
