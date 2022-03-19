@@ -41,8 +41,8 @@ async def help(event):
             f"**❖ Daftar Perintah Untuk [ALBY-Userbot](https://github.com/PunyaAlby/ALBY-Userbot)**\n"
             f"**❖ Jumlah:** `{len(modules)}` **Modules**\n"
             f"**❖ Owner:** {ALIVE_NAME}\n"
-            f"**❖ GUNAKAN DENGAN BIJAK :**\n\n 卍═══❖• **DAFTAR MODULES** •❖═══卍\n\n"
-            f"**❖ {string}\n\n 卍═══❖• **ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ** •❖═══卍\n\nGroup Support @ruangdiskusikami\n\n"
+            f"**❖ GUNAKAN DENGAN BIJAK :**\n\n 卍═❖• **DAFTAR MODULES** •❖═卍\n\n"
+            f"**❖ {string}\n\n 卍══❖• **ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ** •❖══卍\n\nGroup Support @ruangdiskusikami\n\n"
         )
         await event.reply(
             f"╭┄──────┈┄┈──────┄\n"
