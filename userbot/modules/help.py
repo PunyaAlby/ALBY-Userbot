@@ -25,7 +25,7 @@ async def help(event):
         if args in CMD_HELP:
             await event.edit(str(CMD_HELP[args]))
         else:
-            await event.edit("`Command` **Tidak Valid**")
+            await event.edit("𝘔𝘢𝘢𝘧 𝘔𝘰𝘥𝘶𝘭𝘦 `{args}` 𝘛𝘪𝘥𝘢𝘬 𝘋𝘢𝘱𝘢𝘵 𝘋𝘪𝘵𝘦𝘮𝘶𝘬𝘢𝘯!!")
             await asyncio.sleep(200)
             await event.delete()
     else:
@@ -37,6 +37,10 @@ async def help(event):
                          f"**❖ 𝙿𝙴𝙼𝙸𝙻𝙸𝙺 𝙱𝙾𝚃 : {DEFAULTUSER}**\n**{EMOJI_HELP}  𝙼𝙾𝙳𝚄𝙻𝙴𝚂 : {len(modules)}**\n\n"
                          f"**❖ 𝚂𝙴𝙼𝚄𝙰 𝙼𝙴𝙽𝚄 :**\n\n 卍═════❖•ೋ° **(っ◔◡◔)っ 🌙** °ೋ•❖═════卍\n\n"
                          f"❖ {string}\n\n 卍═════❖•ೋ° **(っ◔◡◔)っ 🌙** °ೋ•❖═════卍\n\nSupport @ruangdiskusikami\n\n")
-        await rambot.reply(f"\n**Contoh** : Ketik <`.help ping`> Untuk Informasi Pengunaan.\nJangan Lupa Berdoa Sebelum Mencoba wahahaha..")
+        await event.reply(f"\n**Contoh** : Ketik <`.help ping`> Untuk Informasi Pengunaan.\nAtau Bisa Juga Ketik `.helpme` Untuk Main Menu Yang Lain-Nya.")
+        )
+        await event.reply(
+            f"\n**Halo {DEFAULTUSER} Jika Anda Tidak Tau Perintah Untuk Menggunakan userbot ini silahkan Ketik** `.helpme` Atau Bisa Minta Bantuan Ke @Punya_alby atau tag admin di @ruangdiskusikami:\n"
+        )
         await asyncio.sleep(1000)
         await event.delete()
