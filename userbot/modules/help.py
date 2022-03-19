@@ -29,18 +29,18 @@ async def help(event):
             string += "`\t ❖  "
         await edit_or_reply(
             event,
-            f"**❖ Daftar Perintah Untuk [ALBY-Userbot](https://github.com/PunyaAlby/ALBY-Userbot):**\n"
+            f"**❖ Daftar Perintah Untuk [ALBY-Userbot](https://github.com/PunyaAlby/ALBY-Userbot)**\n"
             f"**❖ Jumlah:** `{len(modules)}` **Modules**\n"
             f"**❖ Owner:** {ALIVE_NAME}\n"
-            f"**❖ Semua Modules :**\n\n 卍═════❖•ೋ° **DAFTAR MODULES** °ೋ•❖═════卍\n\n"
-            f"**❖ {string}\n\n 卍═════❖•ೋ° **ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ** °ೋ•❖═════卍\n\nGroup Support @ruangdiskusikami\n\n"
+            f"**❖ GUNAKAN DENGAN BIJAK :**\n\n 卍═══❖• **DAFTAR MODULES** •❖═══卍\n\n"
+            f"**❖ {string}\n\n 卍═══❖• **ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ** •❖═══卍\n\nGroup Support @ruangdiskusikami\n\n"
         )
         await event.reply(
             f"╭┄──────┈┈──────┄\n"
             f"│ **Contoh Ketik** `{cmd}help ping`\n"
-            f"│ **Halo {ALIVE_NAME} Untuk Melihat Informasi Module :**\n"
-            f"│ **Silahkan Ketik** `.helpme` Untuk Melihat Perintah ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ**\n" 
+            f"│ **Untuk Melihat Informasi Module**\n"
+            f"│ **Silahkan Ketik** `.helpme`\n" 
             f"├┄─────┈┄┈─────┄\n"
-            f"│ **Jangan Lupa Berdoa Sebelum Mencoba awokawok..**\n"
+            f"│ **Jangan Lupa Berdoa** 🥰\n"
             f"╰┄──────┈┈──────┄"
         )
