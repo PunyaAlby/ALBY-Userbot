@@ -6,7 +6,7 @@
 """ Userbot help command """
 
 from userbot import CMD_HANDLER as cmd
-from userbot import ALIVE_NAME, CMD_HELP, EMOJI_HELP, bot
+from userbot import ALIVE_NAME, CMD_HELP, bot
 from userbot.utils import edit_delete, edit_or_reply, kyy_cmd
 
 modules = CMD_HELP
@@ -26,7 +26,7 @@ async def help(event):
         string = ""
         for i in CMD_HELP:
             string += "`" + str(i)
-            string += f"`\t\t\t{EMOJI_HELP}\t\t\t"
+            string += "`\t ❖  "
         await edit_or_reply(
             event,
             f"**❖ Daftar Perintah Untuk [ALBY-Userbot](https://github.com/PunyaAlby/ALBY-Userbot):**\n"
