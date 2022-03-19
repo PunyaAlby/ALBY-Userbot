@@ -11,13 +11,15 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+import asyncio
+import sys
+
 from telethon.errors.rpcerrorlist import BotInlineDisabledError as noinline
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.contacts import UnblockRequest
 
-from userbot import BOT_USERNAME
 from userbot import CMD_HANDLER as cmd
-from userbot import bot
+from userbot import BOT_USERNAME, bot
 from userbot.utils import edit_or_reply, kyy_cmd
 
 
@@ -38,24 +40,77 @@ async def _(event):
                 event,
                 "**Inline Mode Tidak aktif.**\n__Sedang Menyalakannya, Harap Tunggu Sebentar...__",
             )
-            async with bot.conversation(chat) as conv:
-                try:
-                    first = await conv.send_message("/setinline")
-                    second = await conv.get_response()
-                    third = await conv.send_message(BOT_USERNAME)
-                    fourth = await conv.get_response()
-                    fifth = await conv.send_message("Search")
-                    sixth = await conv.get_response()
-                    await bot.send_read_acknowledge(conv.chat_id)
-                except YouBlockedUserError:
-                    await event.client(UnblockRequest(chat))
-                    first = await conv.send_message("/setinline")
-                    second = await conv.get_response()
-                    third = await conv.send_message(BOT_USERNAME)
-                    fourth = await conv.get_response()
-                    fifth = await conv.send_message("Search")
-                    sixth = await conv.get_response()
-                    await bot.send_read_acknowledge(conv.chat_id)
+
+async def autobot():
+    if who.username:
+        username = who.username + "_ubot"
+    else:
+        username = "ALBY" + (str(who.id))[5:] + "ubot"
+    bf = "@BotFather"
+    await bot(UnblockRequest(bf))
+    await bot.send_message(bf, "/cancel")
+    await asyncio.sleep(1)
+    await bot.send_message(bf, "/start")
+    await asyncio.sleep(1)
+            )
+            sys.exit(1)
+    await bot.send_message(bf, BOT_USERNAME)
+    await asyncio.sleep(1)
+    isdone = (await bot.get_messages(bf, limit=1))[0].text
+    await bot.send_read_acknowledge("botfather")
+    if isdone.startswith("Sorry,"):
+        ran = randint(1, 100)
+        username = "ALBY" + (str(who.id))[6:] + str(ran) + "ubot"
+        await bot.send_message(bf, BOT_USERNAME)
+        await asyncio.sleep(1)
+        nowdone = (await bot.get_messages(bf, limit=1))[0].text
+        if nowdone.startswith("Done!"):
+            token = nowdone.split("`")[1]
+        await bot.send_message(bf, "/setinline")
+        await asyncio.sleep(1)
+        await bot.send_message(bf, f"@{BOT_USERNAME}")
+        await asyncio.sleep(1)
+        await bot.send_message(bf, "/setabouttext")
+        await asyncio.sleep(1)
+        await bot.send_message(bf, f"@{BOT_USERNAME}")
+        await asyncio.sleep(1)
+        await bot.send_message(bf, f"Managed With ☕️ By {who.first_name}")
+        await asyncio.sleep(3)
+        await bot.send_message(bf, "/setdescription")
+        await asyncio.sleep(1)
+        await bot.send_message(bf, f"@{BOT_USERNAME}")
+        await asyncio.sleep(1)
+        await bot.send_message(
+            bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @ruangprojects ✨"
+        )
+        await bot.send_message(
+            BOTLOG_CHATID,
+            f"**BERHASIL MENYALAKAN MODE INLINE**",
+        )
+            sys.exit(1)
+    elif isdone.startswith("Done!"):
+        token = isdone.split("`")[1]
+        await bot.send_message(bf, "/setinline")
+        await asyncio.sleep(1)
+        await bot.send_message(bf, f"@{BOT_USERNAME}")
+        await asyncio.sleep(1)
+        await bot.send_message(bf, "/setabouttext")
+        await asyncio.sleep(1)
+        await bot.send_message(bf, f"@{BOT_USERNAME}")
+        await asyncio.sleep(1)
+        await bot.send_message(bf, f"Managed With ☕️ By {who.first_name}")
+        await asyncio.sleep(3)
+        await bot.send_message(bf, "/setdescription")
+        await asyncio.sleep(1)
+        await bot.send_message(bf, f"@{BOT_USERNAME}")
+        await asyncio.sleep(1)
+        await bot.send_message(
+            bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @ruangprojects ✨"
+        )
+        await bot.send_message(
+            BOTLOG_CHATID,
+            f"**BERHASIL MENYALAKAN MODE INLINE**",
+        )
                 await xx.edit(
                     f"**Berhasil Menyalakan Mode Inline**\n\n**Ketik** `{cmd}helpme` **lagi untuk membuka menu bantuan.**"
                 )
