@@ -51,7 +51,7 @@ async def _(event):
                 event,
                 "**Inline Mode Tidak aktif.**\n__Sedang Menyalakannya, Harap Tunggu Sebentar...__",
             )
-            bot.loop.run_until_complete(autobot())
+            bot.loop.run_until_complete(autoinlinebot())
             xx = await xx.edit(
                     f"**BERHASIL MENYALAKAN MODE INLINE**\n\n**Ketik** `{cmd}helpme` **lagi untuk membuka menu bantuan.**"
             )
