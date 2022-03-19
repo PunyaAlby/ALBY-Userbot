@@ -317,7 +317,7 @@ async def redis(alive):
         f"╟◈ 👾 • `Bot Ver  :`v{BOT_VER} \n"
         f"╟◈ 📂 • `Modules  :`{len(modules)} Modules \n"
         f"┟╼══════════════════════ \n"
-        f"`[{✨ ALBY-Userbot ✨}]`(https://github.com/PunyaAlby/ALBY-Userbot) || `[𝗚𝗥𝗢𝗨𝗣](https://t.me/{GROUP})` || `[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/{CHANNEL})` \n"
+        f"`[{ALBY-Userbot}]`(https://github.com/PunyaAlby/ALBY-Userbot) || `[𝗚𝗥𝗢𝗨𝗣](https://t.me/{GROUP})` || `[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/{CHANNEL})` \n"
         f"╰═══════════════════════")
     if ALIVE_LOGO:
         try:
