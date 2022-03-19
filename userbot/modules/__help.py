@@ -62,7 +62,6 @@ async def autobot():
     await asyncio.sleep(1)
     await bot.send_message(bf, "/start")
     await asyncio.sleep(1)
-            )
             sys.exit(1)
     await bot.send_message(bf, BOT_USERNAME)
     await asyncio.sleep(1)
