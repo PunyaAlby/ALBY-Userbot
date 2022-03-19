@@ -31,6 +31,7 @@ from telethon.tl.functions.contacts import UnblockRequest
 from userbot import CMD_HANDLER as cmd
 from userbot import BOT_USERNAME, bot
 from userbot.utils import edit_or_reply, kyy_cmd
+from userbot.utils import autobot
 
 
 @kyy_cmd(pattern="helpme")
@@ -50,71 +51,9 @@ async def _(event):
                 event,
                 "**Inline Mode Tidak aktif.**\n__Sedang Menyalakannya, Harap Tunggu Sebentar...__",
             )
-
-async def autobot():
-    if who.username:
-        username = who.username + "_ubot"
+            bot.loop.run_until_complete(autobot())
+                await xx.edit(
+                    f"**BERHASIL MENYALAKAN MODE INLINE**\n\n**Ketik** `{cmd}helpme` **lagi untuk membuka menu bantuan.**"
+            )
     else:
-        username = "ALBY" + (str(who.id))[5:] + "ubot"
-    bf = "@BotFather"
-    await bot(UnblockRequest(bf))
-    await bot.send_message(bf, "/cancel")
-    await asyncio.sleep(1)
-    await bot.send_message(bf, "/start")
-    await asyncio.sleep(1)
-    await bot.send_message(bf, BOT_USERNAME)
-    await asyncio.sleep(1)
-    isdone = (await bot.get_messages(bf, limit=1))[0].text
-    await bot.send_read_acknowledge("botfather")
-    if isdone.startswith("Sorry,"):
-        ran = randint(1, 100)
-        username = "ALBY" + (str(who.id))[6:] + str(ran) + "ubot"
-        await bot.send_message(bf, BOT_USERNAME)
-        await asyncio.sleep(1)
-        nowdone = (await bot.get_messages(bf, limit=1))[0].text
-        if nowdone.startswith("Done!"):
-            token = nowdone.split("`")[1]
-        await bot.send_message(bf, "/setinline")
-        await asyncio.sleep(1)
-        await bot.send_message(bf, f"@{BOT_USERNAME}")
-        await asyncio.sleep(1)
-        await bot.send_message(bf, "/setabouttext")
-        await asyncio.sleep(1)
-        await bot.send_message(bf, f"@{BOT_USERNAME}")
-        await asyncio.sleep(1)
-        await bot.send_message(bf, f"Managed With ☕️ By {who.first_name}")
-        await asyncio.sleep(3)
-        await bot.send_message(bf, "/setdescription")
-        await asyncio.sleep(1)
-        await bot.send_message(bf, f"@{BOT_USERNAME}")
-        await asyncio.sleep(1)
-        await bot.send_message(
-            bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @ruangprojects ✨"
-        )
-        await bot.send_message(
-            BOTLOG_CHATID,
-            f"**BERHASIL MENYALAKAN MODE INLINE**\n\n**Ketik** `{cmd}helpme` **lagi untuk membuka menu bantuan.**"
-        )
-    elif isdone.startswith("Done!"):
-        token = isdone.split("`")[1]
-        await bot.send_message(bf, "/setinline")
-        await asyncio.sleep(1)
-        await bot.send_message(bf, f"@{BOT_USERNAME}")
-        await asyncio.sleep(1)
-        await bot.send_message(bf, "/setabouttext")
-        await asyncio.sleep(1)
-        await bot.send_message(bf, f"@{BOT_USERNAME}")
-        await asyncio.sleep(1)
-        await bot.send_message(bf, f"Managed With ☕️ By {who.first_name}")
-        await asyncio.sleep(3)
-        await bot.send_message(bf, "/setdescription")
-        await asyncio.sleep(1)
-        await bot.send_message(bf, f"@{BOT_USERNAME}")
-        await asyncio.sleep(1)
-        await bot.send_message(
-            bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @ruangprojects ✨"
-        )
-        await bot.send_message(
-            BOTLOG_CHATID,
-            f"**BERHASIL MENYALAKAN MODE INLINE**\n\n**Ketik** `{cmd}helpme` **lagi untuk membuka menu bantuan.**"
-        )
+    bot.run_until_disconnected()
