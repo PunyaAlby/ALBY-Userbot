@@ -37,7 +37,7 @@ async def help(event):
                          f"**❖ 𝙿𝙴𝙼𝙸𝙻𝙸𝙺 𝙱𝙾𝚃 : {DEFAULTUSER}**\n**{EMOJI_HELP}  𝙼𝙾𝙳𝚄𝙻𝙴𝚂 : {len(modules)}**\n\n"
                          f"**❖ 𝚂𝙴𝙼𝚄𝙰 𝙼𝙴𝙽𝚄 :**\n\n 卍═════❖•ೋ° **(っ◔◡◔)っ 🌙** °ೋ•❖═════卍\n\n"
                          f"❖ {string}\n\n 卍═════❖•ೋ° **(っ◔◡◔)っ 🌙** °ೋ•❖═════卍\n\nSupport @ruangdiskusikami\n\n")
-        await event.reply(f"\n**Contoh** : Ketik <`.help ping`> Untuk Informasi Pengunaan.\nAtau Bisa Juga Ketik `.helpme` Untuk Main Menu Yang Lain-Nya.")
+        await event.reply(f"\n**Contoh** : Ketik <`.help ping`> Untuk Informasi Pengunaan.\nAtau Bisa Juga Ketik `.helpme` Untuk Main Menu Yang Lain-Nya."
         )
         await event.reply(
             f"\n**Halo {DEFAULTUSER} Jika Anda Tidak Tau Perintah Untuk Menggunakan userbot ini silahkan Ketik** `.helpme` Atau Bisa Minta Bantuan Ke @Punya_alby atau tag admin di @ruangdiskusikami:\n"
