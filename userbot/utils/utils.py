@@ -115,7 +115,6 @@ async def autoinlinebot():
             BOTLOG_CHATID,
             f"**BERHASIL MENYALAKAN INLINE MODE DENGAN USERNAME @{BOT_USERNAME}**",
         )
-           sys.exit(1)
 
 
 async def autobot():
