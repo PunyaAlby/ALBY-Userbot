@@ -33,7 +33,7 @@ async def help(event):
             f"**❖ Jumlah:** `{len(modules)}` **Modules**\n"
             f"**❖ Owner:** {ALIVE_NAME}\n"
             f"**❖ Semua Modules :**\n\n 卍═════❖•ೋ° **DAFTAR MODULES** °ೋ•❖═════卍\n\n"
-            f"**❖ {string}\n\n 卍═════❖•ೋ° **ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ** °ೋ•❖═════卍\n\nGroup Support @ruangdiskusikami\n\n")
+            f"**❖ {string}\n\n 卍═════❖•ೋ° **ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ** °ೋ•❖═════卍\n\nGroup Support @ruangdiskusikami\n\n"
         )
         await event.reply(
             f"╭┄──────┈┈──────┄\n"
