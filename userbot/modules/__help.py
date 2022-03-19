@@ -21,68 +21,32 @@
 
 # PERSETAN DENGAN ORANG YANG HAPUS CREDIT
 
-import asyncio
-import sys
+from userbot import BOT_USERNAME, CMD_HELP, bot
+from userbot.utils import edit_or_reply, edit_delete, kyy_cmd
 
-from telethon.errors.rpcerrorlist import BotInlineDisabledError as noinline
-from telethon.errors.rpcerrorlist import YouBlockedUserError
-from telethon.tl.functions.contacts import UnblockRequest
-
-from userbot import CMD_HANDLER as cmd
-from userbot import BOT_USERNAME, BOTLOG_CHATID, bot
-from userbot.utils import edit_or_reply, kyy_cmd
-from userbot.utils import autoinlinebot
+user = bot.get_me()
+DEFAULTUSER = user.first_name
+CUSTOM_HELP_EMOJI = "✨"
 
 
-@kyy_cmd(pattern="helpme")
-async def _(event):
-    if event.fwd_from:
-        return
-    if BOT_USERNAME is not None:
-        bf = "@BotFather"
-        await bot(UnblockRequest(bf))
-        await bot.send_message(bf, "/cancel")
-        await asyncio.sleep(1)
-        await bot.send_message(bf, "/start")
+@kyy_cmd(pattern="help ?(.*)")
+async def cmd_list(event):
+    args = event.pattern_match.group(1).lower()
+    if args:
+        if args in CMD_HELP:
+            await edit_or_reply(event, f"**✘ Commands available in {args} ✘** \n\n" + str(CMD_HELP[args]) + "\n\n**☞ @ruangprojects**")
+        else:
+            await edit_delete(event, f"𝘔𝘢𝘢𝘧 𝘔𝘰𝘥𝘶𝘭𝘦 `{args}` 𝘛𝘪𝘥𝘢𝘬 𝘋𝘢𝘱𝘢𝘵 𝘋𝘪𝘵𝘦𝘮𝘶𝘬𝘢𝘯!!")
+        else:
         try:
-            results = await event.client.inline_query(BOT_USERNAME, "@ALBYUserbot")
+            results = await bot.inline_query(  # pylint:disable=E0602
+                BOT_USERNAME, "@ALBYUserbot"
+            )
             await results[0].click(
                 event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
             )
             await event.delete()
-        except noinline:
-            xx = await edit_or_reply(
-                event,
-                "**Inline Mode Tidak aktif.**\n__Sedang Menyalakannya, Harap Tunggu Sebentar...__\n\n**❖ Kalau sudah 3 menit tidak ada perubahan silahkan pergi ke bot @BotFather ketikan** '/mybots'\n**❖ Kemudian pilih bot Assistant mu yang ada di group log**\n**❖ Lalu pilih Bot Settings > Pilih inline Mode > pilih Turn on\n**❖ Setelah itu Pergi ke group log lagi dan Ketik** `{cmd}helpme` **lagi untuk membuka menu bantuan modules nya**",
-            )
-            async with bot.send_message(bf) as bot:
-                try:
-            await bot.send_message(bf, "/setinline")
-            await asyncio.sleep(1)
-            await bot.send_message(bf, f"@{BOT_USERNAME}")
-            await asyncio.sleep(1)
-            await bot.send_message(bf, "Search")
-            await asyncio.sleep(3)
-            await bot.send_message(bf, "/setuserpic")
-            await asyncio.sleep(1)
-            await bot.send_message(bf, f"@{BOT_USERNAME}")
-            await asyncio.sleep(1)
-            await bot.send_file(bf, "resources/extras/20220119_195302.jpg")
-            await asyncio.sleep(3)
-            await bot.send_message(bf, "/setabouttext")
-            await asyncio.sleep(1)
-            await bot.send_message(bf, f"@{BOT_USERNAME}")
-            await asyncio.sleep(1)
-            await bot.send_message(bf, f"Managed With ☕️ By {who.first_name}")
-            await asyncio.sleep(3)
-            await bot.send_message(bf, "/setdescription")
-            await asyncio.sleep(1)
-            await bot.send_message(bf, f"@{BOT_USERNAME}")
-            await asyncio.sleep(1)
-            await bot.send_message(
-                bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @ruangprojects ✨"
-            )
-            await bot.send_message(
-                BOTLOG_CHATID,
-                f"**BERHASIL MENYALAKAN INLINE MODE DENGAN USERNAME @{BOT_USERNAME}**",
-            )
+        except BaseException:
+            await edit_delete(event,
+                              f""**INLINE MODE KAMU TIDAK AKTIF.**\n\n**© Tutorial Untuk Menyalakan Inline Mode kamu :**\n**❖ Silahkan pergi ke bot @BotFather ketikan** '/mybots'\n**❖ Kemudian pilih bot Assistant mu yang ada di group log**\n**❖ Lalu pilih Bot Settings > Pilih inline Mode > pilih Turn on**\n**❖ Setelah itu Pergi ke group log lagi dan Ketik** `{cmd}helpme` **lagi untuk membuka menu bantuan modules nya**",
+                              )
