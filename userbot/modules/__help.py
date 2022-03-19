@@ -37,7 +37,7 @@ async def cmd_list(event):
             await edit_or_reply(event, f"**✘ Commands available in {args} ✘** \n\n" + str(CMD_HELP[args]) + "\n\n**☞ @ruangprojects**")
         else:
             await edit_delete(event, f"𝘔𝘢𝘢𝘧 𝘔𝘰𝘥𝘶𝘭𝘦 `{args}` 𝘛𝘪𝘥𝘢𝘬 𝘋𝘢𝘱𝘢𝘵 𝘋𝘪𝘵𝘦𝘮𝘶𝘬𝘢𝘯!!")
-        else:
+    else:
         try:
             results = await bot.inline_query(  # pylint:disable=E0602
                 BOT_USERNAME, "@ALBYUserbot"
