@@ -30,6 +30,93 @@ if HEROKU_APP_NAME is not None and HEROKU_API_KEY is not None:
 else:
     app = None
 
+async def autoinlinebot():
+    if BOT_USERNAME:
+        return
+    await bot.start()
+    await bot.send_message(
+        BOTLOG_CHATID, "**SEDANG MENYALAKAN INLINE MODE UNTUK ANDA DI @BotFather**"
+    )
+    bf = "@BotFather"
+    await bot(UnblockRequest(bf))
+    await bot.send_message(bf, "/cancel")
+    await asyncio.sleep(1)
+    await bot.send_message(bf, "/start")
+    await bot.send_message(bf, BOT_USERNAME)
+    await asyncio.sleep(1)
+    isdone = (await bot.get_messages(bf, limit=1))[0].text
+    await bot.send_read_acknowledge("botfather")
+    if isdone.startswith("Sorry,"):
+        ran = randint(1, 100)
+        username = "ALBY" + (str(who.id))[6:] + str(ran) + "ubot"
+        await bot.send_message(bf, BOT_USERNAME)
+        await asyncio.sleep(1)
+        nowdone = (await bot.get_messages(bf, limit=1))[0].text
+        if nowdone.startswith("Done!"):
+            token = nowdone.split("`")[1]
+            await bot.send_message(bf, "/setinline")
+            await asyncio.sleep(1)
+            await bot.send_message(bf, f"@{BOT_USERNAME}")
+            await asyncio.sleep(1)
+            await bot.send_message(bf, "Search")
+            await asyncio.sleep(3)
+            await bot.send_message(bf, "/setuserpic")
+            await asyncio.sleep(1)
+            await bot.send_message(bf, f"@{BOT_USERNAME}")
+            await asyncio.sleep(1)
+            await bot.send_file(bf, "resources/extras/20220119_195302.jpg")
+            await asyncio.sleep(3)
+            await bot.send_message(bf, "/setabouttext")
+            await asyncio.sleep(1)
+            await bot.send_message(bf, f"@{BOT_USERNAME}")
+            await asyncio.sleep(1)
+            await bot.send_message(bf, f"Managed With ☕️ By {who.first_name}")
+            await asyncio.sleep(3)
+            await bot.send_message(bf, "/setdescription")
+            await asyncio.sleep(1)
+            await bot.send_message(bf, f"@{BOT_USERNAME}")
+            await asyncio.sleep(1)
+            await bot.send_message(
+                bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @ruangprojects ✨"
+            )
+            await bot.send_message(
+                BOTLOG_CHATID,
+                f"**BERHASIL MENYALAKAN INLINE MODE DENGAN USERNAME @{BOT_USERNAME}**",
+            )
+            sys.exit(1)
+    elif isdone.startswith("Done!"):
+        token = isdone.split("`")[1]
+        await bot.send_message(bf, "/setinline")
+        await asyncio.sleep(1)
+        await bot.send_message(bf, f"@{BOT_USERNAME}")
+        await asyncio.sleep(1)
+        await bot.send_message(bf, "Search")
+        await asyncio.sleep(3)
+        await bot.send_message(bf, "/setuserpic")
+        await asyncio.sleep(1)
+        await bot.send_message(bf, f"@{BOT_USERNAME}")
+        await asyncio.sleep(1)
+        await bot.send_file(bf, "resources/extras/20220119_195302.jpg")
+        await asyncio.sleep(3)
+        await bot.send_message(bf, "/setabouttext")
+        await asyncio.sleep(1)
+        await bot.send_message(bf, f"@{BOT_USERNAME}")
+        await asyncio.sleep(1)
+        await bot.send_message(bf, f"Managed With ☕️ By {who.first_name}")
+        await asyncio.sleep(3)
+        await bot.send_message(bf, "/setdescription")
+        await asyncio.sleep(1)
+        await bot.send_message(bf, f"@{BOT_USERNAME}")
+        await asyncio.sleep(1)
+        await bot.send_message(
+            bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @ruangprojects ✨"
+        )
+        await bot.send_message(
+            BOTLOG_CHATID,
+            f"**BERHASIL MENYALAKAN INLINE MODE DENGAN USERNAME @{BOT_USERNAME}**",
+        )
+           sys.exit(1)
+
 
 async def autobot():
     if BOT_TOKEN:
