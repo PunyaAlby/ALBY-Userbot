@@ -26,19 +26,19 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.contacts import UnblockRequest
 
 from userbot import BOT_USERNAME
+from userbot import CMD_HANDLER as cmd
 from userbot import bot
-from userbot.utils import edit_or_reply
-from userbot.events import register
+from userbot.utils import edit_or_reply, fanda_cmd
 
 
-@register(pattern=".helpme")
+@kyy_cmd(pattern="helpme")
 async def _(event):
     if event.fwd_from:
         return
     if BOT_USERNAME is not None:
         chat = "@Botfather"
         try:
-            results = await event.client.inline_query(BOT_USERNAME, "@ruangdiskusikami")
+            results = await event.client.inline_query(BOT_USERNAME, "@ALBYUserbot")
             await results[0].click(
                 event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
             )
@@ -46,7 +46,7 @@ async def _(event):
         except noinline:
             xx = await edit_or_reply(
                 event,
-                "**Inline Mode Tidak aktif.**\n__Sedang Menyalakannya, Harap Tunggu Sebentar...__\nKalau tidak ada perubahan silahkan ikuti panduan berikut\n\n**© Tutorial Untuk Menyalakan Inline Mode kamu :**\n**❖ Silahkan pergi ke bot @BotFather ketikan** '/mybots'\n**❖ Kemudian pilih bot Assistant mu yang ada di group log**\n**❖ Lalu pilih Bot Settings > Pilih inline Mode > pilih Turn on**\n**❖ Setelah itu Pergi ke group log lagi dan Ketik** `{cmd}helpme` **lagi untuk membuka menu bantuan modules nya**",
+                "**INLINE MODE KAMU BELUM AKTIF.**\n__Sedang Menyalakannya, Harap Tunggu Sebentar...__\n**Kalau tidak ada perubahan silahkan ikuti panduan berikut**\n\n**© Tutorial Untuk Menyalakan Inline Mode kamu :**\n**❖ Silahkan pergi ke bot @BotFather ketikan** '/mybots'\n**❖ Kemudian pilih bot Assistant mu yang ada di group log**\n**❖ Lalu pilih Bot Settings > Pilih inline Mode > pilih Turn on**\n**❖ Setelah itu Pergi ke group log lagi dan Ketik** `{cmd}helpme` **lagi untuk membuka menu bantuan modules nya**",
             )
             async with bot.conversation(chat) as conv:
                 try:
