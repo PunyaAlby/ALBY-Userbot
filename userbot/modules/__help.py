@@ -28,7 +28,7 @@ from telethon.tl.functions.contacts import UnblockRequest
 from userbot import BOT_USERNAME
 from userbot import CMD_HANDLER as cmd
 from userbot import bot
-from userbot.utils import edit_or_reply, fanda_cmd
+from userbot.utils import edit_or_reply, kyy_cmd
 
 
 @kyy_cmd(pattern="helpme")
