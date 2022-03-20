@@ -46,7 +46,7 @@ async def _(event):
         except noinline:
             xx = await edit_or_reply(
                 event,
-                "**INLINE MODE KAMU BELUM AKTIF.**\n__Sedang Menyalakannya, Harap Tunggu Sebentar...__\n**Kalau tidak ada perubahan silahkan ikuti panduan berikut**\n\n**© Tutorial Untuk Menyalakan Inline Mode kamu :**\n**❖ Silahkan pergi ke bot @BotFather ketikan** '/mybots'\n**❖ Kemudian pilih bot Assistant mu yang ada di group log**\n**❖ Lalu pilih Bot Settings > Pilih inline Mode > pilih Turn on**\n**❖ Setelah itu Pergi ke group log lagi dan Ketik** `{cmd}helpme` **lagi untuk membuka menu bantuan modules nya**",
+                "**INLINE MODE KAMU BELUM AKTIF.**",
             )
             async with bot.conversation(chat) as conv:
                 try:
@@ -67,7 +67,7 @@ async def _(event):
                     sixth = await conv.get_response()
                     await bot.send_read_acknowledge(conv.chat_id)
                 await xx.edit(
-                    f"**Berhasil Menyalakan Mode Inline**\n\n**Ketik** `{cmd}helpme` **lagi untuk membuka menu bantuan.**"
+                    f"**Silahkan Ikuti Tutorial dibawah ini Untuk Menyalakan Inline Mode Kamu**\nn**© Tutorial Untuk Menyalakan Inline Mode Kamu :**\n**❖ Silahkan pergi ke bot @BotFather ketikan** '/mybots'\n**❖ Kemudian pilih bot Assistant mu yang ada di group log**\n**❖ Lalu pilih Bot Settings > Pilih inline Mode > pilih Turn on**\n**❖ Setelah itu Pergi ke group log atau group ini lagi**\n**Ketik** `.helpme` **lagi untuk membuka menu bantuan modules nya**",
                 )
             await bot.delete_messages(
                 conv.chat_id,
