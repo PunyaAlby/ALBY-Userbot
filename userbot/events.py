@@ -20,7 +20,7 @@ from telethon import events
 from userbot import CMD_HANDLER, DEFAULT, CMD_LIST, DEVS, bot
 
 
-def kyy_cmd(pattern=None, command=None, **args):
+def alby_cmd(pattern=None, command=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
     stack = inspect.stack()
     previous_stack_frame = stack[1]
