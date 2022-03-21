@@ -28,10 +28,10 @@ from telethon.tl.functions.contacts import UnblockRequest
 from userbot import BOT_USERNAME
 from userbot import CMD_HANDLER as cmd
 from userbot import bot
-from userbot.utils import edit_or_reply, kyy_cmd
+from userbot.utils import edit_or_reply, alby_cmd
 
 
-@kyy_cmd(pattern="helpme")
+@alby_cmd(pattern="helpme")
 async def _(event):
     if event.fwd_from:
         return
@@ -67,7 +67,7 @@ async def _(event):
                     sixth = await conv.get_response()
                     await bot.send_read_acknowledge(conv.chat_id)
                 await xx.edit(
-                    f"**Silahkan Ikuti Tutorial dibawah ini Untuk Menyalakan Inline Mode Kamu**\nn**© Tutorial Untuk Menyalakan Inline Mode Kamu :**\n**❖ Silahkan pergi ke bot @BotFather ketikan** '/mybots'\n**❖ Kemudian pilih bot Assistant mu yang ada di group log**\n**❖ Lalu pilih Bot Settings > Pilih inline Mode > pilih Turn on**\n**❖ Setelah itu Pergi ke group log atau group ini lagi**\n**Ketik** `.helpme` **lagi untuk membuka menu bantuan modules nya**"
+                    f"**Silahkan Ikuti Tutorial dibawah ini Untuk Menyalakan Inline Mode Kamu**\n\n**© Tutorial Untuk Menyalakan Inline Mode Kamu :**\n**❖ Silahkan pergi ke bot @BotFather ketikan** '/mybots'\n**❖ Kemudian pilih bot Assistant mu yang ada di group log**\n**❖ Lalu pilih Bot Settings > Pilih inline Mode > pilih Turn on**\n**❖ Setelah itu Pergi ke group log atau group ini lagi**\n**Ketik** `.helpme` **lagi untuk membuka menu bantuan modules nya**"
                 )
             await bot.delete_messages(
                 conv.chat_id,
