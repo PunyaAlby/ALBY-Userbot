@@ -20,7 +20,7 @@ from telethon.errors import (
 from telethon.utils import get_input_location
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantsBots
 from userbot.events import register
-from userbot.modules.admin import get_user_from_event
+from userbot.modules.admins import get_user_from_event
 from telethon.utils import pack_bot_file_id
 
 
@@ -105,10 +105,27 @@ async def log(log_text):
     await log_text.delete()
 
 
-@register(outgoing=True, pattern="^.kickme$")
+@register(outgoing=True, pattern="^.exit$")
 async def kickme(leave):
     """ Basically it's .kickme command """
-    await leave.edit(f"**{ALIVE_NAME} Telah Meninggalkan Group,See You Semua!!**")
+    await leave.edit(f"▬▬▬.◙.▬▬▬ \n"
+                     "═▂▄▄▓▄▄▂ \n"
+                     "◢◤ █▀▀████▄▄▄▄◢◤ \n"
+                     "█▄ █ █▄ ███▀▀▀▀▀▀▀╬ \n"
+                     "◥█████◤ \n"
+                     "══╩══╩══ \n"
+                     "╬═╬ \n"
+                     "╬═╬ \n"
+                     "╬═╬ \n"
+                     "╬═╬ \n"
+                     "╬═╬ \n"
+                     "╬═╬ \n"
+                     "╬═╬ AKU PERGI YA SEMUANYA, BABAY! \n"
+                     "╬═╬☻/ \n"
+                     "╬═╬/▌ \n"
+                     "╬═╬/ \\ \n")
+    sleep(10)
+    await leave.edit(f"`{ALIVE_NAME}, Meninggalkan Group ini, Good bye evrybody`")
     await leave.client.kick_participant(leave.chat_id, 'me')
 
 
