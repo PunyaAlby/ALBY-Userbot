@@ -1,57 +1,52 @@
-# Copyright (C) 2020  sandeep.n(π.$)
-# button post makker for catuserbot thanks to uniborg for the base
-# by @sandy1709 (@mrconfused)
-# Man-Userbot
+# nyenyenyenye
+# FROM skyzu-userbot <https://github.com/Skyzu/skyzu-userbot>
+# port by koala🐨/@manusiarakitann
 
-import re
+from telethon.errors.rpcerrorlist import YouBlockedUserError
+from telethon.tl.functions.contacts import UnblockRequest
 
-from telethon import Button
-
-from userbot import BOT_USERNAME
-from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.utils import edit_delete, kyy_cmd, reply_id
+from userbot.events import register
 
-# regex obtained from:
-# https://github.com/PaulSonOfLars/tgbot/blob/master/tg_bot/modules/helper_funcs/string_handling.py#L23
-BTN_URL_REGEX = re.compile(
-    r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
+chat = "@BotFather"
 
 
-@kyy_cmd(pattern="button(?:\\s|$)([\\s\\S]*)")
+@register(outgoing=True, pattern="^.botbaru ?(.*)")
 async def _(event):
-    reply_to_id = await reply_id(event)
-    reply_message = await event.get_reply_message()
-    if reply_message:
-        markdown_note = reply_message.text
+    if event.fwd_from:
+        return
+    if event.pattern_match.group(1):
+        text, username = event.pattern_match.group(1).split()
+
     else:
-        markdown_note = "".join(event.text.split(maxsplit=1)[1:])
-    if not markdown_note:
-        return await edit_delete(
-            event, "**Teks apa yang harus saya gunakan di pesan button?**"
-        )
-    catinput = "Inline buttons " + markdown_note
-    results = await event.client.inline_query(BOT_USERNAME, catinput)
-    await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
-    await event.delete()
+        await event.edit("`Masukan Yang Benar Cok Biar Bisa Bikin Bot!!`")
+        return
 
-
-def build_keyboard(buttons):
-    keyb = []
-    for btn in buttons:
-        if btn[2] and keyb:
-            keyb[-1].append(Button.url(btn[0], btn[1]))
-        else:
-            keyb.append([Button.url(btn[0], btn[1])])
-    return keyb
+    async with event.client.conversation(chat) as conv:
+        try:
+            await conv.send_message("/newbot")
+            audio = await conv.get_response()
+            await conv.send_message(text)
+            audio = await conv.get_response()
+            await conv.send_message(username)
+            audio = await conv.get_response()
+            await event.client.forward_messages(event.chat_id, audio)
+            await event.delete()
+        except YouBlockedUserError:
+            await event.client(UnblockRequest("93372553"))
+            await conv.send_message("/newbot")
+            audio = await conv.get_response()
+            await conv.send_message(text)
+            audio = await conv.get_response()
+            await conv.send_message(username)
+            audio = await conv.get_response()
+            await event.client.forward_messages(event.chat_id, audio)
+            await event.delete()
 
 
 CMD_HELP.update(
     {
-        "button": f"**Plugin : **`button`\
-        \n\n  •  **Syntax :** `{cmd}button` <text> [Name on button]<buttonurl:link you want to open>\
-        \n  •  **Function : **Untuk membuat pesan button melalui inline\
-        \n  •  **Examples : **`{cmd}button test [google]<buttonurl:https://www.google.com> [Channel]<buttonurl:https://t.me/InfoFlicksUserbot:same> [Support]<buttonurl:https://t.me/FlicksSupport>`\
-    "
+        "botfather": ".botbaru\
+    \nUntuk Membuat Bot Dari Botfather, .botbaru  < bot_name > <bot_username >  ."
     }
 )
