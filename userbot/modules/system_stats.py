@@ -305,20 +305,18 @@ async def redis(alive):
     await alive.edit("✨")
     await asyncio.sleep(2)
     output = (
-        f"`✠╼━━━━━━❖━━━━━━━✠` \n"
-        f"`    ✨ALBY-USERBOT✨` \n"
-        f"`✠╼━━━━━━❖━━━━━━━✠` \n"
-        f"┟╼════════════════════╾┤ \n"
-        f"╟◈ 🤴 • `Name     :`{DEFAULTUSER} \n"
-        f"╟◈ 🔎 • `Username :`@{user.username} \n"
-        f"╟◈ ⚙️ • `Telethon :`v.{version.__version__} \n"
-        f"╟◈ 🐍 • `Python   :`v.{python_version()} \n"
-        f"╟◈ 🛠️ • `Branch   :`{UPSTREAM_REPO_BRANCH} \n"
-        f"╟◈ 👾 • `Bot Ver  :`v{BOT_VER} \n"
-        f"╟◈ 📂 • `Modules  :`{len(modules)} Modules \n"
-        f"┟╼══════════════════════ \n"
-        f"`[{ALBY-Userbot}]`(https://github.com/PunyaAlby/ALBY-Userbot) || `[𝗚𝗥𝗢𝗨𝗣](https://t.me/{GROUP})` || `[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/{CHANNEL})` \n"
-        f"╰═══════════════════════")
+        f"┏━━━━━━━━━━━━━━━━━━━ \n"
+        f"┣  `Name     :` {DEFAULTUSER} \n"
+        f"┣  `Username :` @{user.username} \n"
+        f"┣  `Telethon :` Ver {version.__version__} \n"
+        f"┣  `Python   :` Ver {python_version()} \n"
+        f"┣  `Branch   :` {UPSTREAM_REPO_BRANCH} \n"
+        f"┣  `Bot Ver  :` {BOT_VER} \n"
+        f"┣  `Modules  :` {len(modules)} Modules \n"
+        f"┣  `GitHub   :` [ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ](https://github.com/PunyaAlby/ALBY-Userbot) \n"
+        f"┣  `Support  :` [ᴄʜᴀɴɴᴇʟ](https://t.me/ruangprojects) \n"
+        f"┣  `Owner    :` [『ⒶⓁⒷⓎ』](https://t.me/Punya_Alby) \n"
+        f"┗━━━━━━━━━━━━━━━━━━━")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
