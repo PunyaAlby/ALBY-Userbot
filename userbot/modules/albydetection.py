@@ -1,16 +1,25 @@
-from userbot.events import register
-from userbot import CMD_HELP, bot
+# Modifikasi by : @Punya_Alby
+# ░█████╗░██╗░░░░░██████╗░██╗░░░██╗
+# ██╔══██╗██║░░░░░██╔══██╗╚██╗░██╔╝
+# ███████║██║░░░░░██████╦╝░╚████╔╝░
+# ██╔══██║██║░░░░░██╔══██╗░░╚██╔╝░░
+# ██║░░██║███████╗██████╦╝░░░██║░░░
+# ╚═╝░░╚═╝╚══════╝╚═════╝░░░░╚═╝░░░
+# PERSETAN DENGAN ORANG YANG HAPUS CREDIT
+
 from telethon.errors.rpcerrorlist import YouBlockedUserError
+from userbot import CMD_HELP, bot
+from userbot.events import register
 
 
-@register(outgoing=True, pattern=r"^\.detect(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.mendeteksi(?: |$)(.*)")
 async def detect(event):
     if event.fwd_from:
         return
     input_str = "".join(event.text.split(maxsplit=1)[1:])
     reply_message = await event.get_reply_message()
     if not event.reply_to_msg_id:
-        await event.edit("```Please reply to the user or type .detect (ID/Username) that you want to detect.```")
+        await event.edit("``` Mohon Balas Ke Pesan Pengguna atau ketik .deteksi (ID/Username) Yang mau Anda deteksi```")
         return
     if input_str:
         try:
@@ -19,7 +28,7 @@ async def detect(event):
             try:
                 u = await event.client.get_entity(input_str)
             except ValueError:
-                await edit.event("`Please Give ID/Username to Find History.`"
+                await edit.event("`Mohon Berikan ID/Username untuk menemukan Riwayat`"
                                  )
             uid = u.id
     else:
@@ -38,12 +47,13 @@ async def detect(event):
     event = await event.edit("__Connecting.__")
     event = await event.edit("__Connecting..__")
     event = await event.edit("__Connecting...__")
+    event = await event.edit("`Sedang Mendeteksi...`")
     async with bot.conversation(chat) as conv:
         try:
             await conv.send_message(f"{uid}")
         except YouBlockedUserError:
             await steal.reply(
-                "```Please Unblock @tgscanrobot And Try Again.```"
+                "```Mohon Unblock @tgscanrobot Dan Coba Lagi```"
             )
         response = await conv.get_response()
         await event.client.send_read_acknowledge(conv.chat_id)
@@ -63,6 +73,6 @@ def user_full_name(user):
 
 CMD_HELP.update({
     "detection":
-        "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.detect`\
+        "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.mendeteksi`\
           \n📌 : Melihat Riwayat Grup Yang Pernah/Sedang dimasuki."
 })
