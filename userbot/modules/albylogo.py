@@ -1,5 +1,13 @@
 # 🍀 © @tofik_dn
 # ⚠️ Do not remove credits
+# ░█████╗░██╗░░░░░██████╗░██╗░░░██╗
+# ██╔══██╗██║░░░░░██╔══██╗╚██╗░██╔╝
+# ███████║██║░░░░░██████╦╝░╚████╔╝░
+# ██╔══██║██║░░░░░██╔══██╗░░╚██╔╝░░
+# ██║░░██║███████╗██████╦╝░░░██║░░░
+# ╚═╝░░╚═╝╚══════╝╚═════╝░░░░╚═╝░░░
+# PERSETAN DENGAN ORANG YANG HAPUS CREDIT
+
 import asyncio
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
