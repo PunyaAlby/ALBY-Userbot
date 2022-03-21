@@ -216,6 +216,4 @@ CMD_HELP.update({
     \n↳ : Ngatain bocah virtual.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.title`\
     \n↳ : Ngatain bocah gila title."
-    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.support`\
-    \n↳ : group support alby userbot."
 })
