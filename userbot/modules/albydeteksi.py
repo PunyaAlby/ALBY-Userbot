@@ -1,16 +1,21 @@
+# Ported From Cat Userbot For Lord Userbot By Alvin/LiuAlvinas # Jangan Hapus # Jangan Ubah
+# Based On Plugins
+# bacot nyaaa
+
+
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import CMD_HELP, bot
 from userbot.events import register
 
 
-@register(outgoing=True, pattern=r"^\.(?:dgrup|dg)\s?(.*)?")
+@register(outgoing=True, pattern=r"^\.deteksi(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
     input_str = "".join(event.text.split(maxsplit=1)[1:])
     reply_message = await event.get_reply_message()
     if not event.reply_to_msg_id:
-        await event.edit("```Mohon Balas Ke Pesan Pengguna atau ketik .dgrup (ID/Username) Yang mau Anda deteksi```")
+        await event.edit("``` Mohon Balas Ke Pesan Pengguna atau ketik .deteksi (ID/Username) Yang mau Anda deteksi```")
         return
     if input_str:
         try:
@@ -51,6 +56,6 @@ def user_full_name(user):
 
 CMD_HELP.update({
     "deteksi":
-        "`.dgrup` ; `.dg`\
-    \nPenjelasan: Melihat Riwayat Grup Yang Pernah / Sedang dimasuki."
+        "`.deteksi`\
+          \nPenjelasan: Melihat Riwayat Grup Yang Pernah/Sedang dimasuki."
 })
