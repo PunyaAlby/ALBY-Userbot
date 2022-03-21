@@ -5,14 +5,14 @@
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.utils import kyy_cmd
+from userbot.utils import alby_cmd
 import random
 from userbot import owner
 from telethon.tl.types import InputMessagesFilterVideo
 from telethon.tl.types import InputMessagesFilterVoice
 from telethon.tl.types import InputMessagesFilterPhotos
 
-@kyy_cmd(pattern="asupan$")
+@alby_cmd(pattern="asupan$")
 async def _(event):
     try:
         asupannya = [
@@ -31,7 +31,7 @@ async def _(event):
     except Exception:
         await event.edit("Tidak bisa menemukan video asupan.")
 
-@kyy_cmd(pattern="desah$")
+@alby_cmd(pattern="desah$")
 async def _(event):
     try:
         desahnya = [
@@ -50,7 +50,7 @@ async def _(event):
     except Exception:
         await event.edit("Tidak bisa menemukan desahan.")
         
-@kyy_cmd(pattern="ayang$")
+@alby_cmd(pattern="ayang$")
 async def _(event):
     try:
         ayangnya = [
