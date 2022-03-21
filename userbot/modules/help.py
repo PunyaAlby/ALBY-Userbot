@@ -16,12 +16,12 @@
 
 from userbot import CMD_HANDLER as cmd
 from userbot import ALIVE_NAME, CMD_HELP, bot
-from userbot.utils import edit_delete, edit_or_reply, kyy_cmd
+from userbot.utils import edit_delete, edit_or_reply, alby_cmd
 
 modules = CMD_HELP
 
 
-@kyy_cmd(pattern="help(?: |$)(.*)")
+@alby_cmd(pattern="help(?: |$)(.*)")
 async def help(event):
     """For help command"""
     args = event.pattern_match.group(1).lower()
@@ -49,8 +49,9 @@ async def help(event):
             f"│ ❖ **Daftar Perintah ALBY USERBOT :**\n"
             f"│ ❖ **Jumlah** `{len(modules)}` **Modules**\n"
             f"│ ❖ **Owner:** [{user.first_name}](tg://user?id={user.id})\n"
+            f"│ ❖ **Owner Userbot:** [『ⒶⓁⒷⓎ』](https://t.me/punya_alby)\n"
             f"├┄──────┈┈──────┄\n"
-            f"│ ❖ **Contoh Ketik** `{cmd}help ping`\n"
+            f"│ ❖ **Contoh Ketik** `.help ping`\n"
             f"│ ❖ **Untuk Melihat Informasi Module**\n"
             f"│ ❖ **Silahkan Ketik** `.helpme`\n" 
             f"├┄─────┈┄┈─────┄\n"
