@@ -2,17 +2,16 @@
 # Copyright © Team Geez - Project
 #alby
 
+from telethon.tl import functions
+from telethon.tl.functions.messages import GetFullChatRequest
 from telethon.errors import (
     ChannelInvalidError,
     ChannelPrivateError,
-    ChannelPublicGroupNaError,
-)
-from telethon.tl import functions
+    ChannelPublicGroupNaError)
 from telethon.tl.functions.channels import GetFullChannelRequest
-from telethon.tl.functions.messages import GetFullChatRequest
 
-from userbot import VVIP, CMD_HELP
 from userbot.events import register
+from userbot import VVIP, CMD_HELP
 
 
 async def get_chatinfo(event):
