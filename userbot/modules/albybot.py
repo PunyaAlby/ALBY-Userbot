@@ -137,10 +137,10 @@ async def typewriter(typew):
     await typew.edit("**KASIAN MANA MASIH MUDA**")
 
 
-@register(outgoing=True, pattern="^.tittle(?: |$)(.*)")
+@register(outgoing=True, pattern="^.title(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**OI ANAK TITLE**")
+    await typew.edit("**WOYY ANAK TITLE**")
     sleep(2)
     await typew.edit("**OOO INI YANG SOK JADI PAHLAWAN DI TELEGRAM?**")
     sleep(3)
@@ -175,6 +175,28 @@ async def typewriter(typew):
     await typew.edit("**SEMOGA CEPET SADAR YA HAHAHAHA**")
 
 
+@register(outgoing=True, pattern='^.support(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("`PROOCCESS.. `")
+    sleep(1)
+    await typew.edit("`PROOCCESS...`")
+    sleep(1)
+    await typew.edit("`SUCCESSFULLY COMPELED`")
+    sleep(2)
+    await typew.edit("`PERSETAN DENGAN MANUSIA`")
+    sleep(2)
+    await typew.edit("`YANG PAKAI ALBY USERBOT`")
+    sleep(2)
+    await typew.edit("`TAPI TIDAK JOIN GROUP SUPPORT`")
+    sleep(2)
+    await typew.edit("`EH GA MAKSA SIH😶`")
+    sleep(2)
+    await typew.edit("`NANTI JUGA MASUK SENDIRI KE GROUPNYA🤪`")
+    sleep(2)
+    await typew.edit("`NIH LINK GC SUPPORT NYA 👉` @ruangdiskusikami")
+
+
 CMD_HELP.update({
     "albyubot": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.sadboy`\
     \n↳ : Biasalah sadboy hikss\
@@ -192,6 +214,8 @@ CMD_HELP.update({
     \n↳ : Sangean\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.virtual`\
     \n↳ : Ngatain bocah virtual.\
-    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.tittle`\
-    \n↳ : Ngatain bocah gila tittle."
+    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.title`\
+    \n↳ : Ngatain bocah gila title."
+    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.support`\
+    \n↳ : Group Support ALBY USERBOT."
 })
