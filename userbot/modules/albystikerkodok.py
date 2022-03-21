@@ -9,7 +9,7 @@ async def honkasays(event):
     await event.edit("`Sedang Memproses, Mohon Tunggu Sebentar...`")
     text = event.pattern_match.group(1)
     if not text:
-        return await event.edit("Beri Aku Bebeberapa Text, Contoh : `.honka space <text>`")
+        return await event.edit("Beri Aku Bebeberapa Teks, Contoh : `.frog Test Stiker`")
     try:
         if not text.endswith("."):
             text = text + "."
@@ -43,7 +43,7 @@ async def honkasays(event):
 
 CMD_HELP.update(
     {
-        "frog": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.frog` space <text>\
-    \n↳ : Menampilkan Pesan (text) di Sticker Animasi."
+        "stikerkodok": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.frog` <kata kata>\
+    \n↳ : Menampilkan Pesan (text) di Sticker Animasi kodok berbentuk badut."
     }
 )
