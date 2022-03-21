@@ -22,7 +22,7 @@ from userbot import (  # noqa pylint: disable=unused-import isort:skip
     bot,
 )
 from userbot.events import register
-from userbot.utils import kyy_cmd
+from userbot.utils import alby_cmd
 
 # ========================= CONSTANTS ============================
 AFKSTR = [
@@ -44,7 +44,7 @@ afk_start = {}
 # =================================================================
 
 
-@kyy_cmd(pattern="afk(?: |$)(.*)")
+@alby_cmd(pattern="afk(?: |$)(.*)")
 async def set_afk(afk_e):
     """ For .afk command, allows you to inform people that you are afk when they message you """
     message = afk_e.text  # pylint:disable=E0602
