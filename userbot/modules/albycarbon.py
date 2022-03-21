@@ -79,7 +79,7 @@ async def carbon_api(e):
         e.chat_id,
         file,
         caption="Created by [『ⒶⓁⒷⓎ』](https://t.me/punya_alby/)\
-        \nGroup [SUPPORT](https://t.me/allfucek/)",
+        \nGroup [Group Support](https://t.me/ruangdiskusikami/)",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )
@@ -145,7 +145,7 @@ async def carbon_api(e):
         e.chat_id,
         file,
         caption="created by [『ⒶⓁⒷⓎ』](https://t.me/punya_alby/)\
-        \nGroup Support [Dawn Labs](https://t.me/allfucek/)",
+        \nGroup Support [Group Support](https://t.me/ruangdiskusikami/)",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )
@@ -211,7 +211,7 @@ async def carbon_api(e):
         e.chat_id,
         file,
         caption="Created By [『ⒶⓁⒷⓎ』](https://t.me/punya_alby/)\
-        \nGroup Support [Support](https://t.me/allfucek/)",
+        \nGroup Support [Group Support](https://t.me/ruangdiskusikami/)",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )
@@ -277,7 +277,7 @@ async def carbon_api(e):
         e.chat_id,
         file,
         caption="Created by [『ⒶⓁⒷⓎ』](https://t.me/punya_alby/),\
-        \nGroup Support [Group Support](https://t.me/allfucek)",
+        \nGroup Support [Group Support](https://t.me/ruangdiskusikami)",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )
@@ -343,7 +343,7 @@ async def carbon_api(e):
         e.chat_id,
         file,
         caption="Created by [『ⒶⓁⒷⓎ』](https://t.me/punya_alby/),\
-        \nGroup Support [Support](https://t.me/allfucek/)",
+        \nGroup Support [Group Support](https://t.me/ruangdiskusikami/)",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )
