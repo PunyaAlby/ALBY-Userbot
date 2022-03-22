@@ -328,9 +328,7 @@ CMD_HELP.update({
     "animasi2":
     "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.hua` ; `.hua2`\
     \n↳ : coba sendiri animasi nangis ada dua versi.\
-    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.ceritacinta`\
-    \n↳ : liat sendiri"
-    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.canda`\
+    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.ceritacinta` | `.canda`\
     \n↳ : liat sendiri"
     \n\n\n`Selamat Mencoba Fitur Animasinya Kawan`"
 })
