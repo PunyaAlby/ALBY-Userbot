@@ -312,13 +312,13 @@ CMD_HELP.update({
     "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.nah`\
     \n↳ : Cobain Sendiri.\
     "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.nah2`\
-    \n↳ : Cobain Sendiri versi ke 2.\
+    \n↳ : `Cobain Sendiri versi kedua.`\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.huh`\
     \n↳ : Cobain Sendiri.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.huh2`\
-    \n↳ : Cobain Sendiri versi ke 2.\
+    \n↳ : `Cobain Sendiri versi kedua.`\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.owner`\
-    \n↳ : Kenalan sama owner ALBY Userbot.\
+    \n↳ : `kenalan sama owner ALBYUserbot.`\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.owner2`\
     \n↳ : Cobain Sendiri.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.bunga`\
