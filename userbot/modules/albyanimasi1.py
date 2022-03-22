@@ -301,5 +301,5 @@ CMD_HELP.update({
     \n↳ : liat sendiri"
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.canda`\
     \n↳ : liat sendiri"
-\n\n\n Selamat Mencoba Fitur Animasinya Kawan✨"
+    \n\n\n`Selamat Mencoba Fitur Animasinya Kawan`"
 })
