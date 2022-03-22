@@ -1,5 +1,5 @@
 from time import sleep
-from userbot import ALIVE_NAME, CMD_HELP, IG_ALIVE, REPO_NAME, GROUP_LINK, bot
+from userbot import ALIVE_NAME, CMD_HELP, REPO_NAME, GROUP_LINK, bot
 from userbot.events import register
 from telethon import events
 import asyncio
@@ -277,7 +277,7 @@ async def typewriter(typew):
     sleep(2)
     await typew.edit("`Proses Global banned...✅`")
     sleep(3)
-    await typew.edit(f"╭✠╼━━━━━━❖━━━━━━━✠\n┣• **TUAN:** `{ALIVE_NAME}`\n┣• **PIBOONG:** [INSTAGRAM]({IG_ALIVE})\n┣• **Aksi:** `PROMOSI`\n╰✠╼━━━━━━❖━━━━━━━✠")
+    await typew.edit(f"╭✠╼━━━━━━❖━━━━━━━✠\n┣• **TUAN:** `{ALIVE_NAME}`\n┣• **PIBOONG:**\n┣• **Aksi:** `PROMOSI`\n╰✠╼━━━━━━❖━━━━━━━✠")
 
 @register(outgoing=True, pattern='^.gkck(?: |$)(.*)')
 async def typewriter(typew):
@@ -387,14 +387,6 @@ async def typewriter(typew):
     await typew.edit(f"`{ALIVE_NAME}, Saat Nya Pergi...`")
     sleep(3)
     await typew.edit(f"`{ALIVE_NAME} Telah meninggalkan Group....`")
-
-
-@register(outgoing=True, pattern='^.gi(?: |$)(.*)')
-async def typewriter(typew):
-    typew.pattern_match.group(1)
-    await typew.edit("**Mutualan Yukkk!...**")
-    sleep(2)
-    await typew.edit(f"𝐈𝐍𝐒𝐓𝐀𝐆𝐑𝐀𝐌= [𝐓𝐄𝐊𝐀𝐍]({IG_ALIVE})")
 
 
 @register(outgoing=True, pattern='^.fck(?: |$)(.*)')
