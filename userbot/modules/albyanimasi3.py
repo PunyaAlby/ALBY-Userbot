@@ -821,11 +821,11 @@ CMD_HELP.update({
 CMD_HELP.update({
     "animasi6": 
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.orgil`\
-    \nUsage: ntahlah coba aja.\
+    \n↳ : ntahlah coba aja.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.gblk`\
     \n↳ : cobain aja.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.sange` :\
-    \nUsage: cobalah sndiri bodoh.\
+    \n↳ : cobalah sndiri bodoh.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.ass`\
-    \nUsage: Salam dulu biar sopan."
+    \n↳ : salam dulu biar sopan."
 })
