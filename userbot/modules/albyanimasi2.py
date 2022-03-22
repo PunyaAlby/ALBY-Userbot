@@ -1881,5 +1881,5 @@ CMD_HELP.update({
     "\n> `.fag` `.gtfo`; `.stfu` `.lol` `.lool` `.fail` `.leave`"
     "\n> `.iwi` `.sayhi` `.koc` `.gas` `.earth` `.love` `.rain`"
     "\n> `.penis` `.emo` `.fuck` `.skull`  `.monyet`\nUsage: Cobain aja"
-    \n\n\n Selamat Mencoba Fitur Animasinya Kawan✨"
+    \n\n\n`Selamat Mencoba Fitur Animasinya Kawan`"
 })
