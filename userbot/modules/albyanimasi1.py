@@ -257,7 +257,7 @@ async def _(event):
 
     input_str = event.pattern_match.group(1)
 
-    if input_str == "owner":
+    if input_str == "owner2":
 
         await event.edit(input_str)
 
@@ -275,17 +275,51 @@ async def _(event):
 
             await event.edit(animation_chars[i % 6])
 
+
+@bot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
+async def _(event):
+
+    if event.fwd_from:
+
+        return
+
+    animation_interval = 0.5
+
+    animation_ttl = range(0, 6)
+
+    input_str = event.pattern_match.group(1)
+
+    if input_str == "owner":
+
+        await event.edit(input_str)
+
+        animation_chars = [
+            "**OWNER ALBY-USERBOT ADALAH MANUSIA TERGANTENG, TERBAIK, DI HATI PEMAKAI NYA, KENALAN DULU SAMA OWNER NYA YUK**"
+            "**DUNIA ONLINE PANGGILAN NYA ALBY,KALAU REAL LIFE NAMA ASLINYA MUTTAQIN**"
+            "**TINGGAL NYA DI JAKARTA, LAHIR MAH DI JAWA TIMUR NGAWI BTW ORANGNYA THEBEST POKOK NYA AWWHHHH**"
+            "**KALO MAU FORK REPONYA,IZIN DULU KE ORANG NYA YA GENGSSS**"
+            "**POKOK NYA OWNER NYA THEBEST BANGET SERIUSSSSS**"
+            "**UDAH POKOK NYA ITU AJA SIH,INTINYA OWNER NYA GANTENG DAN BAIK PARAH**"]
+
+        for i in animation_ttl:
+
+            await asyncio.sleep(animation_interval)
+
+            await event.edit(animation_chars[i % 6])
+
 CMD_HELP.update({
     "animasi1":
     "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.nah`\
     \n↳ : Cobain Sendiri.\
     "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.nah2`\
-    \n↳ : Cobain Sendiri.\
+    \n↳ : Cobain Sendiri versi ke 2.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.huh`\
     \n↳ : Cobain Sendiri.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.huh2`\
-    \n↳ : Cobain Sendiri.\
+    \n↳ : Cobain Sendiri versi ke 2.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.owner`\
+    \n↳ : Kenalan sama owner ALBY Userbot.\
+    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.owner2`\
     \n↳ : Cobain Sendiri.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.bunga`\
     \n↳ : animasi bunga bergerak.\
@@ -293,6 +327,10 @@ CMD_HELP.update({
     \n↳ : animasi buah bergerak.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.waktu`\
     \n↳ : animasi jam bergerak.\
+})
+
+CMD_HELP.update({
+    "animasi2":
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.hua`\
     \n↳ : nangis.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.hua2`\
