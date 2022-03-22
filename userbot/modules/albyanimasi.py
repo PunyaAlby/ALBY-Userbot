@@ -97,4 +97,4 @@ CMD_HELP.update({
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.idiot`\
     \n↳ : u're ediot xixixi.\
 \n\n\n Selamat Mencoba Fitur Animasinya Kawan✨"
-})})
+})
