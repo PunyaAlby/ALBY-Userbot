@@ -1861,7 +1861,6 @@ CMD_HELP.update({
     "\nUsage: Lakukan dan temukan kesenangan yang sesungguhnya."
     "\n\n>`.clap`"
     "\nUsage: Puji orang!."
-    \n\n\n>`Selamat Mencoba Fitur Animasinya Kawan`"
 })
 
 CMD_HELP.update({
@@ -1882,5 +1881,4 @@ CMD_HELP.update({
     "\n> `.fag` `.gtfo`; `.stfu` `.lol` `.lool` `.fail` `.leave`"
     "\n> `.iwi` `.sayhi` `.koc` `.gas` `.earth` `.love` `.rain`"
     "\n> `.penis` `.emo` `.fuck` `.skull`  `.monyet`\nUsage: Cobain aja"
-    \n\n\n`Selamat Mencoba Fitur Animasinya Kawan`"
 })
