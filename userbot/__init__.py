@@ -235,6 +235,9 @@ YOUTUBE_API_KEY = os.environ.get(
 # Untuk Perintah .albyalive
 ALBY_TEKS_KUSTOM = os.environ.get("ALBY_TEKS_KUSTOM", "I'am Using ALBY-Userbot✨")
 
+# Untuk Melihat Repo
+REPO_NAME = os.environ.get("REPO_NAME") or "✨ ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ ✨"
+
 # Untuk Mengubah Pesan Welcome
 START_WELCOME = os.environ.get("START_WELCOME", None)
 
