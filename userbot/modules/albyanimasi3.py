@@ -820,7 +820,7 @@ CMD_HELP.update({
 
 CMD_HELP.update({
     "animasi6": 
-    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.orgil`\
+    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.orgil`\
     \n↳ : ntahlah coba aja.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.gblk`\
     \n↳ : cobain aja.\
