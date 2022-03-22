@@ -1861,7 +1861,7 @@ CMD_HELP.update({
     "\nUsage: Lakukan dan temukan kesenangan yang sesungguhnya."
     "\n\n>`.clap`"
     "\nUsage: Puji orang!."
-    \n\n\n`Selamat Mencoba Fitur Animasinya Kawan`"
+    \n\n\n>`Selamat Mencoba Fitur Animasinya Kawan`"
 })
 
 CMD_HELP.update({
