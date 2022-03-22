@@ -90,10 +90,11 @@ CMD_HELP.update({
     "animasi":
     "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.sadboy`\
     \n↳ : Biasalah sadboy hikss\
-    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.punten` dan `.pantau`\
-    \n↳ : Coba aja hehehe.\
+    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.punten`\
+    \n↳ : Coba aja sendiri.\
+    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.pantau`\
+    \n↳ : Coba aja sendiri.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.idiot`\
     \n↳ : u're ediot xixixi.\
-    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `kosong`\
-    \n↳ : Tunggu update selanjutnya kawan."
-})
+\n\n\n Selamat Mencoba Fitur Animasinya Kawan✨"
+})})
