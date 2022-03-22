@@ -274,6 +274,10 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 ALIVE_LOGO = os.environ.get(
     "ALIVE_LOGO") or "https://telegra.ph/file/cbe826936d4de9ec1838a.jpg"
 
+# Default .alive Group
+GROUP_LINK = os.environ.get(
+    "GROUP_LINK") or "t.me/ruangdiskusikami"
+
 # Default .helpme Logo
 INLINE_PIC = os.environ.get(
     "INLINE_PIC") or "https://telegra.ph/file/cbe826936d4de9ec1838a.jpg"
