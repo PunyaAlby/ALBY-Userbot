@@ -1816,7 +1816,7 @@ async def emoji_tengkorak(e):
 
 
 CMD_HELP.update({
-    "animasi2":
+    "animasi3":
     ">`.cowsay`"
     "\nUsage: sapi yang mengatakan sesuatu."
     "\n\n> .cp"
@@ -1861,10 +1861,11 @@ CMD_HELP.update({
     "\nUsage: Lakukan dan temukan kesenangan yang sesungguhnya."
     "\n\n>`.clap`"
     "\nUsage: Puji orang!."
+    \n\n\n`Selamat Mencoba Fitur Animasinya Kawan`"
 })
 
 CMD_HELP.update({
-    "animasi3":
+    "animasi4":
     ">`.f` <emoji/karakter>"
     "\nUsage: F."
     "\n\n>`.bt`"
