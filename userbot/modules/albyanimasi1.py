@@ -40,6 +40,68 @@ async def koc(e):
         await e.edit("༼ ༎ຶ ෴ ༎ຶ༽")
 
 
+@register(outgoing=True, pattern="^.hua2$")
+async def koc(e):
+    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+        await e.edit("Aku di ghosting")
+        sleep(1)
+        await e.edit("😭😭😭")
+        sleep(1)
+        await e.edit("Aku Sedihhh")
+        sleep(1)
+        await e.edit("Kenapa si")
+        sleep(1)
+        await e.edit("GAMPANG BGT NYAKITIN")
+        sleep(1)
+        await e.edit("HATI GUA BUKAN BUAT DI GHOSTING")
+        sleep(1)
+        await e.edit("TAI BANGET ASLI")
+        sleep(1)
+        await e.edit("PARAH SI")
+        sleep(1)
+        await e.edit("DEMI APASII")
+        sleep(1)
+        await e.edit("TWINGG")
+        sleep(1)
+        await e.edit("BODOH")
+        sleep(1)
+        await e.edit("PERSETAN")
+        sleep(1)
+        await e.edit("AKU DI GHOSTING")
+        sleep(1)
+        await e.edit("😡😡😡")
+        sleep(1)
+        await e.edit("🥴🥴🥴")
+        sleep(1)
+        await e.edit("TAIIII༼")
+        sleep(1)
+        await e.edit("KUCING")
+        sleep(1)
+        await e.edit("DISAMBALIN")
+        sleep(1)
+        await e.edit("KAMU ITU NYEBELIN")
+        sleep(2)
+        await e.edit("GAUSAH GANGGU")
+        sleep(1)
+        await e.edit("AKU STRESS")
+        sleep(1)
+        await e.edit("😭😭😭😭😭😭")
+        sleep(1)
+        await e.edit("🥴🥴🥴🥴")
+        sleep(1)
+        await e.edit("ADA YG MAU SAMA AKU?")
+        sleep(1)
+        await e.edit("PLISS AKU BUTUH")
+        sleep(1)
+        await e.edit("SESEORANG YG MAU NERIMA AKU")
+        sleep(1)
+        await e.edit("😔😔😔😔")
+        sleep(1)
+        await e.edit("MAU GAK JADI PACAR AKU??༼")
+        sleep(1)
+        await e.edit("༼ TAPI BOONG BODOH!!༽")
+
+
 @register(outgoing=True, pattern='^.huh(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
@@ -54,6 +116,23 @@ async def typewriter(typew):
     await typew.edit("`\n(\\_/)`"
                      "`\n(●_●)`"
                      "`\n💔<\\  *Terimakasih`")
+
+
+@register(outgoing=True, pattern='^.huh2(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("`\n(\\_/)`"
+                     "`\n(●_●)`"
+                     "`\n />❤️ *NIH AKU KASIH BUAT KAMU`")
+    sleep(3)
+    await typew.edit("`\n(\\_/)`"
+                     "`\n(●_●)`"
+                     "`\n/>💔  *Eh GAK JADI DEH,UDAH DI KASIH GRATIS MALAH DIRUSAKIN`")
+    sleep(2)
+    await typew.edit("`\n(\\_/)`"
+                     "`\n(●_●)`"
+                     "`\n💔<\\  *Terimakasih sudah dirusak..`")
+# CREDIT BY @PUNYA_ALBY
 
 
 @bot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
@@ -140,6 +219,31 @@ async def typewriter(typew):
                      "`\n💖<\\  *Tapi Bo'ong Hiyahiyahiya`")
 
 
+@register(outgoing=True, pattern='^.nah2(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("`\n(\\_/)`"
+                     "`\n(●_●)`"
+                     "`\n />💖 *Ini Buat Kamu`")
+    sleep(2)
+    await typew.edit("`\n(\\_/)`"
+                     "`\n(●_●)`"
+                     "`\n💖<\\  *Tapi Bo'ong`")
+    sleep(2)
+    await typew.edit("`\n(\\_/)`"
+                     "`\n(●_●)`"
+                     "`\n />💖 *eh maaf nih beneran buat kamu`")
+    sleep(2)
+    await typew.edit("`\n(\\_/)`"
+                     "`\n(●_●)`"
+                     "`\n/>💔  *KOK MALAH DIRUSAKIN SIH??`")
+    sleep(2)
+    await typew.edit("`\n(\\_/)`"
+                     "`\n(●_●)`"
+                     "`\n💖<\\  *Yaudah ku ambil lagi eumm`")
+# CREDIT BY @PUNYA_ALBY
+
+
 @bot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
 async def _(event):
 
@@ -173,14 +277,29 @@ async def _(event):
 
 CMD_HELP.update({
     "animasi1":
-    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.nah` ; `.huh` ; `.owner`\
+    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.nah`\
     \n↳ : Cobain Sendiri.\
-    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.bunga` ; `.buah`\
-    \n↳ : animasi.\
+    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.nah2`\
+    \n↳ : Cobain Sendiri.\
+    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.huh`\
+    \n↳ : Cobain Sendiri.\
+    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.huh2`\
+    \n↳ : Cobain Sendiri.\
+    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.owner`\
+    \n↳ : Cobain Sendiri.\
+    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.bunga`\
+    \n↳ : animasi bunga bergerak.\
+    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.buah`\
+    \n↳ : animasi buah bergerak.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.waktu`\
-    \n↳ : animasi.\
+    \n↳ : animasi jam bergerak.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.hua`\
     \n↳ : nangis.\
-    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.ceritacinta` ; `.canda`\
+    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.hua2`\
+    \n↳ : nangis versi ke 2.\
+    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.ceritacinta`\
     \n↳ : liat sendiri"
+    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.canda`\
+    \n↳ : liat sendiri"
+\n\n\n Selamat Mencoba Fitur Animasinya Kawan✨"
 })
