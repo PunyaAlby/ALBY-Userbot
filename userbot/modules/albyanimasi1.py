@@ -309,24 +309,19 @@ async def _(event):
 
 CMD_HELP.update({
     "animasi1":
-    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.nah`\
-    \n↳ : Cobain Sendiri.\
-    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.nah2`\
-    \n↳ : `Cobain Sendiri versi kedua.`\
-    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.huh`\
-    \n↳ : Cobain Sendiri.\
-    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.huh2`\
-    \n↳ : `Cobain Sendiri versi kedua.`\
-    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.owner`\
-    \n↳ : `kenalan sama owner ALBYUserbot.`\
-    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.owner2`\
-    \n↳ : Cobain Sendiri.\
+    "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.nah` | `.nah2`\
+    \n↳ : Cobain Sendiri ada dua versi.\
+    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.huh` | `.huh2`\
+    \n↳ : Cobain Sendiri ada dua versi.\
+    \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.owner` | `.owner2`\
+    \n↳ : Cobain Sendiri ada dua versi.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.bunga`\
     \n↳ : animasi bunga bergerak.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.buah`\
     \n↳ : animasi buah bergerak.\
     \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.waktu`\
     \n↳ : animasi jam bergerak.\
+    \n\n\n Selamat Mencoba Fitur Animasinya Kawan"
 })
 
 CMD_HELP.update({
