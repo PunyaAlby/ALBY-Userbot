@@ -785,7 +785,7 @@ async def typewriter(typew):
 @register(outgoing=True, pattern='^.ular2(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit(    nnnbvr
+    await typew.edit(
         "▃▅▆██████▆▅▃\n"
         "█▒⚫▒🔰▒⚫▒█\n"
         "█▒▒▒▒➖▒▒▒▒█\n"
