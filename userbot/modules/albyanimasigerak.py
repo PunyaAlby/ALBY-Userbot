@@ -1,5 +1,5 @@
 # Edit By @pikyus1
-# beberapa gambar dari @greyyvbss
+# @greyyvbss
 # Terima kasih untuk semua creator yang membuat animasi gambar✨
 # Maaf bagi creator yang belum dicantumkan atas kelalaian saya 🙏🏻 
 # collect image animation by @punya_alby
