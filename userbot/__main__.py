@@ -7,14 +7,20 @@
 
 import sys
 from importlib import import_module
+
+import requests
 from telethon.tl.functions.channels import InviteToChannelRequest as Addbot
-
-from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
-from userbot import BOTLOG_CHATID, BOT_USERNAME, BOT_TOKEN, BOT_VER, LOGS, ALIVE_NAME, bot
-
+from userbot import (
+    BOTLOG_CHATID,
+    BOT_USERNAME,
+    BOT_TOKEN,
+    BOT_VER,
+    LOGS,
+    ALIVE_NAME,
+    bot,
+)
 from userbot.modules import ALL_MODULES
-from userbot.utils import autobot, startupmessage
-
+from userbot.utils import autobot, autopilot, startupmessage
 
 try:
     bot.start()
@@ -25,7 +31,12 @@ except PhoneNumberInvalidError:
 for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
-# bot.loop.run_until_complete(checking())
+if not BOTLOG_CHATID:
+    LOGS.info(
+        "BOTLOG_CHATID Vars tidak terisi, Memulai Membuat Grup Otomatis..."
+    )
+    bot.loop.run_until_complete(autopilot())
+
 LOGS.info(
     f"Jika {ALIVE_NAME} Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/ruangdiskusikami")
 LOGS.info(
