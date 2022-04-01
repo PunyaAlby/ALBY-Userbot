@@ -2,13 +2,13 @@
    Heroku manager for your userbot
 """
 
+import codecs
 import heroku3
 import aiohttp
 import math
-
 import os
+import requests
 import asyncio
-
 
 from userbot import (
     HEROKU_APP_NAME,
@@ -16,7 +16,9 @@ from userbot import (
     BOTLOG,
     BOTLOG_CHATID,
     CMD_HELP,
-    ALIVE_NAME)
+    ALIVE_NAME,
+    REPO_NAME,
+    GROUP_LINK)
 from userbot.events import register
 
 heroku_api = "https://api.heroku.com"
@@ -108,7 +110,7 @@ async def set_var(var):
                 "**Mengganti Config Vars**:\n"
                 f"`{variable}` = `{value}`"
             )
-        await var.edit("`Sedang Di Proses, Mohon Menunggu Dalam Beberapa Detik 😼`")
+        await var.edit("`Sedang Di Proses, Mohon Menunggu Dalam Beberapa Detik `")
     else:
         if BOTLOG:
             await var.client.send_message(
@@ -130,7 +132,9 @@ async def dyno_usage(dyno):
     """
         Get your account Dyno Usage
     """
-    await dyno.edit("`Processing...`")
+    await dyno.edit("`Memeriksa Dyno Heroku anda...`")
+    await asyncio.sleep(3)
+    await dyno.edit("🤑")
     await asyncio.sleep(2)
     useragent = (
         'Mozilla/5.0 (Linux; Android 10; SM-G975F) '
@@ -181,19 +185,19 @@ async def dyno_usage(dyno):
             AppMinutes = math.floor(AppQuotaUsed % 60)
 
             await dyno.edit(
-                "✥ **ɪɴꜰᴏʀᴍᴀsɪ ᴅʏɴᴏ ʜᴇʀᴏᴋᴜ :**\n"
-                "╔════════════════════╗\n"
-                f" ☂ **ᴘᴇɴɢɢᴜɴᴀ ᴅʏɴᴏ sᴀᴀᴛ ɪɴɪ :**\n"
-                f"  ➽  `{AppHours}`**ᴊᴀᴍ**  `{AppMinutes}`**ᴍᴇɴɪᴛ**  "
-                f"**|**  [`{AppPercentage}`**%**]"
-                "\n◖════════════════════◗\n"
-                " ☂ **sɪsᴀ ᴋᴏᴜᴛᴀ ᴅʏɴᴏ ʙᴜʟᴀɴ ɪɴɪ :**\n"
-                f"  ➽  `{hours}`**ᴊᴀᴍ**  `{minutes}`**ᴍᴇɴɪᴛ**  "
-                f"**|**  [`{percentage}`**%**]\n"
-                f" ✠➲ **ʙᴏᴛ ᴏꜰ :** {ALIVE_NAME}  "
-                "\n╚════════════════════╝"
-            )
-            await asyncio.sleep(20)
+                f"★ **✨Iɴғᴏʀᴍᴀsɪ Dʏɴᴏ✨** ★\n╔══════━━━━━━━══════╗ \n"
+                f"➠**Penggunaan Kuota :** `{app.name}` \n"
+                f"➠ **Hasil** :  `{AppHours}` **Jam** - `{AppMinutes}` **Menit**\n"
+                f"➠ **Persen** : `{AppPercentage}`**%**\n"
+                f"◖═══════════════════◗ \n"
+                f"➠ **Sisa Kuota Bulan ini :**\n"
+                f"➠ **Sisa** :  `{hours}` **Jam** - `{minutes}` **Menit**\n"
+                f"➠ **Persen** :  `{percentage}`**%**\n"
+                f"╚══════━━━━━━━══════╝ \n"
+                f"➠ **OWNER**  : {ALIVE_NAME} \n"
+                f"➠ **REPO** : [ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ](http://github.com/PunyaAlby/ALBY-Userbot.git) \n"
+               )
+            await asyncio.sleep(5)
             await event.delete()
             return True
 
@@ -210,22 +214,20 @@ async def _(dyno):
     await dyno.edit("`Sedang Mengambil Logs Anda`")
     with open("logs.txt", "w") as log:
         log.write(app.get_log())
-    await dyno.delete()
-    await dyno.client.send_file(
-        dyno.chat_id,
-        file="logs.txt",
-        caption="`Ini Logs Heroku anda`",
-    )
+    fd = codecs.open("logs.txt", "r", encoding="utf-8")
+    data = fd.read()
+    key = (requests.post("https://nekobin.com/api/documents",
+                         json={"content": data}) .json() .get("result") .get("key"))
+    url = f"https://nekobin.com/raw/{key}"
+    await dyno.edit(f"`Ini Logs Heroku Anda :`\n\nPaste Ke: [Nekobin]({url})")
     return os.remove("logs.txt")
 
 
 CMD_HELP.update({"herokuapp": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.usage`"
                  "\n↳ : Check Quota Dyno Heroku"
-                 "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.logs`"
-                 "\n↳ : Melihat Logs Heroku Anda"
                  "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.set var <NEW VAR> <VALUE>`"
                  "\n↳ : Tambahkan Variabel Baru Atau Memperbarui Variabel"
-                 "\nSetelah Menyetel Variabel Tersebut, Rose-Userbot Akan Di Restart."
+                 "\nSetelah Menyetel Variabel Tersebut, ALBY-Userbot Akan Di Restart."
                  "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.get var atau .get var <VAR>`"
                  "\n↳ : Dapatkan Variabel Yang Ada, !!PERINGATAN!! Gunakanlah Di Grup Privasi Anda."
                  "\nIni Mengembalikan Semua Informasi Pribadi Anda, Harap berhati-hati."
