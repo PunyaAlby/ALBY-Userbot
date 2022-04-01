@@ -139,24 +139,9 @@ async def apiset(event):
                 Button.inline("ɪɴʟɪɴᴇ", data="inlinemenu"),
             ],
             [
-                Button.inline("ʜᴀɴᴅʟᴇʀ", data="hndlrmenu"),
                 Button.inline("ᴘᴍᴘᴇʀᴍɪᴛ", data="pmpermitmenu"),
             ],
             [Button.inline("ʙᴀᴄᴋ", data="settings")],
-        ],
-    )
-
-
-@callback(data=re.compile(b"hndlrmenu"))
-async def hndlrmenu(event):
-    await event.edit(
-        "**Silahkan Pilih VAR yang ingin anda Setting**",
-        buttons=[
-            [
-                Button.inline("ᴄᴍᴅ ʜᴀɴᴅʟᴇʀ", data="cmdhndlr"),
-                Button.inline("sᴜᴅᴏ ʜᴀɴᴅʟᴇʀ", data="sdhndlr"),
-            ],
-            [Button.inline("ʙᴀᴄᴋ", data="apiset")],
         ],
     )
 
@@ -278,10 +263,7 @@ async def alivemenu(event):
         buttons=[
             [
                 Button.inline("ᴘᴍᴘᴇʀᴍɪᴛ ᴏɴ", data="pmon"),
-                Button.inline("ᴘᴍᴘᴇʀᴍɪᴛ ᴏᴏꜰ", data="pmoff"),
-            ],
-            [
-                Button.inline("ᴀʟɪᴠᴇ ɴᴀᴍᴇ", data="alvname"),
+                Button.inline("ᴘᴍᴘᴇʀᴍɪᴛ ᴏꜰ", data="pmoff"),
             ],
             [Button.inline("ʙᴀᴄᴋ", data="apiset")],
         ],
