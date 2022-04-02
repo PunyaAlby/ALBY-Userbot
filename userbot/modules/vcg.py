@@ -11,7 +11,7 @@ from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 from telethon.tl import types
 from telethon.utils import get_display_name
 
-from userbot import call_py, ALIVE_NAME
+from userbot import ALIVE_NAME
 from userbot import CMD_HELP, CMD_HANDLER as cmd
 from userbot.utils import edit_delete, edit_or_reply, alby_cmd
 from userbot.events import register
