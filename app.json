@@ -23,7 +23,7 @@
       "required": true
     },
      "STRING_SESSION": {
-      "description": "Dapatkan String Session di termux caranya ada di repo, jika tidak tau reponya tanya ke @punya_alby di telegram",
+      "description": "Dapatkan String Session di group @ruangdiskusikami caranya ketikan #string di group @ruangdiskusikami, jika tidak tau groupnya tanya ke @punya_alby di telegram",
       "required": true
     },
     "HEROKU_APP_NAME": {
