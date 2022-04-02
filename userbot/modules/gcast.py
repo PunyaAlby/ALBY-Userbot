@@ -17,6 +17,7 @@ GCAST_BLACKLIST = [
     -1001473548283,  # SharingUserbot
     -1001638078842,  # RuangDiskusi
     -1001705349543,  # KyuraSupport
+    -1001538752127,  # AbingSupport
 
 ]
 
