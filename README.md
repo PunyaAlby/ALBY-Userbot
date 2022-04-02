@@ -29,7 +29,7 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
 
 ## Heroku Deployment
 <p align="center">
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/PunyaAlby/sayang/"> <img src="https://img.shields.io/badge/Deploy%20Ke%20Heroku-blue?style=flat&logo=heroku" width="250" height="50.00" /></a></p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/PunyaAlby/ALBYUSERBOT/"> <img src="https://img.shields.io/badge/Deploy%20Ke%20Heroku-blue?style=flat&logo=heroku" width="250" height="50.00" /></a></p>
 
 
 ### Support & Updates 
