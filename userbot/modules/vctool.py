@@ -1,5 +1,6 @@
 # Thanks Full To Team Ultroid
-# Fiks By ALBY @Punya_Alby
+# Ported By Vcky @VckyouuBitch
+# Copyright (c) 2021 Geez - Projects
 
 
 from telethon.tl.functions.channels import GetFullChannelRequest as getchat
@@ -8,11 +9,10 @@ from telethon.tl.functions.phone import DiscardGroupCallRequest as stopvc
 from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 
-from userbot import CMD_HELP, CMD_HANDLER as cmd
-from userbot.utils import alby_cmd
+from userbot import CMD_HELP
+from userbot.events import register
 
 NO_ADMIN = "`Maaf Kamu Bukan Admin 👮`"
-
 
 def vcmention(user):
     full_name = get_display_name(user)
@@ -21,10 +21,10 @@ def vcmention(user):
     return f"[{full_name}](tg://user?id={user.id})"
 
 
-async def get_call(alby):
-    alby = await alby.client(getchat(alby.chat_id))
-    await alby.client(getvc(alby.full_chat.call, limit=1))
-    return hehe.call
+async def get_call(ganteng):
+    alby = await ganteng.client(getchat(ganteng.chat_id))
+    albyy = await ganteng.client(getvc(alby.full_chat.call, limit=1))
+    return albyy.call
 
 
 def user_list(l, n):
@@ -32,7 +32,7 @@ def user_list(l, n):
         yield l[i: i + n]
 
 
-@alby_cmd(pattern="startvc$")
+@register(outgoing=True, pattern=r"^\.startvc$")
 async def start_voice(c):
     chat = await c.get_chat()
     admin = chat.admin_rights
@@ -48,7 +48,7 @@ async def start_voice(c):
         await c.edit(f"**ERROR:** `{ex}`")
 
 
-@alby_cmd(pattern="stopvc$")
+@register(outgoing=True, pattern=r"^\.stopvc$")
 async def stop_voice(c):
     chat = await c.get_chat()
     admin = chat.admin_rights
@@ -63,10 +63,9 @@ async def stop_voice(c):
     except Exception as ex:
         await c.edit(f"**ERROR:** `{ex}`")
 
-
-@alby_cmd(pattern="vcinvite")
+@register(outgoing=True, pattern=r"^\.vcinvite", groups_only=True)
 async def _(alby):
-    await alby.edit("`Sedang Menginvite Member...`")
+    await alby.edit("`Memulai Invite member group...`")
     users = []
     z = 0
     async for x in alby.client.iter_participants(alby.chat_id):
@@ -84,11 +83,11 @@ async def _(alby):
 
 CMD_HELP.update(
     {
-        "vcg": f"𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.startvc`\
+        "vcalls": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.startvc`\
          \n↳ : Memulai Obrolan Suara dalam Group.\
          \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.stopvc`\
          \n↳ : `Menghentikan Obrolan Suara Pada Group.`\
          \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.vcinvite`\
-         \n↳ : Invite semua member yang berada di group."
+         \n↳ : Invite semua member yang berada di group. (Kadang bisa kadang kaga)."
     }
 )
