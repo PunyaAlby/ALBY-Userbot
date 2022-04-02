@@ -11,7 +11,7 @@ from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 from telethon.tl import types
 from telethon.utils import get_display_name
 
-from userbot import owner
+from userbot import call_py, ALIVE_NAME
 from userbot import CMD_HELP, CMD_HANDLER as cmd
 from userbot.utils import edit_delete, edit_or_reply, alby_cmd
 from userbot.events import register
@@ -45,7 +45,7 @@ async def start_voice(c):
     creator = chat.creator
 
     if not admin and not creator:
-        await edit_delete(c, f"**Maaf {owner} Bukan Admin 👮**")
+        await edit_delete(c, f"**Maaf {ALIVE_NAME} Bukan Admin 👮**")
         return
     try:
         await c.client(startvc(c.chat_id))
@@ -62,7 +62,7 @@ async def stop_voice(c):
     creator = chat.creator
 
     if not admin and not creator:
-        await edit_delete(c, f"**Maaf {owner} Bukan Admin 👮**")
+        await edit_delete(c, f"**Maaf {ALIVE_NAME} Bukan Admin 👮**")
         return
     try:
         await c.client(stopvc(await get_call(c)))
@@ -110,6 +110,48 @@ async def change_title(e):
     except Exception as ex:
         await edit_delete(e, f"**ERROR:** `{ex}`")
 
+@alby_cmd(pattern="joinvc(?: |$)(.*)")
+async def join_(event):
+    xnxx = await edit_or_reply(event, f"**Processing**")
+    if len(event.text.split()) > 1:
+        chat = event.text.split()[1]
+        try:
+            chat = await event.client(GetFullUserRequest(chat))
+        except Exception as e:
+            await edit_delete(event, f"**ERROR:** `{e}`", 30)
+    else:
+        chat = event.chat_id
+        vcmention(event.sender)
+    if not call_py.is_connected:
+        await call_py.start()
+    await call_py.join_group_call(
+        chat,
+        AudioPiped("http://duramecho.com/Misc/SilentCd/Silence01s.mp3"),
+        stream_type=StreamType().pulse_stream,
+    )
+    try:
+        await xnxx.edit("**{}** `Joined VC in` `{}`".format(ALIVE_NAME, str(event.chat_id)))
+    except Exception as ex:
+        await edit_delete(event, f"**ERROR:** `{ex}`")
+
+
+@alby_cmd(pattern="leavevc(?: |$)(.*)")
+async def leavevc(event):
+    """leave video chat"""
+    xnxx = await edit_or_reply(event, "Processing")
+    chat_id = event.chat_id
+    from_user = vcmention(event.sender)
+    if from_user:
+        try:
+            await call_py.leave_group_call(chat_id)
+        except (NotInGroupCallError, NoActiveGroupCall):
+            pass
+        await xnxx.edit(
+            "**{}** `Left the voice in` `{}`".format(ALIVE_NAME, str(event.chat_id))
+        )
+    else:
+        await edit_delete(event, f"**Maaf {ALIVE_NAME} Tidak di VCG**")
+
 
 CMD_HELP.update(
     {
@@ -121,5 +163,16 @@ CMD_HELP.update(
          \n↳ : `Mengubah tittle/judul Obrolan Suara.`\
          \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.vcinvite`\
          \n↳ : Invite semua member yang berada di group."
+    }
+)
+
+CMD_HELP.update(
+    {
+        "vctools": f"**Plugin : **`vctools`\
+      \n\n  •  **Syntax :** `{cmd}joinvc`\
+      \n  •  **Function :** Melakukan Fake OS.\
+      \n\n  •  **Syntax :** `{cmd}leavevc`\
+      \n  •  **Function :** Memberhentikan Fake OS.\
+      "
     }
 )
