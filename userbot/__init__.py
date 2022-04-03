@@ -100,13 +100,6 @@ DEVS = (
     1337194042,
 )
 
-# VVIP | JANGAN DIISI YAA BODOH 
-VVIP = (
-    1441342342,
-    5089916692,
-    1938616056,
-    810227767,
-)
 
 SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
 BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
@@ -250,6 +243,14 @@ TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
 
 # Clean Welcome
 CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME", "True"))
+
+# VVIP | JANGAN DIISI YAA BODOH 
+VVIP = (
+    1441342342,
+    5089916692,
+    1938616056,
+    810227767,
+)
 
 # Zipfile Module
 ZIP_DOWNLOAD_DIRECTORY = os.environ.get("ZIP_DOWNLOAD_DIRECTORY", "./zips")
@@ -411,12 +412,17 @@ except Exception as e:
 async def checking():
     gocheck = str("@ruangdiskusikami")
     checker = str("@ruangprojects")
+    checker2 = str("@Ruang_Gabutku")
     try:
         await bot(GetSec(gocheck))
     except BaseException:
         pass
     try:
         await bot(GetSec(checker))
+    except BaseException:
+        pass
+    try:
+        await bot(GetSec(checker2))
     except BaseException:
         pass
 
