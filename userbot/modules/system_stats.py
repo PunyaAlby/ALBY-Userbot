@@ -306,29 +306,28 @@ async def redis(alive):
     await alive.edit("✨")
     await asyncio.sleep(2)
     output = (
-        f"┏━━━━━━━━━━━━━━━━━━━ \n"
-        f"┣  `Name     :` {DEFAULTUSER} \n"
-        f"┣  `Username :` @{user.username} \n"
-        f"┣  `Telethon :` Ver {version.__version__} \n"
-        f"┣  `Python   :` Ver {python_version()} \n"
-        f"┣  `Branch   :` {UPSTREAM_REPO_BRANCH} \n"
-        f"┣  `Bot Ver  :` {BOT_VER} \n"
-        f"┣  `Modules  :` {len(modules)} Modules \n"
-        f"┣  `GitHub   :` [ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ](https://github.com/PunyaAlby/ALBY-Userbot) \n"
-        f"┣  `Support  :` [ᴄʜᴀɴɴᴇʟ](https://t.me/ruangprojects) \n"
-        f"┣  `Owner    :` [『ⒶⓁⒷⓎ』](https://t.me/Punya_Alby) \n"
-        f"┗━━━━━━━━━━━━━━━━━━━")
+        f"**[ALBY-Userbot](https://github.com/PunyaAlby/ALBY-Userbot) Sedang Berjalan.**\n\n"
+        f"**{DEFAULTUSER}**\n\n"
+        f"**Name :** {DEFAULTUSER} \n"
+        f"**Modules :** `{len(modules)} Modules` \n"
+        f"**Bot Version :** `{BOT_VER}` \n"
+        f"**Python Version :** `{python_version()}` \n"
+        f"**Telethon Version :** `{version.__version__}` \n"
+        f"**Telethon Version :** `{version.__version__}` \n"
+        f"**Owner ALBY Userbot :** `[『ⒶⓁⒷⓎ』](https://t.me/Punya_Alby)` \n"
+        f"    **[𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/{GROUP})** | **[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/{CHANNEL})** | **[𝗢𝘄𝗻𝗲𝗿]({DEFAULTUSER})**"
+    )
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
             await alive.delete()
             msg = await bot.send_file(alive.chat_id, logo, caption=output)
-            await asyncio.sleep(500)
+            await asyncio.sleep(800)
             await msg.delete()
         except BaseException:
             await alive.edit(
-                output + "\n\n *`Logo Yang Disediakan Tidak Valid."
-                "\nPastikan Tautan Yang Anda Gunakan Valid`"
+                output + "\n\n ***Logo yang diberikan tidak valid."
+                "\nPastikan link diarahkan ke gambar logo**"
             )
             await asyncio.sleep(100)
             await alive.delete()
