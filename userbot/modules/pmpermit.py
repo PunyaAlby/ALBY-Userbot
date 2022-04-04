@@ -8,7 +8,9 @@ from sqlalchemy.exc import IntegrityError
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.functions.messages import ReportSpamRequest
 from telethon.tl.types import User
+from userbot.utils import edit_or_reply, edit_delete, alby_cmd
 from userbot.events import register
+from userbot import CMD_HANDLER as cmd
 from userbot import (
     BOTLOG,
     BOTLOG_CHATID,
@@ -41,15 +43,16 @@ CUSTOM_TEXT = str(
     PMPERMIT_TEXT) if PMPERMIT_TEXT else f"__Halo kawan, saya bot yang menjaga room chat ALBY-Userbot {DEFAULTUSER} di mohon jangan melakukan spam , kalau anda melakukan itu OTOMATIS saya akan memblockir anda!__ \n"
 DEF_UNAPPROVED_MSG = (
     "╔═════════════════════╗\n"
-    "“𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐓𝐡𝐞 𝐏𝐫𝐢𝐯𝐚𝐜𝐲 𝐌𝐞𝐬𝐬𝐚𝐠𝐞”    ”\n"
+    "                ᴘʀɪᴠᴀᴄʏ ᴍᴇssᴀɢᴇ     \n"
     "╚═════════════════════╝\n"
-    "**Dimohon Untuk Tidak Melakukan Spam Ke Room Chat ini!** \n"
+    "**Dimohon Untuk Tidak Melakukan Spam Chat!** \n"
     f"**Karena bisa menggangu** {ALIVE_NAME} [⚠️]({ALIVE_LOGO})\n"
-    f"**Jika Anda Melakukan Spamming, Anda Akan Terblokir Otomatis!**\n"
-    "╔═════════════════════╗\n"
-    f"➠ **Owner :** {ALIVE_NAME} \n"
-    f"➠ **Pesan Otomatis by ALBY-Userbot** \n"
-    "╚═════════════════════╝")
+    f"**Jika Anda Masih Melakukan Spam chat, Anda Akan Terblokir Otomatis!**\n"
+    "╭╌╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╌╮\n"
+    "┊➭ ᴘᴇsᴀɴ ᴏᴛᴏᴍᴀᴛɪs           \n"
+    "┊➭ [ɢʀᴏᴜᴘ ꜱᴜᴘᴘᴏʀᴛ](https://t.me/ruangdiskusikami)           \n"
+    "┊➭ [ᴄʜᴀɴɴᴇʟ ᴜᴘᴅᴀᴛᴇꜱ](https://t.me/ruangprojects)           \n"
+    "╰╌╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╌╯")
 # =================================================================
 
 
@@ -189,7 +192,7 @@ async def auto_accept(event):
                     )
 
 
-@register(outgoing=True, pattern=r"^\.notifoff$")
+@alby_cmd(pattern="notifoff$")
 async def notifoff(noff_event):
     """For .notifoff command, stop getting notifications from unapproved PMs."""
     try:
@@ -200,7 +203,7 @@ async def notifoff(noff_event):
     await noff_event.edit("`Notifikasi Dari Pesan Pribadi Tidak Disetujui, Telah Dibisukan!`")
 
 
-@register(outgoing=True, pattern=r"^\.notifon$")
+@alby_cmd(pattern="notifon$")
 async def notifon(non_event):
     """For .notifoff command, get notifications from unapproved PMs."""
     try:
@@ -211,14 +214,14 @@ async def notifon(non_event):
     await non_event.edit("`Notifikasi Dari Pesan Pribadi Tidak Disetujui, Tidak Lagi Dibisukan!`")
 
 
-@register(outgoing=True, pattern=r"^\.(?:setuju|ok)\s?(.)?")
+@alby_cmd(pattern="(?:setuju|ok)\\s?(.)?")
 async def approvepm(apprvpm):
     """For .ok command, give someone the permissions to PM you."""
     try:
         from userbot.modules.sql_helper.globals import gvarstatus
         from userbot.modules.sql_helper.pm_permit_sql import approve
     except AttributeError:
-        return await apprvpm.edit("`Running on Non-SQL mode!`")
+        return await edit_delete(apprvpm, "`Running on Non-SQL mode!`")
 
     if apprvpm.reply_to_msg_id:
         reply = await apprvpm.get_reply_message()
@@ -247,10 +250,10 @@ async def approvepm(apprvpm):
     try:
         approve(uid)
     except IntegrityError:
-        return await apprvpm.edit("`Oke Pesan Anda Sudah Diterima ツ`")
+        return await edit_delete(apprvpm, "`Oke Pesan Anda Sudah Diterima ツ`")
 
-    await apprvpm.edit(f"`Hai` [{name0}](tg://user?id={uid}) `Pesan Anda Sudah Diterima 😎`")
-    await apprvpm.delete(getmsg)
+    await edit_delete(apprvpm, f"`Hai` [{name0}](tg://user?id={uid}) `Pesan Anda Sudah Diterima 😎`")
+    await edit_delete(apprvpm, getmsg)
     await message.delete()
 
     if BOTLOG:
@@ -260,12 +263,12 @@ async def approvepm(apprvpm):
         )
 
 
-@register(outgoing=True, pattern=r"^\.(?:tolak|nopm)\s?(.)?")
+@alby_cmd(pattern="(?:tolak|nopm)\\s?(.)?")
 async def disapprovepm(disapprvpm):
     try:
         from userbot.modules.sql_helper.pm_permit_sql import dissprove
     except BaseException:
-        return await disapprvpm.edit("`Running on Non-SQL mode!`")
+        return await edit_delete(disapprvpm, "`Running on Non-SQL mode!`")
 
     if disapprvpm.reply_to_msg_id:
         reply = await disapprvpm.get_reply_message()
@@ -278,9 +281,9 @@ async def disapprovepm(disapprvpm):
         aname = await disapprvpm.client.get_entity(disapprvpm.chat_id)
         name0 = str(aname.first_name)
 
-    await disapprvpm.edit(
-        f"`Maaf` [{name0}](tg://user?id={disapprvpm.chat_id}) `Pesan Anda Telah Ditolak, Mohon Jangan Melakukan Spam Ke Room Chat!`"
-    )
+    await edit_or_reply(disapprvpm,
+                        f"`Maaf` [{name0}](tg://user?id={disapprvpm.chat_id}) `Pesan Anda Telah Ditolak, Mohon Jangan Melakukan Spam Ke Room Chat!`"
+                        )
 
     if BOTLOG:
         await disapprvpm.client.send_message(
@@ -290,7 +293,7 @@ async def disapprovepm(disapprvpm):
         )
 
 
-@register(outgoing=True, pattern=r"^\.block$")
+@alby_cmd(pattern="block$")
 async def blockpm(block):
     """For .block command, block people from PMing you!"""
     if block.reply_to_msg_id:
@@ -322,7 +325,7 @@ async def blockpm(block):
         )
 
 
-@register(outgoing=True, pattern=r"^\.unblock$")
+@alby_cmd(pattern="unblock$")
 async def unblockpm(unblock):
     """For .unblock command, let people PMing you again!"""
     if unblock.reply_to_msg_id:
@@ -339,7 +342,7 @@ async def unblockpm(unblock):
         )
 
 
-@register(outgoing=True, pattern=r"^.(set|get|reset) pm_msg(?: |$)(\w*)")
+@alby_cmd(pattern="(set|get|reset) pm_msg(?: |$)(\\w*)")
 async def add_pmsg(cust_msg):
     """Set your own Unapproved message"""
     if not PM_AUTO_BAN:
