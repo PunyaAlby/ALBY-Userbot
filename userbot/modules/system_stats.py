@@ -296,15 +296,6 @@ async def amireallyalive(alive):
 async def redis(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
-    await alive.edit("__Sedang Memuat.__")
-    await alive.edit("__Sedang Memuat..__")
-    await alive.edit("__Sedang Memuat.__")
-    await alive.edit("__Sedang Memuat..__")
-    await alive.edit("__Sedang Memuat...__")
-    await alive.edit("__Sedang Memuat..__")
-    await alive.edit("__Sedang Memuat...__")
-    await alive.edit("✨")
-    await asyncio.sleep(2)
     output = (
         f"**[ALBY-Userbot](https://github.com/PunyaAlby/ALBY-Userbot) Sedang Berjalan.**\n\n"
         f"**{DEFAULTUSER}**\n\n"
