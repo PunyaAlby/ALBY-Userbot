@@ -296,17 +296,22 @@ async def amireallyalive(alive):
 async def redis(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
-    await alive.edit("`Menghubungkan......`")
+    await alive.edit("__Sedang Memuat.__")
+    await alive.edit("__Sedang Memuat..__")
+    await alive.edit("__Sedang Memuat...__")
+    await alive.edit("__Sedang Memuat.__")
+    await alive.edit("__Sedang Memuat..__")
+    await alive.edit("__Sedang Memuat...__")
     await asyncio.sleep(1)
     await alive.edit("✨")
     await asyncio.sleep(3)
     output = (
         f"**╭✠╼━━━━━━❖━━━━━━━✠╮** \n"
-        f"**     ✨ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ✨** \n"
+        f"**       ✨ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ✨** \n"
         f"**╰✠╼━━━━━━❖━━━━━━━✠╯** \n"
-        f"**╭╼════════════════════╾╮** \n"
+        f"**╭╼══════════════════╾╮** \n"
         f"**│  ⇱ **SISTEM ALIVE USERBOT** ⇲ \n"
-        f"**┟╼════════════════════╾┤** \n"
+        f"**┟╼══════════════════╾┤** \n"
         f"**╟➭ 🤴 **Owner     :** {DEFAULTUSER} \n"
         f"**╟➭ 🔎 **Username :** @{user.username} \n"
         f"**╟➭ ⚙️ **Telethon :** v.{version.__version__} \n"
@@ -314,11 +319,11 @@ async def redis(alive):
         f"**╟➭ 🛠️ **Branch   :** {UPSTREAM_REPO_BRANCH} \n"
         f"**╟➭ 👾 **Bot Ver  :** v{BOT_VER} \n"
         f"**╟➭ 📂 **Plugins  :** {len(modules)} Plugin \n"
-        f"**╭╌╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╌╮**\n"
+        f"**├╌╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╌╮**\n"
         f"**┊➭ [✨ ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ ✨](https://github.com/PunyaAlby/ALBY-Userbot)  \n"
         f"**┊➭ [ɢʀᴏᴜᴘ ꜱᴜᴘᴘᴏʀᴛ](https://t.me/ruangdiskusikami) \n"
         f"**┊➭ [ᴄʜᴀɴɴᴇʟ ᴜᴘᴅᴀᴛᴇꜱ](https://t.me/ruangprojects) \n"
-        f"**╰╌╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╌╯")
+        f"**╰╌╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╾╌╯")
     if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
