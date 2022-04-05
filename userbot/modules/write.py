@@ -1,4 +1,6 @@
 # Created by @punya_alby
+# FROM ALBY-Userbot <https://github.com/PunyaAlby/ALBY-Userbot>
+# ALBY GANTENG
 # ░█████╗░██╗░░░░░██████╗░██╗░░░██╗
 # ██╔══██╗██║░░░░░██╔══██╗╚██╗░██╔╝
 # ███████║██║░░░░░██████╦╝░╚████╔╝░
