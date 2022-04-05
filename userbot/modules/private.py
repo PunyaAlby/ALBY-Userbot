@@ -152,28 +152,13 @@ async def alivemenu(event):
         "**Silahkan Pilih VAR yang ingin anda Setting**",
         buttons=[
             [
-                Button.inline("ᴀʟɪᴠᴇ ᴇᴍᴏᴊɪ", data="alvmoji"),
+                Button.inline("ᴀʟɪᴠᴇ ɴᴀᴍᴇ", data="alvname"),
                 Button.inline("ᴀʟɪᴠᴇ ʟᴏɢᴏ", data="alvlogo"),
             ],
             [
-                Button.inline("ᴀʟɪᴠᴇ ɴᴀᴍᴇ", data="alvname"),
                 Button.inline("ʙᴀᴄᴋ", data="apiset"),
             ],
             [Button.inline("ʙᴀᴄᴋ", data="settings")],
-        ],
-    )
-
-
-@callback(data=re.compile(b"inlinemenu"))
-async def inlinemenu(event):
-    await event.edit(
-        "**Silahkan Pilih VAR yang ingin anda Setting**",
-        buttons=[
-            [
-                Button.inline("ɪɴʟɪɴᴇ ᴇᴍᴏᴊɪ", data="inmoji"),
-                Button.inline("ɪɴʟɪɴᴇ ᴘɪᴄ", data="inpics"),
-            ],
-            [Button.inline("ʙᴀᴄᴋ", data="apiset")],
         ],
     )
 
