@@ -168,6 +168,7 @@ async def dyno_usage(dyno):
             minutes_remaining = remaining_quota / 60
             hours = math.floor(minutes_remaining / 60)
             minutes = math.floor(minutes_remaining % 60)
+            day = math.floor(hours / 24)
 
             """ - User App Used Quota - """
             Apps = result['apps']
@@ -193,6 +194,7 @@ async def dyno_usage(dyno):
                 f"➠ **Sisa Kuota Bulan ini :**\n"
                 f"➠ **Sisa** :  `{hours}` **Jam** - `{minutes}` **Menit**\n"
                 f"➠ **Persen** :  `{percentage}`**%**\n"
+                f"➠ **Perkiraan Kadaluwarsa Heroku**:  `{day}` **day(s)**\n"  
                 f"╚══════━━━━━━━══════╝ \n"
                 f"➠ **OWNER**  : {ALIVE_NAME} \n"
                 f"➠ **REPO** : [ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ](http://github.com/PunyaAlby/ALBY-Userbot.git) \n"
