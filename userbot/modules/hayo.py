@@ -1,8 +1,8 @@
 # © @punya_alby
-# ⚠️ Don't Remove Credits
+# ⚠️ Don't Remove Credits ⚠️
+# FROM ALBY-Userbot <https://github.com/PunyaAlby/ALBY-Userbot>
+# ALBY GANTENG
 # Hayoooloh Kesini pasti nyari cmd help nya kan? Awokawok yaudah pakai aja
-# Asalkan Jangan hapus credit ya bodoh
-# Sampai ketahuan ku tandai akun Telegram Anda!
 # ░█████╗░██╗░░░░░██████╗░██╗░░░██╗
 # ██╔══██╗██║░░░░░██╔══██╗╚██╗░██╔╝
 # ███████║██║░░░░░██████╦╝░╚████╔╝░
@@ -10,7 +10,7 @@
 # ██║░░██║███████╗██████╦╝░░░██║░░░
 # ╚═╝░░╚═╝╚══════╝╚═════╝░░░░╚═╝░░░
 # PERSETAN DENGAN ORANG YANG HAPUS CREDIT!
-
+# ⚠️ Do not remove credits ⚠️
 
 from userbot import CMD_HELP
 
