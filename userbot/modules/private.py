@@ -136,9 +136,6 @@ async def apiset(event):
         buttons=[
             [
                 Button.inline("ᴀʟɪᴠᴇ", data="alivemenu"),
-                Button.inline("ɪɴʟɪɴᴇ", data="inlinemenu"),
-            ],
-            [
                 Button.inline("ᴘᴍᴘᴇʀᴍɪᴛ", data="pmpermitmenu"),
             ],
             [Button.inline("ʙᴀᴄᴋ", data="settings")],
