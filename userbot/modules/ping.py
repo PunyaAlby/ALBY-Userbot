@@ -16,8 +16,9 @@ from userbot import CMD_HELP, DEVS, StartTime, ALIVE_NAME
 from userbot.events import register
 
 absen = [
-    "**Hadir ganteng** 🥵",
+    "**Hadir ganteng** 🥰",
     "**Hadir bro** 😎",
+    "**Sungkem Lord ALBY Datang** ",
     "**Hadir kak** 😉",
     "**Hadir bang** 😁",
     "**Hadir kak maap telat** 🥺",
@@ -27,7 +28,7 @@ absen = [
     "**Hadir Bro Alby** 😁",
     "**maaf ka habis nemenin ka Alby** 🥺",
     "**maaf ka habis disuruh Tuan alby** 🥺🙏🏻",
-    "**Hadir Sayang** 🥵"
+    "**Hadir Sayang** 😘"
     "**Hadir alby Akuuuuhhh** ☺️",
     "**Hadir alby Pacar Aku** 🥰",
 ]
