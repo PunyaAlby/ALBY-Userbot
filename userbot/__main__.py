@@ -18,12 +18,14 @@ from userbot import (
     LOGS,
     ALIVE_NAME,
     bot,
+    call_py,
 )
 from userbot.modules import ALL_MODULES
 from userbot.utils import autobot, autopilot, startupmessage
 
 try:
     bot.start()
+    call_py.start()
 except PhoneNumberInvalidError:
     print("The phone number is incorrect!")
     exit(1)
