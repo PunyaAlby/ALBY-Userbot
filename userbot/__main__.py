@@ -17,6 +17,7 @@ from userbot import (
     BOT_VER,
     LOGS,
     ALIVE_NAME,
+    albyblacklist,
     bot,
     call_py,
 )
@@ -26,9 +27,18 @@ from userbot.utils import autobot, autopilot, startupmessage
 try:
     bot.start()
     call_py.start()
-except PhoneNumberInvalidError:
-    print("The phone number is incorrect!")
-    exit(1)
+    user = bot.get_me()
+    albyblacklist = requests.get(
+        "https://raw.githubusercontent.com/PunyaAlby/ALBYBL/master/albyblacklist.json"
+    ).json()
+    if user.id in albyblacklist:
+        LOGS.warning(
+            "MAKANYA GA USAH BERTINGKAH GOBLOK, USERBOTnya GUA MATIIN NAJIS BANGET DIPAKE ORANG KEK LU.\nCredits: @moonscrsh"
+        )
+        sys.exit(1)
+except Exception as e:
+    LOGS.info(str(e), exc_info=True)
+    sys.exit(1)
 
 for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
