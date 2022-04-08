@@ -6,14 +6,14 @@ import random
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.utils import Xa_cmd
+from userbot.utils import alby_cmd
 
 from userbot import owner
 from telethon.tl.types import InputMessagesFilterPhotos
 from telethon.tl.types import InputMessagesFilterVideo
 
 
-@Xa_cmd(pattern="ppanime$")
+@alby_cmd(pattern="ppanime$")
 async def _(event):
     try:
         ppanimenya = [
@@ -33,7 +33,7 @@ async def _(event):
         await event.edit("**Lagi Ga Nemu pp anime!.**")
 
 
-@Xa_cmd(pattern="wallanime$")
+@alby_cmd(pattern="walanime$")
 async def _(event):
     try:
         wallpapernya = [
@@ -53,7 +53,7 @@ async def _(event):
         await event.edit("**Silahkan coba lagi.**")
 
 
-@Xa_cmd(pattern="shortanime$")
+@alby_cmd(pattern="shortanime$")
 async def _(event):
     try:
         shortanimenya = [
@@ -78,10 +78,17 @@ CMD_HELP.update(
         "tentanganime": f"❖ **Plugin : **`tentanganime`\
         \n\n ┌❖ **Perintah :** `.ppanime`\
         \n └❖ **Berfungsi : **untuk mendapatkan pp anime random.\
-        \n\n ┌❖ **Perintah :** `.wallanime`\
-        \n └❖ **Berfungsi : **Untuk Mendapatkan Wallpaper Aninme Random.\
         \n\n ┌❖ **Perintah :** `.shortanime`\
         \n └❖ **Berfungsi : **Untuk Mendapatkan Video Anime Pendek untuk Status whatsapp.\
+    "
+    }
+)
+
+CMD_HELP.update(
+    {
+        "walpaperanime": f"❖ **Plugin : **`walpaperanime`\
+        \n\n ┌❖ **Perintah :** `.walanime`\
+        \n └❖ **Berfungsi : **Untuk Mendapatkan Wallpaper Aninme Random.\
     "
     }
 )
