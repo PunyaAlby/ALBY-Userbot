@@ -75,7 +75,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "tentanganime": f"❖ **Plugin : **`tentanganime`\
+        "anime2": f"❖ **Plugin : **`tentanganime`\
         \n\n ┌❖ **Perintah :** `.ppanime`\
         \n └❖ **Berfungsi : **untuk mendapatkan pp anime random.\
         \n\n ┌❖ **Perintah :** `.shortanime`\
