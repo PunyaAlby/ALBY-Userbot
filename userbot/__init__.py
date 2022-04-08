@@ -910,9 +910,9 @@ with bot:
         @tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             buttons = [
-                (custom.Button.inline("📤 **Re-Open Menu** 📤", data="gcback"),),
+                (custom.Button.inline("📤 Kembali ke Menu 📤", data="gcback"),),
             ]
-            await event.edit("⚜️ **Menu diTutup** ⚜️", file=albylogo, buttons=buttons)
+            await event.edit("⚜️ **Menu DiTutup** ⚜️", file=albylogo, buttons=buttons)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(
