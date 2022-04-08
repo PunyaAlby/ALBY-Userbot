@@ -29,7 +29,7 @@ async def _(event):
         await event.client.send_file(
             event.chat_id,
             file=random.choice(walpapernya),
-            caption=f" Nih Kak Walpaper Aesthetic nya 😎 [{owner}](tg://user?id={aing.id})",
+            caption=f" Nih Kak Walpaper Aesthetic nya [{owner}](tg://user?id={aing.id}) 😎",
         )
         await event.delete()
     except Exception:
@@ -49,7 +49,7 @@ async def _(event):
         await event.client.send_file(
             event.chat_id,
             file=random.choice(walpapernya),
-            caption=f" Nih Kak Walpaper Aesthetic nya 😎 [{owner}](tg://user?id={aing.id})",
+            caption=f" Nih Kak Walpaper BTS nya [{owner}](tg://user?id={aing.id}) 😎",
         )
         await event.delete()
     except Exception:
