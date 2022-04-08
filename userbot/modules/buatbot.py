@@ -47,7 +47,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "Membuat bot father": "**𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : **`Membuat bot father`\
+        "Buat bot father": "**𝘾𝙤𝙢𝙢𝙖𝙣𝙙 : **`Membuat bot father`\
         \n\n  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.botbaru`\
         \n  **Usage : **Untuk Membuat Bot Dari Botfather.\
         \n\n  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.botbaru  < bot_name > <bot_username >`\
