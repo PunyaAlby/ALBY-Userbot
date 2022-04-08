@@ -114,6 +114,20 @@ DEVS = (
     1337194042,
 )
 
+# Blacklist User for use ALBY-Userbot
+while 0 < 6:
+    _BLACKLIST = get(
+        "https://raw.githubusercontent.com/PunyaAlby/ALBYBL/master/albyblacklist.json"
+    )
+    if _BLACKLIST.status_code != 200:
+        if 0 != 5:
+            continue
+        albyblacklist = []
+        break
+    albyblacklist = _BLACKLIST.json()
+    break
+
+del _BLACKLIST
 
 SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
 BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
@@ -529,15 +543,18 @@ def paginate_help(page_number, loaded_modules, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "««", data="{}_prev({})".format(prefix, modulo_page)
+                    "⪻", data="{}_prev({})".format(prefix, modulo_page)
                 ),
-                custom.Button.inline("Tutup", b"close"),
                 custom.Button.inline(
-                    "»»", data="{}_next({})".format(prefix, modulo_page)
+                    "🗑️ Close", data="{}_close({})".format(prefix, modulo_page)
+                ),
+                custom.Button.inline(
+                    "⪼", data="{}_next({})".format(prefix, modulo_page)
                 ),
             )
         ]
     return pairs
+
 
 
 def ibuild_keyboard(buttons):
@@ -560,30 +577,33 @@ with bot:
         user = bot.get_me()
         uid = user.id
         owner = user.first_name
+        asst = tgbot.get_me()
+        botusername = asst.username
         logo = ALIVE_LOGO
-        roselogo = INLINE_PIC
+        albylogo = ALIVE_LOGO
+        cmd = CMD_HANDLER
         tgbotusername = BOT_USERNAME
         BTN_URL_REGEX = re.compile(
             r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
         )
+        S_PACK_NAME = os.environ.get("S_PACK_NAME", f"Sticker Pack {owner}")
+       
+        main_help_button = [
+            [
+                Button.inline("🗂️ Modules", data="reopen"),     
+                Button.url("Settings 🛠️ ", f"t.me/{botusername}"),  
+            ],
+            [
+                Button.inline("📺 VC-Plugin", data="alby_inline"),
+            ],
+            [
+                Button.url("☎️ Support", f"https://t.me/ruangdiskusikami"),
+                Button.url("📣 Updates", f"https://t.me/ruangprojects"),
+            ],
+            [Button.inline("🗑️ Close", data="close")],
+        ]
 
-        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(rb"reopen")))
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
-                current_page_number = int(looters)
-                buttons = paginate_help(
-                    current_page_number, dugmeler, "helpme")
-                text = f"**✨ ALBY-Userbot ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n✣ **ᴏᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴊᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**"
-                await event.edit(
-                    text,
-                    file=roselogo,
-                    buttons=buttons,
-                    link_preview=False,
-                )
-            else:
-                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
+        
         @tgbot.on(events.NewMessage(incoming=True,
                   func=lambda e: e.is_private))
         async def bot_pms(event):
@@ -655,6 +675,46 @@ with bot:
                                 f"**ERROR:** Saat menyimpan detail pesan di database\n`{e}`",
                             )
 
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"get_back")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                current_page_number = int(looters)
+                buttons = paginate_help(
+                    current_page_number, dugmeler, "helpme")
+                text = f"**🕹️ ALBY-Userbot Inline Menu 🕹️**\n\n🧸 **Owner :** [{user.first_name}](tg://user?id={user.id})\n🔮 **Jumlah :** `{len(dugmeler)}` **Modules**",
+                await event.edit(
+                    text,
+                    file=albylogo,
+                    buttons=buttons,
+                    link_preview=False,
+                )
+            else:
+                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME}"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"reopen")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                buttons = paginate_help(0, dugmeler, "helpme")
+                text = f"**🕹️ ALBY-Userbot Inline Menu 🕹️**\n\n🧸 **Owner :** [{user.first_name}](tg://user?id={user.id})\n🔮 **Jumlah :** `{len(dugmeler)}` **Modules**"
+                await event.edit(
+                    text,
+                    file=albylogo,
+                    buttons=buttons,
+                    link_preview=False,
+                )
+            else:
+                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
         @tgbot.on(events.InlineQuery)
         async def inline_handler(event):
             builder = event.builder
@@ -663,22 +723,22 @@ with bot:
             if event.query.user_id == uid and query.startswith("@KyyUserbot"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = await event.builder.photo(
-                    file=roselogo,
+                    file=albylogo,
                     link_preview=False,
-                    text=f"**✨ ALBY-Userbot ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n✣ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴊᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**",
-                    buttons=buttons,
+                    text = f"**🕹️ ALBY-Userbot Inline Menu 🕹️**\n\n🧸 **Owner :** [{user.first_name}](tg://user?id={user.id})\n🔮 **Jumlah :** `{len(dugmeler)}` **Modules**",
+                    buttons=main_help_button,
                 )
             elif query.startswith("repo"):
                 result = builder.article(
                     title="Repository",
-                    description="Repository ALBY-Userbot",
+                    description="Repository ALBY - Userbot",
                     url="https://t.me/ruangdiskusikami",
                     thumb=InputWebDocument(
-                        INLINE_PIC,
+                        ALIVE_LOGO,
                         0,
                         "image/jpeg",
                         []),
-                    text="**ALBY-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **ᴏᴡɴᴇʀ ʀᴇᴘᴏ :** [『ⒶⓁⒷⓎ』](https://t.me/Punya_Alby)\n✣ **sᴜᴘᴘᴏʀᴛ :** @ruangdiskusikami\n✣ **ʀᴇᴘᴏsɪᴛᴏʀʏ :** [ALBY-Userbot](https://github.com/PunyaAlby/ALBY-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    text="**ALBY-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n❖ **Owner Repo :** [『ⒶⓁⒷⓎ』](https://t.me/punya_alby)\n❖ **Support :** @ruangdiskusikami\n❖ **Repository :** [ALBY-Userbot](https://github.com/PunyaAlby/ALBY-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url(
@@ -729,18 +789,18 @@ with bot:
                     description="ALBY - Userbot | Telethon",
                     url="https://t.me/ruangdiskusikami",
                     thumb=InputWebDocument(
-                        INLINE_PIC,
+                        ALIVE_LOGO,
                         0,
                         "image/jpeg",
                         []),
-                    text=f"**ALBY-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **ᴏᴡɴᴇʀ:** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴀssɪsᴛᴀɴᴛ:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**ᴜᴘᴅᴀᴛᴇs:** @ruangprojects\n➖➖➖➖➖➖➖➖➖➖",
+                    text=f"**ALBY-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n❖ **Owner :** [{user.first_name}](tg://user?id={user.id})\n❖ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Updates:** @ruangprojects\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url(
-                                "ɢʀᴏᴜᴘ",
+                                "Groups",
                                 "https://t.me/ruangdiskusikami"),
                             custom.Button.url(
-                                "ʀᴇᴘᴏ",
+                                "Repo",
                                 "https://github.com/PunyaAlby/ALBY-Userbot"),
                         ],
                     ],
@@ -768,17 +828,91 @@ with bot:
                 )
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"helpme_close\((.+?)\)")
+            )
+        )
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid or event.query.user_id in DEVS and SUDO_USERS:
-                openlagi = custom.Button.inline(
-                    "• Re-Open Menu •", data="reopen")
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:  # @Kyy-Userbot
+                # https://t.me/TelethonChat/115200                               # @Fliks-Userbot
                 await event.edit(
-                    "⚜️ **ʜᴇʟᴘ ᴍᴏᴅᴇ ʙᴜᴛᴛᴏɴ ᴅɪᴛᴜᴛᴜᴘ!** ⚜️", buttons=openlagi
-                )
+                    file=albylogo,
+                    link_preview=True,
+                    buttons=main_help_button)
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"gcback")
+            )
+        )
+        async def gback_handler(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:  # @Kyy-Userbot
+                # https://t.me/TelethonChat/115200                               # @Fliks-Userbot    
+                text = (
+                    f"**🕹️ ALBY-Userbot Inline Menu 🕹️**\n\n🧸 **Owner :** [{user.first_name}](tg://user?id={user.id})\n🔮 **Jumlah :** `{len(dugmeler)}` **Modules**")
+                await event.edit(
+                    text,
+                    file=albylogo,
+                    link_preview=True,
+                    buttons=main_help_button)
+
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"alby_inline")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
+                text = (
+                    f"""
+     🎧 **VC-Plugin Menu** 🎧
+
+┌❖ **Syntax   :** {cmd}play <Judul Lagu>
+└❖ **Function :** Untuk Memutar Lagu
+ 
+┌❖ **Syntax   :** {cmd}vplay <Judul Video>
+└❖ **Function :** Untuk Memutar Video 
+  
+┌❖ **Syntax   :** {cmd}end
+└❖ **Function :** Untuk Menghentikan Lagu/Video
+ 
+┌❖ **Syntax   :** {cmd}skip
+└❖ **Function :** Untuk Melewati Video/Lagu 
+  
+┌❖ **Syntax   :** {cmd}pause
+└❖ **Function :** Untuk memberhentikan video/lagu
+  
+┌❖ **Syntax   :** {cmd}resume
+└❖ **Function :** Untuk melanjutkan pemutaran video/lagu
+  
+┌❖ **Syntax   :** {cmd}volume 1-200
+└❖ **Function :** Untuk mengubah volume
+ 
+┌❖ **Syntax   :** {cmd}playlist
+└❖ **Function :** Untuk menampilkan daftar putar
+
+┌❖ **Syntax   :** {cmd}joinvc
+└❖ **Function :** Untuk Join Vcg Menggunakan bot(fake os)
+
+┌❖ **Syntax   :** {cmd}leavevc
+└❖ **Function :** Untuk Turun Vcg Menggunakan bot(fake os)
+""")
+                await event.edit(
+                    text,
+                    file=albylogo,
+                    link_preview=True,
+                    buttons=[Button.inline("🔙 Back", data="gcback")])
             else:
-                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
+                reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(events.CallbackQuery(data=b"close"))
+        async def close(event):
+            buttons = [
+                (custom.Button.inline("📤 **Re-Open Menu** 📤", data="gcback"),),
+            ]
+            await event.edit("⚜️ **Menu diTutup** ⚜️", file=albylogo, buttons=buttons)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(
@@ -812,7 +946,6 @@ with bot:
                         + modul_name
                         + " "
                     )
-
                 else:
                     help_string = (str(CMD_HELP[modul_name]).replace(
                         "`", "").replace("**", ""))
@@ -825,8 +958,9 @@ with bot:
                     )
                 )
                 await event.edit(
-                    reply_pop_up_alert, buttons=[Button.inline("Back", data="reopen")]
+                    reply_pop_up_alert, buttons=[Button.inline("🔙 Back", data="reopen")]
                 )
+
             else:
                 reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
