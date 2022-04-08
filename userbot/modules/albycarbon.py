@@ -233,7 +233,7 @@ async def crbn(event):
 
 CMD_HELP.update(
     {
-        "albycarbon": f"❖ **Plugin : **`carbon`\
+        "carbon2": f"❖ **Plugin : **`carbon`\
         \n\n ┌❖ **Perintah :** `.carbon` <text/reply>\
         \n └❖ **Berfungsi : **Carbonisasi teks dengan pengaturan default.\
         \n\n ┌❖ **Perintah :** `.rcarbon` <text/reply>\
