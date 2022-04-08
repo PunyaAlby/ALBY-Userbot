@@ -5,10 +5,10 @@
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.utils import edit_or_reply, cilik_cmd
+from userbot.utils import edit_or_reply, alby_cmd
 
 
-@cilik_cmd(pattern="puasa(?: |$)(.*)")
+@alby_cmd(pattern="puasa(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -18,7 +18,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="puasa2(?: |$)(.*)")
+@alby_cmd(pattern="puasa2(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -28,7 +28,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="puasa3(?: |$)(.*)")
+@alby_cmd(pattern="puasa3(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -38,7 +38,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="puasa4(?: |$)(.*)")
+@alby_cmd(pattern="puasa4(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -48,7 +48,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="puasa5(?: |$)(.*)")
+@alby_cmd(pattern="puasa5(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -58,7 +58,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="puasa6(?: |$)(.*)")
+@alby_cmd(pattern="puasa6(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -68,7 +68,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="takjil(?: |$)(.*)")
+@alby_cmd(pattern="takjil(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -78,7 +78,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="takjil2(?: |$)(.*)")
+@alby_cmd(pattern="takjil2(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -88,7 +88,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="takjil3(?: |$)(.*)")
+@alby_cmd(pattern="takjil3(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -98,7 +98,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="ngaji(?: |$)(.*)")
+@alby_cmd(pattern="ngaji(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -108,7 +108,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="ngaji2(?: |$)(.*)")
+@alby_cmd(pattern="ngaji2(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -118,7 +118,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="sabar(?: |$)(.*)")
+@alby_cmd(pattern="sabar(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -128,7 +128,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="sabar2(?: |$)(.*)")
+@alby_cmd(pattern="sabar2(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -138,7 +138,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="setan(?: |$)(.*)")
+@alby_cmd(pattern="setan(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -148,7 +148,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="setan2(?: |$)(.*)")
+@alby_cmd(pattern="setan2(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -158,7 +158,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="setan3(?: |$)(.*)")
+@alby_cmd(pattern="setan3(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -168,7 +168,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="s1(?: |$)(.*)")
+@alby_cmd(pattern="s1(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -178,7 +178,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="s2(?: |$)(.*)")
+@alby_cmd(pattern="s2(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -188,7 +188,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="s3(?: |$)(.*)")
+@alby_cmd(pattern="s3(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -198,7 +198,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="sdkh(?: |$)(.*)")
+@alby_cmd(pattern="sdkh(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -208,7 +208,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="sdkh2(?: |$)(.*)")
+@alby_cmd(pattern="sdkh2(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -218,7 +218,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="warteg(?: |$)(.*)")
+@alby_cmd(pattern="warteg(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -228,7 +228,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="warteg2(?: |$)(.*)")
+@alby_cmd(pattern="warteg2(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -238,7 +238,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="warteg3(?: |$)(.*)")
+@alby_cmd(pattern="warteg3(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -248,7 +248,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="sahur(?: |$)(.*)")
+@alby_cmd(pattern="sahur(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -258,7 +258,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="sahur2(?: |$)(.*)")
+@alby_cmd(pattern="sahur2(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -268,7 +268,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="sahur3(?: |$)(.*)")
+@alby_cmd(pattern="sahur3(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -278,22 +278,22 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="buka(?: |$)(.*)")
+@alby_cmd(pattern="buka(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**Selamat Berbuka Puasa...😊**")
 
 
-@cilik_cmd(pattern="magrib(?: |$)(.*)")
+@alby_cmd(pattern="magrib(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**Cieeee Lagi nungguin Adzan Magrib Ya wkwkw**")
 
 
-@cilik_cmd(pattern="bukber(?: |$)(.*)")
+@alby_cmd(pattern="bukber(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**Ga ada niatan Bukber ni GC?**")
 
 
-@cilik_cmd(pattern="bukber2(?: |$)(.*)")
+@alby_cmd(pattern="bukber2(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -303,7 +303,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="bukbersad(?: |$)(.*)")
+@alby_cmd(pattern="bukbersad(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -313,7 +313,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="taraw1(?: |$)(.*)")
+@alby_cmd(pattern="taraw1(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -323,7 +323,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="taraw2(?: |$)(.*)")
+@alby_cmd(pattern="taraw2(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -333,7 +333,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="nyemen(?: |$)(.*)")
+@alby_cmd(pattern="nyemen(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -343,7 +343,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="nyemen2(?: |$)(.*)")
+@alby_cmd(pattern="nyemen2(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -352,7 +352,7 @@ async def _(event):
     )
     await event.delete()
 
-@cilik_cmd(pattern="nyemen3(?: |$)(.*)")
+@alby_cmd(pattern="nyemen3(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -362,7 +362,7 @@ async def _(event):
     await event.delete()
 
 
-@cilik_cmd(pattern="sholat(?: |$)(.*)")
+@alby_cmd(pattern="sholat(?: |$)(.*)")
 async def _(event):
     await edit_or_reply(event, "**SHOLAT TOLOL! PERCUMA LO PUASA TAPI GA SHOLAT, NAHAN LAPER HAUS SIA SIA DOANG!! JANGAN MIKIRIN TELEGRAM TERUS, DI AKHIRAT GA BISA WAR SAMA MALAIKAT TOLOL!**")
 
