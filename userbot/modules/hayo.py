@@ -673,9 +673,9 @@ CMD_HELP.update(
     {
         "animasiwibu": f"❖ **Plugin : **`animasiwibu`\
         \n\n ┌❖ **Perintah :** `.wibu`\
-        \n └❖ **Berfungsi : **Mengirim Animasi teks cek sendiri.\
+        \n └❖ **Berfungsi : **Mengirim Animasi teks ngatain wibu.\
         \n\n ┌❖ **Perintah :** `.wibu2`\
-        \n └❖ **Berfungsi : **Mengirim Animasi teks cek sendiri.\
+        \n └❖ **Berfungsi : **Mengirim Animasi teks ngatain wibu.\
     "
     }
 )
