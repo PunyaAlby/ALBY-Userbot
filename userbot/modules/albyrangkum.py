@@ -9,6 +9,7 @@
 # ⚠️ Do not remove credits ⚠️
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
+from telethon.tl.functions.contacts import UnblockRequest
 from userbot import CMD_HELP
 from userbot.events import register
 
@@ -33,11 +34,7 @@ async def _(event):
             await event.client.forward_messages(event.chat_id, rangkum)
             await event.delete()
         except YouBlockedUserError:
-            await event.edit(
-                "**Error: Mohon Buka Blokir** @awakmalas_bot **Dan Coba Lagi!**"
-            )
-        await event.client.delete_messages(conv.chat_id, [event.chat_id, rangkum.id])
-        await event.delete()
+            await event.client(UnblockRequest("1341722721"))
 
 
 CMD_HELP.update(
