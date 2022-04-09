@@ -34,7 +34,10 @@ async def _(event):
             await event.client.forward_messages(event.chat_id, rangkum)
             await event.delete()
         except YouBlockedUserError:
-            await event.client(UnblockRequest("1341722721"))
+            await conv.send_message(f"/ringkas {text}")
+            rangkum = await conv.get_response()
+            await event.client.forward_messages(event.chat_id, rangkum)
+            await event.delete()
 
 
 CMD_HELP.update(
