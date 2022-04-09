@@ -13,7 +13,7 @@ from userbot import CMD_HELP
 from userbot.utils import alby_cmd
 import random
 from userbot import owner
-from telethon.tl.types import InputMessagesFilterVoice
+from telethon.tl.types import InputMessagesFilterAudio
 
 
 @alby_cmd(pattern="murotal$")
@@ -22,7 +22,7 @@ async def _(event):
         murotalnya = [
             murotal
             async for murotal in event.client.iter_messages(
-                "@MurotalAnakJuz30", filter=InputMessagesFilterVoice
+                "@MurotalAnakJuz30", filter=InputMessagesFilterAudio
             )
         ]
         aing = await event.client.get_me()
