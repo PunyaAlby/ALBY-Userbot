@@ -29,10 +29,9 @@ async def _(event):
     async with event.client.conversation(chat) as conv:
         try:
             msg_rangkum = await conv.send_message(f"/ringkas {text}")
-            response = await conv.get_response()
             rangkum = await conv.get_response()
             """ - don't spam notif - """
-            await event.client.send_read_acknowledge(conv.chat_id)
+            await event.client.forward_messages(conv.chat_id, rangkum.id)
         except YouBlockedUserError:
             await event.edit(
                 "**Error: Mohon Buka Blokir** @awakmalas_bot **Dan Coba Lagi!**"
@@ -44,7 +43,7 @@ async def _(event):
             rangkum,
             caption=f"Rangkuman by [✨ ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ ✨](https://t.me/ruangprojects/82)",
         )
-        await event.client.delete_messages(conv.chat_id, [msg_rangkum.id, response.id, rangkum.id])
+        await event.client.delete_messages(conv.chat_id, [msg_rangkum.id, rangkum.id])
         await event.delete()
 
 
