@@ -28,7 +28,7 @@ async def _(event):
 
     async with event.client.conversation(chat) as conv:
         try:
-            msg_rangkum.id = await conv.send_message(f"/ringkas {text}")
+            await conv.send_message(f"/ringkas {text}")
             rangkum = await conv.get_response()
             await event.client.forward_messages(event.chat_id, rangkum)
             await event.delete()
@@ -36,7 +36,7 @@ async def _(event):
             await event.edit(
                 "**Error: Mohon Buka Blokir** @awakmalas_bot **Dan Coba Lagi!**"
             )
-        await event.client.delete_messages(conv.chat_id, [msg_rangkum.id, rangkum.id])
+        await event.client.delete_messages(conv.chat_id, [event.chat_id, rangkum.id])
         await event.delete()
 
 
