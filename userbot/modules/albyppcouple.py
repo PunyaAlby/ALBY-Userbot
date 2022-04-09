@@ -73,7 +73,7 @@ CMD_HELP.update(
     {
         "ppcouple": f"❖ **Plugin : **`ppcouple`\
         \n\n ┌❖ **Perintah :** `.ppcp`\
-        \n └❖ **Berfungsi : **Mengirim Animasi teks cek sendiri.\
+        \n └❖ **Berfungsi : **Untuk Mencari PP Couple secara random.\
         \n\n ┌❖ **Perintah :** `.ppcp2`\
         \n └❖ **Berfungsi : **Untuk Mencari PP Couple secara random versi kedua.\
         \n\n ┌❖ **Perintah :** `.ppcp3`\
