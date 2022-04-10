@@ -7,10 +7,6 @@ FROM kyyex/kyy-userbot:busterv2
 
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install ffmpeg -y
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
-    apt-get install -y nodejs && \
-    npm i -g npm
-
 RUN git clone -b ALBY-Userbot https://github.com/PunyaAlby/ALBY-Userbot /root/userbot
 RUN mkdir /root/userbot/.bin
 RUN pip install --upgrade pip setuptools
