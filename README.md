@@ -28,8 +28,10 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
 
 
 ## Heroku Deployment
+The easy way to host this bot, deploy to Heroku, Change the app country to Europe (it will help to make the bot stable).
 <p align="center">
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/PunyaAlby/ALBY-Userbot/"> <img src="https://img.shields.io/badge/Deploy%20Ke%20Heroku-blue?style=flat&logo=heroku" width="250" height="50.00" /></a></p>
+<a href="https://heroku.com/deploy?template=https://github.com/PunyaAlby/ALBY-Userbot/"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="250""/</a>  
+<a href="https://telegram.dog/XTZ_HerokuBot?start=UHVueWFBbGJ5L0FMQlktVXNlcmJvdCBBTEJZLVVzZXJib3Q"><img src="https://img.shields.io/badge/Deploy%20Via%20Telegram-blue?style=for-the-badge&logo=telegram" width="250""/</a>  </p>
 
 
 ### Support & Updates 
@@ -46,5 +48,5 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan dengan bijak.
 *   [Kyy](https://github.com/muhammadrizky16/Kyy-Userbot)   Kyy - Userbot
 *   [Sendi](https://github.com/SendiAp/Rose-Userbot)   Rose-Userbot
 *   [Skyzu](https://github.com/Skyzu/skyzu-userbot)   skyzu-userbot
-*   [ALBY](https://github.com/PunyaAlby/ALBY-Userbot)   ALBY-Userbot
+*   [『ⒶⓁⒷⓎ』](https://github.com/PunyaAlby/ALBY-Userbot)   ALBY-Userbot
 *   DAN TERIMAKASIH KEPADA USERBOT LAINNYA
