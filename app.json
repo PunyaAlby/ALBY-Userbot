@@ -15,15 +15,15 @@
   "stack": "container",
   "env": {
     "API_KEY": {
-      "description": "Dapatkan Api Key di web my.telegram.org",
+      "description": "Dapatkan Api Key di web my.telegram.org atau mampir di https://t.me/ruangprojects/138",
       "required": true
     },
     "API_HASH": {
-      "description": "Dapatkan Api Hash Di Web my.telegram.org",
+      "description": "Dapatkan Api Hash Di Web my.telegram.org atau mampir di https://t.me/ruangprojects/138",
       "required": true
     },
      "STRING_SESSION": {
-      "description": "Dapatkan String Session di group @ruangdiskusikami caranya ketikan #string di group @ruangdiskusikami, jika tidak tau groupnya tanya ke @punya_alby di telegram",
+      "description": "Dapatkan String Session di https://t.me/ruangprojects/143, jika masih bingung tanya ke @punya_alby di telegram",
       "required": true
     },
     "HEROKU_APP_NAME": {
@@ -31,7 +31,7 @@
       "required": true
     },
     "HEROKU_API_KEY": {
-      "description": "Heroku API KEY mu, dapatkan dari web 'https://dashboard.heroku.com/account'",
+      "description": "Heroku API KEY mu, dapatkan dari web 'https://dashboard.heroku.com/account' atau mampir di https://t.me/ruangprojects/141",
       "value": "Check Di Heroku Dashboard Mu",
       "required": true
     },
