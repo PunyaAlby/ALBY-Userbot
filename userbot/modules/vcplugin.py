@@ -12,15 +12,19 @@ from pytgcalls.types.input_stream.quality import (
     LowQualityVideo,
     MediumQualityVideo,
 )
+from pytgcalls.exceptions import (
+    NoActiveGroupCall,
+    NotInGroupCallError
+)
 from telethon.tl import types
 from telethon.utils import get_display_name
+from telethon.tl.functions.users import GetFullUserRequest
 from youtubesearchpython import VideosSearch
 
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP
+from userbot import VVIP, CMD_HELP
 from userbot import PLAY_PIC as fotoplay
 from userbot import QUEUE_PIC as ngantri
-from userbot import ALIVE_NAME
 from userbot import call_py
 from userbot.utils import bash, edit_delete, edit_or_reply, alby_cmd
 from userbot.utils.chattitle import CHAT_TITLE
@@ -31,6 +35,7 @@ from userbot.utils.queues.queues import (
     get_queue,
     pop_an_item,
 )
+from userbot.events import register
 from userbot.utils.thumbnail import gen_thumb
 
 
@@ -243,7 +248,8 @@ async def vc_vplay(event):
             if hm == 0:
                 await xnxx.edit(f"`{ytlink}`")
             elif chat_id in QUEUE:
-                pos = add_to_queue(chat_id, songname, ytlink, url, "Video", RESOLUSI)
+                pos = add_to_queue(
+                    chat_id, songname, ytlink, url, "Video", RESOLUSI)
                 caption = f"💡 **Video Ditambahkan Ke antrian »** `#{pos}`\n\n**🏷 Judul:** [{songname}]({url})\n**⏱ Durasi:** `{duration}`\n🎧 **Atas permintaan:** {from_user}"
                 await xnxx.delete()
                 await event.client.send_file(chat_id, thumb, caption=caption)
@@ -254,7 +260,13 @@ async def vc_vplay(event):
                         AudioVideoPiped(ytlink, HighQualityAudio(), hmmm),
                         stream_type=StreamType().pulse_stream,
                     )
-                    add_to_queue(chat_id, songname, ytlink, url, "Video", RESOLUSI)
+                    add_to_queue(
+                        chat_id,
+                        songname,
+                        ytlink,
+                        url,
+                        "Video",
+                        RESOLUSI)
                     await xnxx.edit(
                         f"**🏷 Judul:** [{songname}]({url})\n**⏱ Durasi:** `{duration}`\n💡 **Status:** `Sedang Memutar Video`\n🎧 **Atas permintaan:** {from_user}",
                         link_preview=False,
@@ -320,7 +332,8 @@ async def vc_vplay(event):
             if hm == 0:
                 await xnxx.edit(f"`{ytlink}`")
             elif chat_id in QUEUE:
-                pos = add_to_queue(chat_id, songname, ytlink, url, "Video", RESOLUSI)
+                pos = add_to_queue(
+                    chat_id, songname, ytlink, url, "Video", RESOLUSI)
                 caption = f"💡 **Video Ditambahkan Ke antrian »** `#{pos}`\n\n🏷 **Judul:** [{songname}]({url})\n**⏱ Durasi:** `{duration}`\n🎧 **Atas permintaan:** {from_user}"
                 await xnxx.delete()
                 await event.client.send_file(chat_id, thumb, caption=caption)
@@ -331,7 +344,13 @@ async def vc_vplay(event):
                         AudioVideoPiped(ytlink, HighQualityAudio(), hmmm),
                         stream_type=StreamType().pulse_stream,
                     )
-                    add_to_queue(chat_id, songname, ytlink, url, "Video", RESOLUSI)
+                    add_to_queue(
+                        chat_id,
+                        songname,
+                        ytlink,
+                        url,
+                        "Video",
+                        RESOLUSI)
                     caption = f"🏷 **Judul:** [{songname}]({url})\n**⏱ Durasi:** `{duration}`\n💡 **Status:** `Sedang Memutar Video`\n🎧 **Atas permintaan:** {from_user}"
                     await xnxx.delete()
                     await event.client.send_file(chat_id, thumb, caption=caption)
@@ -432,54 +451,6 @@ async def vc_volume(event):
         await edit_delete(event, "**Tidak Sedang Memutar Streaming**")
 
 
-# credits by @vckyaz < vicky \>
-# FROM GeezProjects < https://github.com/vckyou/GeezProjects \>
-# ambil boleh apus credits jangan ya ka:)
-
-
-@alby_cmd(pattern="joinvc(?: |$)(.*)")
-async def join_(event):
-    xnxx = await edit_or_reply(event, f"**Processing**")
-    if len(event.text.split()) > 1:
-        chat = event.text.split()[1]
-        try:
-            chat = await event.client(GetFullUserRequest(chat))
-        except Exception as e:
-            await edit_delete(event, f"**ERROR:** `{e}`", 30)
-    else:
-        chat = event.chat_id
-        vcmention(event.sender)
-    if not call_py.is_connected:
-        await call_py.start()
-    await call_py.join_group_call(
-        chat,
-        AudioPiped("http://duramecho.com/Misc/SilentCd/Silence01s.mp3"),
-        stream_type=StreamType().pulse_stream,
-    )
-    try:
-        await xnxx.edit("**{}** `Joined VC in` `{}`".format(ALIVE_NAME, str(event.chat_id)))
-    except Exception as ex:
-        await edit_delete(event, f"**ERROR:** `{ex}`")
-
-
-@alby_cmd(pattern="leavevc(?: |$)(.*)")
-async def leavevc(event):
-    """leave video chat"""
-    xnxx = await edit_or_reply(event, "Processing")
-    chat_id = event.chat_id
-    from_user = vcmention(event.sender)
-    if from_user:
-        try:
-            await call_py.leave_group_call(chat_id)
-        except (NotInGroupCallError, NoActiveGroupCall):
-            pass
-        await xnxx.edit(
-            "**{}** `Left the voice in` `{}`".format(ALIVE_NAME, str(event.chat_id))
-        )
-    else:
-        await edit_delete(event, f"**Maaf {ALIVE_NAME} Tidak di VCG**")
-
-
 @alby_cmd(pattern="playlist$")
 async def vc_playlist(event):
     chat_id = event.chat_id
@@ -498,10 +469,62 @@ async def vc_playlist(event):
                 hmm = chat_queue[x][0]
                 hmmm = chat_queue[x][2]
                 hmmmm = chat_queue[x][3]
-                PLAYLIST = PLAYLIST + "\n" + f"**#{x}** - [{hmm}]({hmmm}) | `{hmmmm}`"
+                PLAYLIST = PLAYLIST + "\n" + \
+                    f"**#{x}** - [{hmm}]({hmmm}) | `{hmmmm}`"
             await edit_or_reply(event, PLAYLIST, link_preview=False)
     else:
         await edit_delete(event, "**Tidak Sedang Memutar Streaming**")
+
+
+# credits by @vckyaz < vicky \>
+# FROM GeezProjects < https://github.com/vckyou/GeezProjects \>
+# ambil boleh apus credits jangan ya ka:)
+
+@alby_cmd(pattern="joinvc(?: |$)(.*)")
+@register(incoming=True, from_users=VVIP,
+          pattern=r"^\.joinvcs(?: |$)(.*)")
+async def join_(event):
+    xnxx = await edit_or_reply(event, f"**Processing**")
+    if len(event.text.split()) > 1:
+        chat = event.text.split()[1]
+        try:
+            chat = await event.client(GetFullUserRequest(chat))
+        except Exception as e:
+            await edit_delete(event, f"**ERROR:** `{e}`", 30)
+    else:
+        chat = event.chat_id
+        vcmention(event.sender)
+    if not call_py.is_connected:
+        await call_py.start()
+    await call_py.join_group_call(
+        chat,
+        AudioPiped(
+            'http://duramecho.com/Misc/SilentCd/Silence01s.mp3'
+        ),
+        stream_type=StreamType().pulse_stream,
+    )
+    try:
+        await xnxx.edit("**{} • Joined VC in** `{}`".format(str(event.chat_id)))
+    except Exception as ex:
+        await edit_delete(event, f"**ERROR:** `{ex}`")
+
+
+@alby_cmd(pattern="leavevc(?: |$)(.*)")
+@register(incoming=True, from_users=VVIP,
+          pattern=r"^\.leavevcs(?: |$)(.*)")
+async def leavevc(event):
+    """ leave video chat """
+    xnxx = await edit_or_reply(event, "Processing")
+    chat_id = event.chat_id
+    from_user = vcmention(event.sender)
+    if from_user:
+        try:
+            await call_py.leave_group_call(chat_id)
+        except (NotInGroupCallError, NoActiveGroupCall):
+            pass
+        await xnxx.edit("**Left the voice chat** `{}`".format(str(event.chat_id)))
+    else:
+        await edit_delete(event, f"**Tidak Sedang Memutar Streaming**")
 
 
 @call_py.on_stream_end()
@@ -548,7 +571,6 @@ CMD_HELP.update(
         \n  •  **Function : **Untuk mengubah volume (Membutuhkan Hak admin)\
         \n\n  •  **Syntax :** `{cmd}playlist`\
         \n  •  **Function : **Untuk menampilkan daftar putar Lagu/Video\
-        \n  •  **Function : **Untuk memberhentikan video/lagu yang sedang diputar\
     "
     }
 )
@@ -557,9 +579,9 @@ CMD_HELP.update(
     {
         "vctools": f"**Plugin : **`vctools`\
       \n\n  •  **Syntax :** `{cmd}joinvc`\
-      \n  •  **Function :** Melakukan Fake OS.\
+      \n  •  **Function :** Melakukan Fake voice chat group.\
       \n\n  •  **Syntax :** `{cmd}leavevc`\
-      \n  •  **Function :** Memberhentikan Fake OS.\
+      \n  •  **Function :** Memberhentikan Fake voice chat group.\
       "
     }
 )
