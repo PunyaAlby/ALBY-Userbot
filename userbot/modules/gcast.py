@@ -18,7 +18,6 @@ GCAST_BLACKLIST = [
     -1001638078842,  # RuangDiskusi
     -1001692751821,  # ramsupport
     -1001459812644,  # GeezSupport
-    -1001705349543,  # KyuraSupport
     -1001538752127,  # AbingSupport
 
 ]
