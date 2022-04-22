@@ -25,8 +25,11 @@ async def _(event):
     raise events.StopPropagation
 
 
-CMD_HELP.update({
-    "aeshtetic":
-    "`.ae <teks>`\
-    \nUsage: mengubah font teks"
-})
+CMD_HELP.update(
+    {
+        "aeshtetic": f"❖ **Plugin : **`aeshtetic`\
+        \n\n ┌❖ **Perintah :** `.ae` <teks>\
+        \n └❖ **Berfungsi :**mengubah font teks.\
+    "
+    }
+)
