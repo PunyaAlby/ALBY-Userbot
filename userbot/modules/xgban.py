@@ -28,11 +28,3 @@ async def testing(event):
             await event.edit(str(e))
         await sleep(.5)
     await event.edit("Tidak Ada yang Terjadi di sini🙃🙂")
-
-CMD_HELP.update(
-    {
-        "allban": "**Plugin : **`allban`\
-    \n\n**Syntax : **`.allban`\
-    \n**Function : **ban all members in 1 cmnd"
-    }
-)
