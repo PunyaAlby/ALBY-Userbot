@@ -32,7 +32,7 @@ async def on_new_message(event):
             break
 
 
-@register(outgoing=True, pattern=r"^\.addbl(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.addblacklist(?: |$)(.*)")
 async def on_add_black_list(addbl):
     text = addbl.pattern_match.group(1)
     to_blacklist = list(
@@ -46,7 +46,7 @@ async def on_add_black_list(addbl):
     )
 
 
-@register(outgoing=True, pattern=r"^\.listbl(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.blacklist(?: |$)(.*)")
 async def on_view_blacklist(listbl):
     all_blacklisted = sql.get_chat_blacklist(listbl.chat_id)
     OUT_STR = "Blacklists in the Current Chat:\n"
@@ -71,7 +71,7 @@ async def on_view_blacklist(listbl):
         await listbl.edit(OUT_STR)
 
 
-@register(outgoing=True, pattern=r"^\.rmbl(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.rmblacklist(?: |$)(.*)")
 async def on_delete_blacklist(rmbl):
     text = rmbl.pattern_match.group(1)
     to_unblacklist = list(
@@ -83,15 +83,15 @@ async def on_delete_blacklist(rmbl):
         if sql.rm_from_blacklist(rmbl.chat_id, trigger.lower()):
             successful += 1
     if not successful:
-        await rmbl.edit("**{}** `Tidak Ada Di Blacklist`".format(text))
+        await rmbl.edit("`Maaf,` **{}** `Tidak Ada Di Blacklist`".format(text))
     else:
         await rmbl.edit("`Berhasil Menghapus` **{}** `Di Blacklist`".format(text))
 
 
-CMD_HELP.update({"blacklist": ">`.listbl`"
+CMD_HELP.update({"blacklist": ">`.blacklist`"
                  "\nUsage: Melihat daftar blacklist yang aktif di obrolan."
-                 "\n\n>`.addbl <kata>`"
+                 "\n\n>`.addblacklist <kata>`"
                  "\nUsage: Memasukan pesan ke blacklist 'kata blacklist'."
                  "\nlord bot akan otomatis menghapus 'kata blacklist'."
-                 "\n\n>`.rmbl <kata>`"
+                 "\n\n>`.rmblacklist <kata>`"
                  "\nUsage: Menghapus kata blacklist."})
