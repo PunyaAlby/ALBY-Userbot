@@ -9,7 +9,7 @@
 
 
 <p align="center">
-  <img src="https://telegra.ph/file/cbe826936d4de9ec1838a.jpg">
+  <img src="https://telegra.ph/file/a48641f34f11c771e49b8.jpg">
 </p>
 
 
@@ -35,7 +35,7 @@ The easy way to host this bot, deploy to Heroku, Change the app country to Europ
 
 
 ### Support & Updates 
-<a href="https://t.me/ruangdiskusikami"><img src="https://img.shields.io/badge/Join-Group%20Support-red.svg?style=for-the-badge&logo=Telegram"></a> <a href="https://t.me/ruangprojects"><img src="https://img.shields.io/badge/Join-Updates%20Channel-white.svg?style=for-the-badge&logo=Telegram"></a>
+<a href="https://t.me/KataPrenjon"><img src="https://img.shields.io/badge/Join-Group%20Support-red.svg?style=for-the-badge&logo=Telegram"></a> <a href="https://t.me/FriendlyZONEE"><img src="https://img.shields.io/badge/Join-Updates%20Channel-white.svg?style=for-the-badge&logo=Telegram"></a>
 
 ### Follow Me :
 <p align="left">
