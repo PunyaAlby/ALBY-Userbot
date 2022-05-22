@@ -16,7 +16,7 @@ from userbot import (
     BOTLOG,
     BOTLOG_CHATID,
     CMD_HELP,
-    ALIVE_NAME,
+    owner,
     REPO_NAME,
     GROUP_LINK)
 from userbot.events import register
@@ -196,8 +196,7 @@ async def dyno_usage(dyno):
                 f"➠ **Persen** :  `{percentage}`**%**\n"
                 f"➠ **Perkiraan Kadaluwarsa Heroku**:  `{day}` **day(s)**\n"  
                 f"╚══════━━━━━━━══════╝ \n"
-                f"➠ **OWNER**  : {ALIVE_NAME} \n"
-                f"➠ **REPO** : [ᴀʟʙʏ ᴜꜱᴇʀʙᴏᴛ](http://github.com/PunyaAlby/ALBY-Userbot.git) \n"
+                f"➠ **OWNER**  : {owner} \n"
                )
             await asyncio.sleep(5)
             await event.delete()
