@@ -1,7 +1,7 @@
 {
-  "name": "ALBY-Userbot",
+  "name": "SKYZO-Userbot",
   "description": "ALBY-USERBOT KHUSUS YANG DIGUNAKAN UNTUK BERSENANG-SENANG DI TELEGRAM.",
-  "logo": "https://telegra.ph/file/cbe826936d4de9ec1838a.jpg",
+  "logo": "https://telegra.ph/file/a48641f34f11c771e49b8.jpg",
   "keywords": [
     "telegram",
     "userbot",
@@ -10,8 +10,8 @@
     "productivity"
   ],
   "repository": "https://github.com/PunyaAlby/ALBY-Userbot",
-  "telegram": "https://t.me/Punya_Alby",
-  "success_url": "https://t.me/ruangdiskusikami",
+  "telegram": "https://t.me/TheDrimz",
+  "success_url": "https://t.me/KataPrenjon",
   "stack": "container",
   "env": {
     "API_KEY": {
