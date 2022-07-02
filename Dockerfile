@@ -1,11 +1,17 @@
-FROM punyaalby/alby-userbot:buster
-#━━━━━ ALBY-Userbot ━━━━━━
+#==============×==============#
+#      Created by: Alfa-Ex
+#=========× AyiinXd ×=========#
 
-RUN git clone -b ALBY-Userbot https://github.com/PunyaAlby/ALBY-Userbot /home/albyuserbot/ \
+FROM ayiinxd/ayiin-userbot:buster
+
+RUN git clone -b ALBY-Userbot https://github.com/PunyaAlby/Userbot /home/albyuserbot/ \
     && chmod 777 /home/albyuserbot \
     && mkdir /home/albyuserbot/bin/
+
+COPY ./sample_config.env ./config.env* /home/albyuserbot/
+
 WORKDIR /home/albyuserbot/
 
-RUN pip3 install -r https://raw.githubusercontent.com/PunyaAlby/ALBY-Userbot/ALBY-Userbot/requirements.txt
+RUN pip install -r requirements.txt
 
-CMD ["python3", "-m", "userbot"]
+CMD ["bash","start"]
