@@ -61,7 +61,7 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan userbot ini dengan bijak
 
  • `git clone https://github.com/PunyaAlby/Projects`
 
- • `cd ALBY-Userbot`
+ • `cd Projects`
 
  • `pip3 install -U -r requirements.txt`
 
@@ -73,7 +73,7 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan userbot ini dengan bijak
   - ketik ctrl + S
   - ctrl + X
 
- • `screen -S ALBY-Userbot`
+ • `screen -S Projects`
 
  • `bash start`
 
