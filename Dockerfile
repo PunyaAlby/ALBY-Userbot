@@ -1,16 +1,11 @@
-#==============×==============#
-#      Created by: Alfa-Ex
-#=========× AyiinXd ×=========#
-
 FROM ayiinxd/ayiin-userbot:buster
+RUN git clone -b ALBY-Userbot https://github.com/xfkm/nyoba /home/alby/ \
+    && chmod 777 /home/alby \
+    && mkdir /home/alby/bin/
 
-RUN git clone -b ALBY-Userbot https://github.com/PunyaAlby/Userbot /home/albyuserbot/ \
-    && chmod 777 /home/albyuserbot \
-    && mkdir /home/albyuserbot/bin/
+COPY ./sample.env ./config.env* /home/alby/
 
-COPY ./sample_config.env ./config.env* /home/albyuserbot/
-
-WORKDIR /home/albyuserbot/
+WORKDIR /home/alby/
 
 RUN pip install -r requirements.txt
 
