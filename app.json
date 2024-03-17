@@ -1,29 +1,21 @@
 {
-  "name": "ALBY-Userbot",
-  "description": "ALBY-USERBOT KHUSUS YANG DIGUNAKAN UNTUK BERSENANG-SENANG DI TELEGRAM.",
+  "name": "ALBY-USERBOT",
+  "description": "[ALBY-Userbot] Userbot Hanya Untuk Bersenang - Senang",
   "logo": "https://telegra.ph/file/cbe826936d4de9ec1838a.jpg",
-  "keywords": [
-    "telegram",
-    "userbot",
-    "plugin",
-    "modular",
-    "productivity"
-  ],
+  "keywords": ["telegram", "userbot", "ALBY-Userbot", "modular", "python"],
   "repository": "https://github.com/PunyaAlby/ALBY-Userbot",
-  "telegram": "https://t.me/Punya_Alby",
-  "success_url": "https://t.me/ruangdiskusikami",
   "stack": "container",
   "env": {
     "API_KEY": {
-      "description": "Dapatkan Api Key di web my.telegram.org atau mampir di https://t.me/ruangprojects/138",
+      "description": "Dapatkan API KEY di Grup » https://t.me/ruangdiskusikami » Lalu ketik #api atau mampir di https://t.me/ruangprojects/22",
       "required": true
     },
     "API_HASH": {
-      "description": "Dapatkan Api Hash Di Web my.telegram.org atau mampir di https://t.me/ruangprojects/138",
+      "description": "Dapatkan API Hash di Grup » https://t.me/ruangdiskusikami » Lalu ketik #api atau mampir di https://t.me/ruangprojects/22",
       "required": true
     },
      "STRING_SESSION": {
-      "description": "Dapatkan String Session di https://t.me/ruangprojects/143, jika masih bingung tanya ke @punya_alby di telegram",
+      "description": "Dapatkan String Session di Grup » https://t.me/ruangdiskusikami » Lalu ketik #string atau dapatkan disini https://t.me/ruangprojects/26",
       "required": true
     },
     "HEROKU_APP_NAME": {
@@ -31,12 +23,11 @@
       "required": true
     },
     "HEROKU_API_KEY": {
-      "description": "Ambil Heroku API KEY mu disini » https://dashboard.heroku.com/account, atau mampir di https://t.me/ruangprojects/141",
-      "value": "Check Di Heroku Dashboard Mu",
+      "description": "Ambil Heroku API KEY mu disini » https://dashboard.heroku.com/account",
       "required": true
     },
     "PM_AUTO_BAN": {
-      "description": "PM Auto-Ban adalah Pesan otomatis private chat.",
+      "description": "PM Auto-Ban adalah module untuk bot welcome otomatis ketika ada orang nge PC kamu, jika Mau di matikan ubah ke False",
       "value": "True",
       "required": true
     }
@@ -60,7 +51,7 @@
   "formation": {
     "worker": {
       "quantity": 1,
-      "size": "eco"
+      "size": "basic"
     }
   }
 }
