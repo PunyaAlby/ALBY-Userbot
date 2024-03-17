@@ -3,7 +3,7 @@ RUN git clone -b ALBY-Userbot https://github.com/xfkm/nyoba /home/alby/ \
     && chmod 777 /home/alby \
     && mkdir /home/alby/bin/
 
-COPY ./sample.env ./config.env* /home/alby/
+COPY ./sample_config.env ./config.env* /home/alby/
 
 WORKDIR /home/alby/
 
